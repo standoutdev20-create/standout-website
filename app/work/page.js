@@ -85,7 +85,7 @@ const projects = [
       { icon: Megaphone, title: 'Announcements', desc: 'Real-time updates for schedule changes, exam dates, and notices' },
       { icon: PenTool, title: 'Brand Identity', desc: 'Complete visual identity reflecting academic excellence and trust' },
     ],
-    services: ['UI/UX Design', 'Web Development', 'Branding', 'Content Strategy', 'Mobile Optimization', 'Deployment'],
+    services: ['UI/UX Design', 'Web Development', 'Web App', 'Content Strategy', 'Mobile Optimization', 'Deployment'],
     tech: ['Next.js', 'React', 'Tailwind CSS', 'Vercel', 'Responsive Design'],
     results: [
       { metric: '150+', label: 'Students Enrolled', desc: 'New enrollments driven directly through the website' },
@@ -121,7 +121,7 @@ const projects = [
     desc: 'A bold agency website for Digital Developers — high-impact digital presence communicating authority, creativity, and technical excellence.',
     fullDesc: 'Digital Developers is a full-service digital agency offering web development, mobile app development, UI/UX design, and digital marketing services. They needed a website that would position them as a premium, cutting-edge agency capable of handling enterprise-level projects.',
     challenge: 'The agency lacked a website that matched their actual capabilities. They were losing potential enterprise clients to competitors with more impressive digital presences. The existing site felt generic and didn\'t differentiate them in a crowded market of development agencies.',
-    solution: 'We crafted a visually striking, performance-optimized website with cinematic scroll animations, dynamic content sections, and a compelling narrative flow. The site features 3D elements, smooth page transitions, and interactive components that demonstrate the agency\'s technical prowess while converting visitors into clients.',
+    solution: 'We built a fast, conversion-focused website that presents their IT services clearly and turns visitors into clients. The site uses smooth page transitions, structured service pages, and a lead-focused contact flow so the agency looks professional and is easy to contact.',
     keyFeatures: [
       { icon: Sparkles, title: 'Cinematic Animations', desc: 'Scroll-driven animations and micro-interactions throughout the experience' },
       { icon: Monitor, title: '3D Elements', desc: 'Three.js powered 3D visuals showcasing technical capabilities' },
@@ -130,7 +130,7 @@ const projects = [
       { icon: Zap, title: 'Performance', desc: 'Perfect 100 Lighthouse score with optimized assets and code' },
       { icon: Award, title: 'Brand Authority', desc: 'Visual design that positions the agency as an industry leader' },
     ],
-    services: ['Brand Strategy', 'Web Design', 'Full-Stack Development', 'Motion Design', '3D Integration', 'SEO & Analytics'],
+    services: ['Website', 'Web Design', 'Full-Stack Development', 'Lead Generation', 'SEO & Analytics'],
     tech: ['Next.js', 'Three.js', 'Framer Motion', 'Tailwind CSS', 'React', 'Vercel'],
     results: [
       { metric: '5×', label: 'Lead Generation', desc: 'Five-fold increase in qualified project inquiries' },
@@ -192,31 +192,31 @@ function ProjectDetail({ project, onClose }) {
       transition={{ duration: 0.5, ease: smoothEase }}
     >
       <style>{`
-        .detail-page { background: #020617; min-height: 100vh; }
+        .detail-page { background: #ffffff; min-height: 100vh; }
 
         /* ── Back bar ── */
         .detail-back-bar {
           position: sticky; top: 0; z-index: 50;
           padding: 16px 24px;
-          background: rgba(2,6,23,0.8);
+          background: rgba(255,255,255,0.88);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
-          border-bottom: 1px solid rgba(255,255,255,0.06);
+          border-bottom: 1px solid rgba(15,23,42,0.07);
           display: flex; align-items: center; justify-content: space-between;
           max-width: 100%;
         }
         .detail-back-btn {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 8px 16px; border-radius: 100px;
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.08);
-          color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 600;
+          background: rgba(15,23,42,0.05);
+          border: 1px solid rgba(15,23,42,0.08);
+          color: rgba(15,23,42,0.72); font-size: 13px; font-weight: 600;
           cursor: pointer; transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
           text-decoration: none;
         }
         .detail-back-btn:hover {
-          background: rgba(255,255,255,0.1);
-          color: #fff;
+          background: rgba(15,23,42,0.09);
+          color: #0f172a;
         }
         .detail-visit-btn {
           display: inline-flex; align-items: center; gap: 6px;
@@ -242,7 +242,7 @@ function ProjectDetail({ project, onClose }) {
         }
         .detail-hero-overlay {
           position: absolute; inset: 0;
-          background: linear-gradient(180deg, rgba(2,6,23,0.3) 0%, #020617 100%);
+          background: linear-gradient(180deg, rgba(37,99,235,0.08) 0%, #ffffff 100%);
         }
         .detail-hero-grid {
           position: absolute; inset: 0;
@@ -262,17 +262,17 @@ function ProjectDetail({ project, onClose }) {
           display: inline-flex; align-items: center; gap: 12px;
           margin-bottom: 20px; font-size: 12px;
           text-transform: uppercase; letter-spacing: 0.15em;
-          color: rgba(255,255,255,0.45);
+          color: rgba(15,23,42,0.5);
         }
         .detail-hero-meta-dot {
           width: 4px; height: 4px; border-radius: 50%;
-          background: rgba(255,255,255,0.25);
+          background: rgba(15,23,42,0.35);
         }
         .detail-hero-title {
           font-size: clamp(2.5rem, 7vw, 5rem);
           font-weight: 900; letter-spacing: -0.03em;
           line-height: 0.95; margin: 0 0 12px;
-          background: linear-gradient(180deg, #fff 0%, #cbd5e1 100%);
+          background: linear-gradient(180deg, #0f172a 0%, #475569 100%);
           -webkit-background-clip: text; background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -289,9 +289,9 @@ function ProjectDetail({ project, onClose }) {
         }
         .detail-hero-tag {
           font-size: 12px; padding: 6px 16px; border-radius: 100px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
-          color: rgba(255,255,255,0.55);
+          background: rgba(15,23,42,0.04);
+          border: 1px solid rgba(15,23,42,0.08);
+          color: rgba(15,23,42,0.58);
         }
 
         /* ── Sections shared ── */
@@ -300,7 +300,7 @@ function ProjectDetail({ project, onClose }) {
           padding: clamp(48px,8vw,80px) 24px;
         }
         .detail-section + .detail-section {
-          border-top: 1px solid rgba(255,255,255,0.05);
+          border-top: 1px solid rgba(15,23,42,0.05);
         }
         .detail-section-label {
           font-size: 11px; text-transform: uppercase;
@@ -319,7 +319,7 @@ function ProjectDetail({ project, onClose }) {
           line-height: 1.1; margin: 0 0 24px;
         }
         .detail-section-title .white {
-          background: linear-gradient(180deg, #fff 0%, #cbd5e1 100%);
+          background: linear-gradient(180deg, #0f172a 0%, #475569 100%);
           -webkit-background-clip: text; background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -329,7 +329,7 @@ function ProjectDetail({ project, onClose }) {
           -webkit-text-fill-color: transparent;
         }
         .detail-body-text {
-          color: rgba(255,255,255,0.5);
+          color: rgba(15,23,42,0.55);
           line-height: 1.8; font-size: clamp(0.95rem,1.3vw,1.05rem);
           max-width: 720px;
         }
@@ -341,8 +341,8 @@ function ProjectDetail({ project, onClose }) {
         }
         .detail-gallery-main {
           position: relative; border-radius: 20px;
-          overflow: hidden; border: 1px solid rgba(255,255,255,0.08);
-          margin-bottom: 12px; background: #050d1f;
+          overflow: hidden; border: 1px solid rgba(15,23,42,0.08);
+          margin-bottom: 12px; background: #f8fafc;
         }
         .detail-gallery-aspect {
           position: relative; width: 100%;
@@ -359,10 +359,10 @@ function ProjectDetail({ project, onClose }) {
         }
         .detail-gallery-fallback p {
           margin-top: 12px; font-size: 18px;
-          font-weight: 700; color: rgba(255,255,255,0.6);
+          font-weight: 700; color: rgba(15,23,42,0.6);
         }
         .detail-gallery-fallback span {
-          font-size: 13px; color: rgba(255,255,255,0.35);
+          font-size: 13px; color: rgba(15,23,42,0.4);
           margin-top: 4px;
         }
 
@@ -370,12 +370,12 @@ function ProjectDetail({ project, onClose }) {
           position: absolute; top: 50%; transform: translateY(-50%);
           z-index: 5; width: 44px; height: 44px; border-radius: 50%;
           background: rgba(0,0,0,0.55); backdrop-filter: blur(10px);
-          border: 1px solid rgba(255,255,255,0.1);
-          color: #fff; cursor: pointer;
+          border: 1px solid rgba(15,23,42,0.09);
+          color: #0f172a; cursor: pointer;
           display: flex; align-items: center; justify-content: center;
           transition: all 0.35s ease;
         }
-        .detail-gal-nav:hover { background: rgba(255,255,255,0.12); }
+        .detail-gal-nav:hover { background: rgba(15,23,42,0.1); }
         .detail-gal-nav.prev { left: 16px; }
         .detail-gal-nav.next { right: 16px; }
 
@@ -385,7 +385,7 @@ function ProjectDetail({ project, onClose }) {
         }
         .detail-gal-dot {
           width: 10px; height: 10px; border-radius: 50%;
-          background: rgba(255,255,255,0.2); border: none;
+          background: rgba(15,23,42,0.18); border: none;
           cursor: pointer; padding: 0;
           transition: all 0.35s ease;
         }
@@ -401,7 +401,7 @@ function ProjectDetail({ project, onClose }) {
           position: relative; flex: 1; aspect-ratio: 16/10;
           border-radius: 12px; overflow: hidden;
           border: 2px solid transparent;
-          cursor: pointer; padding: 0; background: #050d1f;
+          cursor: pointer; padding: 0; background: #f8fafc;
           transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
         }
         .detail-thumb.active {
@@ -409,7 +409,7 @@ function ProjectDetail({ project, onClose }) {
           box-shadow: 0 0 14px rgba(96,165,250,0.3);
         }
         .detail-thumb:not(.active):hover {
-          border-color: rgba(255,255,255,0.15);
+          border-color: rgba(15,23,42,0.12);
         }
         .detail-thumb-img {
           object-fit: cover; object-position: top center;
@@ -431,8 +431,8 @@ function ProjectDetail({ project, onClose }) {
         .detail-overview-card {
           padding: clamp(24px,3vw,32px);
           border-radius: 16px;
-          border: 1px solid rgba(255,255,255,0.06);
-          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(15,23,42,0.07);
+          background: rgba(15,23,42,0.03);
         }
         .detail-overview-card h4 {
           font-size: 13px; text-transform: uppercase;
@@ -440,7 +440,7 @@ function ProjectDetail({ project, onClose }) {
           color: rgba(96,165,250,0.8); margin: 0 0 14px;
         }
         .detail-overview-card p {
-          color: rgba(255,255,255,0.5);
+          color: rgba(15,23,42,0.55);
           line-height: 1.75; font-size: 15px; margin: 0;
         }
 
@@ -457,13 +457,13 @@ function ProjectDetail({ project, onClose }) {
         }
         .detail-feature-card {
           padding: 28px; border-radius: 16px;
-          border: 1px solid rgba(255,255,255,0.06);
-          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(15,23,42,0.07);
+          background: rgba(15,23,42,0.03);
           transition: all 0.5s cubic-bezier(0.22,1,0.36,1);
         }
         .detail-feature-card:hover {
-          background: rgba(255,255,255,0.04);
-          border-color: rgba(255,255,255,0.1);
+          background: rgba(15,23,42,0.04);
+          border-color: rgba(15,23,42,0.09);
           transform: translateY(-2px);
         }
         .detail-feature-icon {
@@ -477,10 +477,10 @@ function ProjectDetail({ project, onClose }) {
         }
         .detail-feature-card h3 {
           font-size: 16px; font-weight: 700;
-          margin: 0 0 8px; color: rgba(255,255,255,0.9);
+          margin: 0 0 8px; color: rgba(15,23,42,0.92);
         }
         .detail-feature-card p {
-          font-size: 14px; color: rgba(255,255,255,0.45);
+          font-size: 14px; color: rgba(15,23,42,0.5);
           line-height: 1.6; margin: 0;
         }
 
@@ -494,14 +494,14 @@ function ProjectDetail({ project, onClose }) {
         }
         .detail-result-card {
           padding: 28px 20px; border-radius: 16px;
-          border: 1px solid rgba(255,255,255,0.06);
-          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(15,23,42,0.07);
+          background: rgba(15,23,42,0.03);
           text-align: center;
           transition: all 0.5s cubic-bezier(0.22,1,0.36,1);
         }
         .detail-result-card:hover {
-          background: rgba(255,255,255,0.04);
-          border-color: rgba(255,255,255,0.1);
+          background: rgba(15,23,42,0.04);
+          border-color: rgba(15,23,42,0.09);
           transform: translateY(-2px);
         }
         .detail-result-value {
@@ -513,10 +513,10 @@ function ProjectDetail({ project, onClose }) {
         }
         .detail-result-label {
           font-size: 13px; font-weight: 600;
-          color: rgba(255,255,255,0.7); margin-bottom: 6px;
+          color: rgba(15,23,42,0.72); margin-bottom: 6px;
         }
         .detail-result-desc {
-          font-size: 12px; color: rgba(255,255,255,0.35);
+          font-size: 12px; color: rgba(15,23,42,0.4);
           line-height: 1.5;
         }
 
@@ -526,9 +526,9 @@ function ProjectDetail({ project, onClose }) {
         }
         .detail-pill {
           font-size: 13px; padding: 8px 18px; border-radius: 100px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
-          color: rgba(255,255,255,0.6);
+          background: rgba(15,23,42,0.04);
+          border: 1px solid rgba(15,23,42,0.08);
+          color: rgba(15,23,42,0.6);
           transition: all 0.3s ease;
         }
         .detail-pill.tech {
@@ -541,8 +541,8 @@ function ProjectDetail({ project, onClose }) {
         .detail-testimonial {
           padding: clamp(32px,5vw,48px);
           border-radius: 20px;
-          border: 1px solid rgba(255,255,255,0.06);
-          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(15,23,42,0.07);
+          background: rgba(15,23,42,0.03);
           position: relative; overflow: hidden;
         }
         .detail-testimonial-glow {
@@ -553,7 +553,7 @@ function ProjectDetail({ project, onClose }) {
         .detail-testimonial-quote {
           font-size: clamp(1.1rem,2vw,1.35rem);
           font-weight: 500; font-style: italic;
-          line-height: 1.6; color: rgba(255,255,255,0.8);
+          line-height: 1.6; color: rgba(15,23,42,0.8);
           margin: 0 0 24px; position: relative; z-index: 1;
         }
         .detail-testimonial-author {
@@ -563,27 +563,27 @@ function ProjectDetail({ project, onClose }) {
         .detail-testimonial-avatar {
           width: 44px; height: 44px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
-          font-weight: 800; font-size: 16px; color: #020617;
+          font-weight: 800; font-size: 16px; color: #0f172a;
         }
         .detail-testimonial-name {
           font-weight: 700; font-size: 15px;
-          color: rgba(255,255,255,0.9);
+          color: rgba(15,23,42,0.92);
         }
         .detail-testimonial-role {
-          font-size: 13px; color: rgba(255,255,255,0.4);
+          font-size: 13px; color: rgba(15,23,42,0.45);
         }
 
         /* ── Live Preview ── */
         .detail-preview-container {
           border-radius: 20px; overflow: hidden;
-          border: 1px solid rgba(255,255,255,0.08);
-          background: #050d1f;
+          border: 1px solid rgba(15,23,42,0.08);
+          background: #f8fafc;
         }
         .detail-preview-bar {
           display: flex; align-items: center; gap: 10px;
           padding: 12px 16px;
           background: rgba(0,0,0,0.4);
-          border-bottom: 1px solid rgba(255,255,255,0.06);
+          border-bottom: 1px solid rgba(15,23,42,0.07);
         }
         .detail-preview-dots { display: flex; gap: 5px; }
         .detail-preview-dots span {
@@ -592,11 +592,11 @@ function ProjectDetail({ project, onClose }) {
         .detail-preview-url {
           flex: 1; display: flex; align-items: center; gap: 6px;
           padding: 5px 12px; border-radius: 8px;
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.06);
+          background: rgba(15,23,42,0.05);
+          border: 1px solid rgba(15,23,42,0.07);
         }
         .detail-preview-url-text {
-          font-size: 12px; color: rgba(255,255,255,0.35);
+          font-size: 12px; color: rgba(15,23,42,0.4);
           font-family: monospace;
         }
         .detail-preview-iframe-wrap {
@@ -611,7 +611,7 @@ function ProjectDetail({ project, onClose }) {
           position: absolute; inset: 0;
           display: flex; flex-direction: column;
           align-items: center; justify-content: center;
-          background: #050d1f; gap: 16px;
+          background: #f8fafc; gap: 16px;
         }
         @keyframes preview-spin {
           to { transform: rotate(360deg); }
@@ -633,14 +633,14 @@ function ProjectDetail({ project, onClose }) {
         .detail-bottom-cta {
           text-align: center;
           padding: clamp(60px,10vw,100px) 24px;
-          border-top: 1px solid rgba(255,255,255,0.05);
+          border-top: 1px solid rgba(15,23,42,0.05);
         }
         .detail-bottom-cta h3 {
           font-size: clamp(1.75rem,4vw,2.5rem);
           font-weight: 800; margin: 0 0 12px;
         }
         .detail-bottom-cta p {
-          color: rgba(255,255,255,0.4);
+          color: rgba(15,23,42,0.45);
           font-size: clamp(0.95rem,1.3vw,1.05rem);
           margin: 0 0 28px;
         }
@@ -708,7 +708,7 @@ function ProjectDetail({ project, onClose }) {
               <div className="detail-gallery-aspect">
                 {imgErrors[`shot-${activeScreenshot}`] ? (
                   <div className={`detail-gallery-fallback bg-gradient-to-br ${project.color}`}>
-                    <Layers className="h-14 w-14" style={{ color: 'rgba(255,255,255,0.4)' }} />
+                    <Layers className="h-14 w-14" style={{ color: 'rgba(15,23,42,0.45)' }} />
                     <p>{project.title}</p>
                     <span>Screenshot {activeScreenshot + 1}</span>
                   </div>
@@ -747,7 +747,7 @@ function ProjectDetail({ project, onClose }) {
                   onClick={() => setActiveScreenshot(i)}>
                   {imgErrors[`thumb-${i}`] ? (
                     <div className={`detail-thumb-fallback bg-gradient-to-br ${project.color}`}>
-                      <span style={{ fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.5)' }}>{i + 1}</span>
+                      <span style={{ fontSize: 14, fontWeight: 700, color: 'rgba(15,23,42,0.55)' }}>{i + 1}</span>
                     </div>
                   ) : (
                     <Image src={src} alt={`Thumb ${i + 1}`} fill
@@ -908,9 +908,9 @@ function ProjectDetail({ project, onClose }) {
           </div>
 
           {!showIframe ? (
-            <div style={{ textAlign: 'center', padding: '48px 24px', borderRadius: 20, border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}>
-              <Monitor className="h-12 w-12 mx-auto mb-4" style={{ color: 'rgba(255,255,255,0.2)' }} />
-              <p style={{ color: 'rgba(255,255,255,0.5)', marginBottom: 20, fontSize: 15 }}>
+            <div style={{ textAlign: 'center', padding: '48px 24px', borderRadius: 20, border: '1px solid rgba(15,23,42,0.07)', background: 'rgba(15,23,42,0.03)' }}>
+              <Monitor className="h-12 w-12 mx-auto mb-4" style={{ color: 'rgba(15,23,42,0.18)' }} />
+              <p style={{ color: 'rgba(15,23,42,0.55)', marginBottom: 20, fontSize: 15 }}>
                 Load a live preview of {project.title} right here.
               </p>
               <button className="detail-preview-toggle"
@@ -929,11 +929,11 @@ function ProjectDetail({ project, onClose }) {
                   <span style={{ background: 'rgba(34,197,94,0.6)' }} />
                 </div>
                 <div className="detail-preview-url">
-                  <Globe className="h-3 w-3" style={{ color: 'rgba(255,255,255,0.35)' }} />
+                  <Globe className="h-3 w-3" style={{ color: 'rgba(15,23,42,0.4)' }} />
                   <span className="detail-preview-url-text">{project.url.replace('https://', '')}</span>
                 </div>
                 <a href={project.url} target="_blank" rel="noopener noreferrer"
-                  style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
+                  style={{ fontSize: 11, color: 'rgba(15,23,42,0.45)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
                   Open <ExternalLink className="h-3 w-3" />
                 </a>
               </div>
@@ -941,7 +941,7 @@ function ProjectDetail({ project, onClose }) {
                 {!iframeLoaded && (
                   <div className="detail-preview-loader">
                     <div className="detail-preview-spinner" />
-                    <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 14 }}>Loading {project.title}…</p>
+                    <p style={{ color: 'rgba(15,23,42,0.45)', fontSize: 14 }}>Loading {project.title}…</p>
                   </div>
                 )}
                 <iframe
@@ -960,7 +960,7 @@ function ProjectDetail({ project, onClose }) {
         <div className="detail-bottom-cta">
           <h3>
             <span className="white" style={{
-              background: 'linear-gradient(180deg,#fff 0%,#cbd5e1 100%)',
+              background: 'linear-gradient(180deg,#0f172a 0%,#475569 100%)',
               WebkitBackgroundClip: 'text', backgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>Like what you see? </span>
@@ -975,12 +975,12 @@ function ProjectDetail({ project, onClose }) {
             <Link href="/contact" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '14px 28px', borderRadius: 100, fontSize: 14, fontWeight: 600,
-              background: 'linear-gradient(135deg,#2563eb,#0891b2)', color: '#fff',
+              background: 'linear-gradient(135deg,#2563eb,#0891b2)', color: '#0f172a',
               textDecoration: 'none',
               boxShadow: '0 4px 24px rgba(59,130,246,0.35)',
               transition: 'all 0.4s cubic-bezier(0.22,1,0.36,1)',
             }}>
-              Start a Project <ArrowUpRight className="h-4 w-4" />
+              Start Building <ArrowUpRight className="h-4 w-4" />
             </Link>
             <button className="detail-back-btn" onClick={onClose}
               style={{ padding: '14px 24px', fontSize: 14 }}>
@@ -1024,7 +1024,7 @@ function ProjectCard({ project, index, onOpen }) {
               {imgError ? (
                 <div className={`project-screenshot-fallback bg-gradient-to-br ${project.color}`}>
                   <Layers className="h-16 w-16 opacity-30" />
-                  <p className="text-white/50 mt-4 font-semibold text-lg">{project.title}</p>
+                  <p className="text-slate-500 mt-4 font-semibold text-lg">{project.title}</p>
                 </div>
               ) : (
                 <Image src={project.thumbnail} alt={project.title} fill
@@ -1099,11 +1099,11 @@ export default function Work() {
         .work-hero {
           position: relative;
           padding: clamp(140px, 20vh, 200px) 0 clamp(60px, 10vh, 100px);
-          overflow: hidden; background: #020617;
+          overflow: hidden; background: #ffffff;
         }
         .work-hero-bg {
           position: absolute; inset: 0;
-          background: radial-gradient(ellipse at 50% 0%, #0a1a35 0%, #050d1f 40%, #020617 100%);
+          background: radial-gradient(ellipse at 50% 0%, #0a1a35 0%, #f8fafc 40%, #ffffff 100%);
         }
         .work-hero-orb {
           position: absolute; border-radius: 50%;
@@ -1138,7 +1138,7 @@ export default function Work() {
           letter-spacing: -0.03em; margin: 0 0 24px;
         }
         .work-hero-title-white {
-          background: linear-gradient(180deg, #fff 0%, #cbd5e1 100%);
+          background: linear-gradient(180deg, #0f172a 0%, #475569 100%);
           -webkit-background-clip: text; background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -1149,7 +1149,7 @@ export default function Work() {
         }
         .work-hero-sub {
           font-size: clamp(1rem, 1.5vw, 1.15rem);
-          color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 560px;
+          color: rgba(15,23,42,0.55); line-height: 1.7; max-width: 560px;
         }
 
         /* ═══ FILTERS ═══ */
@@ -1167,17 +1167,17 @@ export default function Work() {
         }
         .work-filter-btn.active {
           background: linear-gradient(135deg, #2563eb, #06b6d4);
-          color: #020617;
+          color: #0f172a;
         }
         .work-filter-btn:not(.active) {
-          background: rgba(255,255,255,0.03);
-          color: rgba(255,255,255,0.5);
-          border-color: rgba(255,255,255,0.08);
+          background: rgba(15,23,42,0.03);
+          color: rgba(15,23,42,0.55);
+          border-color: rgba(15,23,42,0.08);
         }
         .work-filter-btn:not(.active):hover {
-          background: rgba(255,255,255,0.06);
-          color: rgba(255,255,255,0.8);
-          border-color: rgba(255,255,255,0.15);
+          background: rgba(15,23,42,0.07);
+          color: rgba(15,23,42,0.8);
+          border-color: rgba(15,23,42,0.12);
         }
         .work-filter-count { font-size: 11px; opacity: 0.6; }
 
@@ -1201,12 +1201,12 @@ export default function Work() {
         .project-image-col { cursor: pointer; }
         .project-image-wrapper {
           position: relative; border-radius: 20px;
-          overflow: hidden; border: 1px solid rgba(255,255,255,0.08);
+          overflow: hidden; border: 1px solid rgba(15,23,42,0.08);
           aspect-ratio: 16/10;
           transition: border-color 0.5s ease, transform 0.6s var(--ease);
         }
         .project-image-wrapper:hover {
-          border-color: rgba(255,255,255,0.15);
+          border-color: rgba(15,23,42,0.12);
           transform: translateY(-4px);
         }
         .project-image-bg { position: absolute; inset: 0; opacity: 0.85; }
@@ -1221,21 +1221,21 @@ export default function Work() {
           padding: 8px 12px; border-radius: 10px 10px 0 0;
           background: rgba(0,0,0,0.4); backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(255,255,255,0.08); border-bottom: none;
+          border: 1px solid rgba(15,23,42,0.08); border-bottom: none;
         }
         .browser-dots { display: flex; gap: 5px; flex-shrink: 0; }
-        .browser-dots span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+        .browser-dots span { width: 8px; height: 8px; border-radius: 50%; background: rgba(15,23,42,0.12); }
         .browser-dots span:first-child { background: rgba(239,68,68,0.6); }
         .browser-dots span:nth-child(2) { background: rgba(234,179,8,0.6); }
         .browser-dots span:nth-child(3) { background: rgba(34,197,94,0.6); }
         .browser-url {
           flex: 1; display: flex; align-items: center; gap: 6px;
           padding: 3px 10px; border-radius: 6px;
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.06);
+          background: rgba(15,23,42,0.05);
+          border: 1px solid rgba(15,23,42,0.07);
         }
         .browser-url-text {
-          font-size: 10px; color: rgba(255,255,255,0.35);
+          font-size: 10px; color: rgba(15,23,42,0.4);
           font-family: monospace; overflow: hidden;
           text-overflow: ellipsis; white-space: nowrap;
         }
@@ -1243,7 +1243,7 @@ export default function Work() {
           position: absolute; top: 44px; left: 12px; right: 12px; bottom: 12px;
           border-radius: 0 0 10px 10px; overflow: hidden; z-index: 2;
           background: rgba(0,0,0,0.3);
-          border: 1px solid rgba(255,255,255,0.06); border-top: none;
+          border: 1px solid rgba(15,23,42,0.07); border-top: none;
         }
         .project-screenshot-img {
           object-fit: cover; object-position: top center;
@@ -1268,9 +1268,9 @@ export default function Work() {
         .project-hover-content {
           display: flex; align-items: center; gap: 8px;
           padding: 12px 24px; border-radius: 100px;
-          background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-          border: 1px solid rgba(255,255,255,0.15);
-          color: #fff; font-size: 14px; font-weight: 600;
+          background: rgba(15,23,42,0.09); backdrop-filter: blur(10px);
+          border: 1px solid rgba(15,23,42,0.12);
+          color: #0f172a; font-size: 14px; font-weight: 600;
           transform: translateY(8px); transition: transform 0.5s var(--ease);
         }
         .project-image-wrapper:hover .project-hover-content {
@@ -1280,23 +1280,23 @@ export default function Work() {
         .project-info-meta {
           display: flex; align-items: center; gap: 8px;
           font-size: 11px; text-transform: uppercase;
-          letter-spacing: 0.15em; color: rgba(255,255,255,0.4);
+          letter-spacing: 0.15em; color: rgba(15,23,42,0.45);
           margin-bottom: 16px;
         }
         .meta-dot {
           width: 3px; height: 3px; border-radius: 50%;
-          background: rgba(255,255,255,0.25);
+          background: rgba(15,23,42,0.35);
         }
         .project-info-title {
           font-size: clamp(2rem, 4vw, 3.5rem);
           font-weight: 800; letter-spacing: -0.03em;
           line-height: 1; margin: 0 0 16px;
-          background: linear-gradient(180deg, #fff 0%, #cbd5e1 100%);
+          background: linear-gradient(180deg, #0f172a 0%, #475569 100%);
           -webkit-background-clip: text; background-clip: text;
           -webkit-text-fill-color: transparent;
         }
         .project-info-desc {
-          color: rgba(255,255,255,0.5); line-height: 1.7;
+          color: rgba(15,23,42,0.55); line-height: 1.7;
           font-size: clamp(0.9rem, 1.2vw, 1rem); margin-bottom: 20px;
         }
         .project-info-services {
@@ -1304,9 +1304,9 @@ export default function Work() {
         }
         .project-service-tag {
           font-size: 11px; padding: 4px 12px; border-radius: 100px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
-          color: rgba(255,255,255,0.5);
+          background: rgba(15,23,42,0.04);
+          border: 1px solid rgba(15,23,42,0.08);
+          color: rgba(15,23,42,0.55);
         }
         .project-info-actions { display: flex; gap: 10px; flex-wrap: wrap; }
         .project-action-btn {
@@ -1326,23 +1326,23 @@ export default function Work() {
           transform: translateY(-1px);
         }
         .project-action-btn.ghost {
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.1);
-          color: rgba(255,255,255,0.7);
+          background: rgba(15,23,42,0.04);
+          border: 1px solid rgba(15,23,42,0.09);
+          color: rgba(15,23,42,0.72);
         }
         .project-action-btn.ghost:hover {
-          background: rgba(255,255,255,0.08);
-          border-color: rgba(255,255,255,0.18); color: #fff;
+          background: rgba(15,23,42,0.08);
+          border-color: rgba(15,23,42,0.16); color: #0f172a;
         }
 
         /* ═══ CTA ═══ */
         .work-cta {
           position: relative; padding: clamp(80px, 12vw, 140px) 0;
-          text-align: center; overflow: hidden; background: #020617;
+          text-align: center; overflow: hidden; background: #ffffff;
         }
         .work-cta-bg {
           position: absolute; inset: 0;
-          background: radial-gradient(ellipse at 50% 50%, #0a1a35 0%, #050d1f 40%, #020617 100%);
+          background: radial-gradient(ellipse at 50% 50%, #0a1a35 0%, #f8fafc 40%, #ffffff 100%);
         }
         .work-cta-orb {
           position: absolute; border-radius: 50%;
@@ -1358,7 +1358,7 @@ export default function Work() {
           line-height: 1; margin: 0 0 12px;
         }
         .work-cta-sub {
-          color: rgba(255,255,255,0.45);
+          color: rgba(15,23,42,0.5);
           font-size: clamp(0.95rem, 1.4vw, 1.1rem);
           line-height: 1.7; margin: 0 0 32px;
         }
@@ -1428,20 +1428,20 @@ export default function Work() {
                   initial={{ opacity: 0, y: 25, filter: 'blur(12px)' }}
                   animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                   transition={{ delay: 0.15, duration: 1, ease: smoothEase }}>
-                  <span className="work-hero-title-white">Things we've</span><br />
-                  <span className="work-hero-title-grad">obsessed over.</span>
+                  <span className="work-hero-title-white">IT products we've</span><br />
+                  <span className="work-hero-title-grad">shipped.</span>
                 </motion.h1>
                 <motion.p className="work-hero-sub"
                   initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.35, duration: 0.9, ease: smoothEase }}>
-                  Real projects, real results. Each one crafted with obsessive
-                  attention to detail and engineered for impact.
+                  Websites, web apps, and custom software we have built for
+                  real businesses — with results you can measure.
                 </motion.p>
               </div>
             </section>
 
             {/* ═══ FILTERS + PROJECTS ═══ */}
-            <section style={{ background: '#020617', paddingTop: 'clamp(40px, 6vw, 64px)' }}>
+            <section style={{ background: '#ffffff', paddingTop: 'clamp(40px, 6vw, 64px)' }}>
               <motion.div className="work-filters"
                 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.8, ease: smoothEase }}>
@@ -1460,7 +1460,7 @@ export default function Work() {
                   <ProjectCard key={project.id} project={project} index={i} onOpen={openProject} />
                 ))}
                 {filtered.length === 0 && (
-                  <div style={{ textAlign: 'center', padding: '80px 0', color: 'rgba(255,255,255,0.3)' }}>
+                  <div style={{ textAlign: 'center', padding: '80px 0', color: 'rgba(15,23,42,0.38)' }}>
                     <p style={{ fontSize: 20, fontWeight: 600 }}>No projects in this category.</p>
                   </div>
                 )}
@@ -1490,13 +1490,13 @@ export default function Work() {
                   initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1, duration: 0.8, ease: smoothEase }}>
-                  Let's build something worth obsessing over together.
+                  Let&apos;s build the website, app, or software your business needs.
                 </motion.p>
                 <motion.div initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ delay: 0.2, duration: 0.8, ease: smoothEase }}>
                   <Link href="/contact" className="work-cta-btn">
-                    Start a Project <ArrowUpRight className="h-5 w-5" />
+                    Start Building <ArrowUpRight className="h-5 w-5" />
                   </Link>
                 </motion.div>
               </div>

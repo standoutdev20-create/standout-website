@@ -6,7 +6,7 @@ export const metadata = {
 const sections = [
   {
     t: 'Who we are',
-    d: 'Standoutdev (“we”, “us”, or “our”) is a design and engineering studio based in Pune, Maharashtra 411052, India. This Privacy Policy explains how we collect, use, store, and share information when you visit standoutdev.co or otherwise interact with us.',
+    d: 'Standoutdev (“we”, “us”, or “our”) is an IT solutions company based in Pune, Maharashtra 411052, India. This Privacy Policy explains how we collect, use, store, and share information when you visit standoutdev.co or otherwise interact with us.',
   },
   {
     t: 'Information we collect',
@@ -50,7 +50,7 @@ const sections = [
   },
   {
     t: 'Contact us',
-    d: 'If you have questions about this Privacy Policy or how we handle your data, contact us at standoutdevsolutions@gmail.com, call +91 93223 96236, or write to Standoutdev, Pune, Maharashtra 411052, India.',
+    d: 'If you have questions about this Privacy Policy or how we handle your data, contact us at standoutdev20@gmail.com, call +91 93223 96236, or write to Standoutdev, Pune, Maharashtra 411052, India.',
   },
 ]
 
@@ -61,12 +61,12 @@ export default function PrivacyPage() {
         <div className="absolute inset-0 bg-aurora opacity-80" />
         <div className="absolute inset-0 grid-lines opacity-25" />
         <div className="relative mx-auto max-w-3xl px-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-8">Legal</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-cyan-600 mb-8">Legal</p>
           <h1 className="font-display text-5xl md:text-7xl font-bold leading-[0.95]">
             Privacy <span className="grad-text">Policy</span>
           </h1>
-          <p className="mt-6 text-sm text-white/40">Last updated: July 28, 2026</p>
-          <p className="mt-6 text-lg text-white/60 leading-relaxed">
+          <p className="mt-6 text-sm text-slate-400">Last updated: July 28, 2026</p>
+          <p className="mt-6 text-lg text-slate-500 leading-relaxed">
             Your privacy matters. This policy describes what we collect when you use our website and how we use it.
           </p>
         </div>
@@ -75,12 +75,12 @@ export default function PrivacyPage() {
       <section className="pb-32">
         <div className="mx-auto max-w-3xl px-6 space-y-10">
           {sections.map((s, i) => (
-            <div key={s.t} className="border-t border-white/10 pt-8">
+            <div key={s.t} className="border-t border-slate-200 pt-8">
               <div className="flex gap-4">
-                <span className="font-mono text-sm text-cyan-300/80 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                <span className="font-mono text-sm text-cyan-600 shrink-0">{String(i + 1).padStart(2, '0')}</span>
                 <div>
                   <h2 className="font-display text-2xl font-semibold">{s.t}</h2>
-                  <p className="mt-3 text-white/60 leading-relaxed">{s.d}</p>
+                  <p className="mt-3 text-slate-500 leading-relaxed">{s.d}</p>
                 </div>
               </div>
             </div>

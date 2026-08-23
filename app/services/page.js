@@ -6,8 +6,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import {
   ArrowUpRight, ArrowRight, Palette, Code2, Play, Rocket, Brain, Cpu,
-  Globe, Smartphone, ShoppingCart, LayoutDashboard, Layers, PenTool,
-  MonitorPlay, Clapperboard, CheckCircle, Star, Zap, Target, Users,
+  Globe, Smartphone, ShoppingCart, LayoutDashboard, Layers,
+  MonitorPlay, CheckCircle, Star, Zap, Target, Users,
   Clock, Shield, HeartHandshake, MessagesSquare, Search, Eye,
   FlaskConical, Sparkles, TrendingUp, Award,
 } from 'lucide-react'
@@ -16,94 +16,94 @@ import {
    CONSTANTS
 ============================================ */
 const E = [0.22, 1, 0.36, 1]
-const BG = '#020617'
-const BGA = '#050d1f'
+const BG = '#ffffff'
+const BGA = '#f8fafc'
 const gT = { background: 'linear-gradient(135deg,#60a5fa 0%,#06b6d4 50%,#818cf8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }
-const wT = { background: 'linear-gradient(180deg,#fff 0%,#cbd5e1 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }
+const wT = { background: 'linear-gradient(180deg,#0f172a 0%,#475569 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }
 
 /* ============================================
    SERVICES DATA — Real offerings
 ============================================ */
 const services = [
   {
-    icon: PenTool,
+    icon: Globe,
     k: '01',
-    t: 'Brand & Identity Design',
-    d: 'We craft complete brand systems that resonate with your audience and differentiate you from competitors. From logo design to comprehensive brand guidelines.',
-    deliverables: ['Logo & mark design', 'Color & typography system', 'Brand guidelines document', 'Social media templates'],
-    color: 'from-violet-500 to-purple-600',
-    colorRgb: '139,92,246',
-    stat: { v: '15+', l: 'Brands crafted' },
+    t: 'Website Development',
+    d: 'Business websites, landing pages, and company sites that load fast, rank well, and turn visitors into inquiries. Built for real businesses, not templates.',
+    deliverables: ['Business & marketing websites', 'SEO-ready structure', 'CMS so you can update content', 'Contact & lead forms'],
+    color: 'from-emerald-400 to-teal-500',
+    colorRgb: '52,211,153',
+    stat: { v: '3×', l: 'Avg inquiry lift' },
   },
   {
-    icon: Palette,
+    icon: Smartphone,
     k: '02',
-    t: 'UI/UX Design',
-    d: 'User-centered design that converts. We research, wireframe, prototype, and test — so every screen serves a purpose and every interaction feels intentional.',
-    deliverables: ['User research & personas', 'Wireframes & user flows', 'High-fidelity UI design', 'Interactive prototypes'],
-    color: 'from-blue-500 to-cyan-500',
-    colorRgb: '59,130,246',
-    stat: { v: '95%', l: 'Client satisfaction' },
+    t: 'Mobile App Development',
+    d: 'iOS, Android, and cross-platform apps for customers, field teams, and internal use. We plan the product, build it, and ship it to the stores.',
+    deliverables: ['iOS & Android apps', 'Cross-platform builds', 'API & backend integration', 'App store submission'],
+    color: 'from-sky-400 to-blue-500',
+    colorRgb: '56,189,248',
+    stat: { v: '4.8★', l: 'Avg app rating' },
   },
   {
     icon: Code2,
     k: '03',
-    t: 'Web Development',
-    d: 'Full-stack development with Next.js, React, and modern frameworks. We build fast, accessible, SEO-optimized websites that perform flawlessly across all devices.',
-    deliverables: ['Next.js / React builds', 'API & backend integration', 'CMS setup (Sanity, Strapi)', 'Performance optimization'],
+    t: 'Custom Software',
+    d: 'Web apps, internal tools, and custom IT products built around how your business works. We replace spreadsheets and scattered tools with one system.',
+    deliverables: ['Custom web applications', 'API & backend development', 'Third-party integrations', 'Admin panels'],
     color: 'from-cyan-400 to-emerald-400',
     colorRgb: '6,182,212',
     stat: { v: '100', l: 'Lighthouse score' },
   },
   {
-    icon: Globe,
-    k: '04',
-    t: 'Marketing Websites',
-    d: 'High-conversion marketing sites that tell your story and drive action. Built with cinematic animations, responsive design, and conversion-focused layouts.',
-    deliverables: ['Landing page design', 'Conversion optimization', 'A/B test frameworks', 'Analytics & tracking'],
-    color: 'from-emerald-400 to-teal-500',
-    colorRgb: '52,211,153',
-    stat: { v: '3×', l: 'Avg conversion lift' },
-  },
-  {
-    icon: Clapperboard,
-    k: '05',
-    t: 'Motion & Animation',
-    d: 'Scroll-driven animations, micro-interactions, and motion design that bring your digital product to life. Using Framer Motion, GSAP, and Lottie.',
-    deliverables: ['Scroll animations', 'Micro-interactions', 'Loading & transition effects', 'Animated illustrations'],
-    color: 'from-amber-400 to-orange-500',
-    colorRgb: '251,191,36',
-    stat: { v: '60%', l: 'More engagement' },
-  },
-  {
     icon: LayoutDashboard,
-    k: '06',
-    t: 'SaaS & Dashboard Design',
-    d: 'Complex data, simple interfaces. We design dashboards, admin panels, and SaaS platforms that users actually enjoy using and that reduce support tickets.',
-    deliverables: ['Dashboard UI design', 'Data visualization', 'Component design system', 'User onboarding flows'],
+    k: '04',
+    t: 'SaaS & Dashboards',
+    d: 'Multi-user platforms, analytics dashboards, and client portals. We build products your team and customers can run every day.',
+    deliverables: ['SaaS platforms', 'Admin & analytics dashboards', 'User roles & permissions', 'Onboarding flows'],
     color: 'from-indigo-500 to-violet-500',
     colorRgb: '99,102,241',
     stat: { v: '40%', l: 'Fewer support tickets' },
   },
   {
     icon: ShoppingCart,
-    k: '07',
-    t: 'E-Commerce & Shopify',
-    d: 'Commerce experiences built for conversion. Custom Shopify themes, optimized checkout flows, and product pages that turn browsers into buyers.',
-    deliverables: ['Custom Shopify themes', 'Product page optimization', 'Checkout flow design', 'Inventory & CMS setup'],
+    k: '05',
+    t: 'E-Commerce Development',
+    d: 'Online stores with catalogs, checkout, payments, and inventory. Shopify or custom — whichever fits your products and scale.',
+    deliverables: ['Shopify & custom stores', 'Product catalog & checkout', 'Payment integration', 'Order & inventory setup'],
     color: 'from-pink-500 to-rose-500',
     colorRgb: '236,72,153',
     stat: { v: '2.5×', l: 'Revenue increase' },
   },
   {
-    icon: Smartphone,
+    icon: Palette,
+    k: '06',
+    t: 'UI/UX for Products',
+    d: 'Clear screens and flows for websites and apps. We wireframe, prototype, and test so the product is easy to use before we write production code.',
+    deliverables: ['User flows & wireframes', 'Product UI design', 'Interactive prototypes', 'Usability reviews'],
+    color: 'from-blue-500 to-cyan-500',
+    colorRgb: '59,130,246',
+    stat: { v: '95%', l: 'Client satisfaction' },
+  },
+  {
+    icon: MonitorPlay,
+    k: '07',
+    t: 'CMS & WordPress',
+    d: 'Content-managed websites you can update yourself. WordPress, headless CMS, or a simple admin — chosen for your team, not the trend.',
+    deliverables: ['WordPress & headless CMS', 'Custom content types', 'Editor-friendly admin', 'Training & handoff'],
+    color: 'from-amber-400 to-orange-500',
+    colorRgb: '251,191,36',
+    stat: { v: '15+', l: 'CMS sites shipped' },
+  },
+  {
+    icon: Layers,
     k: '08',
-    t: 'Mobile App Design',
-    d: 'Native-feel mobile experiences for iOS and Android. From concept to polished UI — designed for retention, engagement, and app store success.',
-    deliverables: ['iOS & Android UI', 'Gesture & interaction design', 'App store assets', 'Usability testing'],
-    color: 'from-sky-400 to-blue-500',
-    colorRgb: '56,189,248',
-    stat: { v: '4.8★', l: 'Avg app rating' },
+    t: 'IT Consulting & Support',
+    d: 'Not sure what to build? We help you pick the right product, stack, and roadmap — then stay on after launch for updates and maintenance.',
+    deliverables: ['Product & tech scoping', 'Architecture advice', 'Launch support', 'Ongoing maintenance'],
+    color: 'from-violet-500 to-purple-600',
+    colorRgb: '139,92,246',
+    stat: { v: '48hr', l: 'Avg kickoff time' },
   },
 ]
 
@@ -114,7 +114,7 @@ const process = [
   {
     k: '01',
     t: 'Discovery & Strategy',
-    d: 'We start with a focused workshop to understand your goals, audience, and competitive landscape. You get a clear project roadmap within 48 hours.',
+    d: 'We start with a focused workshop to understand your business, users, and the IT product you need. You get a clear project roadmap within 48 hours.',
     icon: Search,
     color: 'from-blue-500 to-cyan-400',
     duration: 'Week 1',
@@ -123,7 +123,7 @@ const process = [
   {
     k: '02',
     t: 'Research & Direction',
-    d: 'Competitive analysis, user research, and moodboarding. We present 2–3 creative directions and align on the vision before a single pixel is designed.',
+    d: 'We review similar products, user needs, and technical options. Then we align on the product direction and stack before we start building.',
     icon: Eye,
     color: 'from-violet-500 to-blue-500',
     duration: 'Week 1–2',
@@ -132,7 +132,7 @@ const process = [
   {
     k: '03',
     t: 'Design & Prototype',
-    d: 'High-fidelity designs, component libraries, and interactive prototypes. Weekly reviews ensure we stay aligned and iterate quickly.',
+    d: 'Screens, flows, and clickable prototypes for your website or app. Weekly reviews keep the product aligned before development starts.',
     icon: Palette,
     color: 'from-cyan-400 to-emerald-400',
     duration: 'Week 2–4',
@@ -141,7 +141,7 @@ const process = [
   {
     k: '04',
     t: 'Development & Build',
-    d: 'Clean, performant code in Next.js with Tailwind CSS. Built with performance budgets, accessibility standards, and SEO best practices.',
+    d: 'We write production code for websites, apps, and software — with performance, security, and SEO built in from the start.',
     icon: Code2,
     color: 'from-emerald-400 to-teal-500',
     duration: 'Week 3–6',
@@ -172,7 +172,7 @@ const process = [
 ============================================ */
 const whyUs = [
   { icon: Zap, title: 'Ship in weeks, not months', desc: 'Most projects launch in 4–8 weeks. We move fast without cutting corners.' },
-  { icon: Target, title: 'Conversion-focused design', desc: 'Every design decision is backed by user research and conversion data.' },
+  { icon: Target, title: 'Built for results', desc: 'Every product decision is tied to a real outcome — more inquiries, fewer tickets, higher use.' },
   { icon: Shield, title: '100% ownership', desc: 'You own everything — code, designs, assets. No lock-in, no recurring fees.' },
   { icon: MessagesSquare, title: 'Direct communication', desc: 'Talk directly to the people doing the work. No account managers in between.' },
   { icon: TrendingUp, title: 'Measurable results', desc: 'We track what matters: load time, conversion rate, bounce rate, revenue.' },
@@ -200,7 +200,7 @@ const testimonials = [
     result: '150+ students enrolled',
   },
   {
-    q: 'The result exceeded every expectation. Cinematic animations, perfect performance scores, and clients now call us premium. Worth every rupee.',
+    q: 'The result exceeded every expectation. Fast website, clean product, and clients now treat us as a serious IT partner. Worth every rupee.',
     n: 'Digital Developers',
     r: 'Digital Agency',
     c: 'from-violet-500 to-purple-600',
@@ -284,8 +284,8 @@ const ServiceCard = memo(function ServiceCard({ s, i }) {
         position: 'relative',
         overflow: 'hidden',
         borderRadius: 20,
-        border: `1px solid ${hovered ? `rgba(${s.colorRgb},0.2)` : 'rgba(255,255,255,0.06)'}`,
-        background: hovered ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.015)',
+        border: `1px solid ${hovered ? `rgba(${s.colorRgb},0.2)` : 'rgba(15,23,42,0.07)'}`,
+        background: hovered ? 'rgba(15,23,42,0.03)' : 'rgba(15,23,42,0.03)',
         padding: 'clamp(24px,3vw,36px)',
         transition: 'all 0.55s cubic-bezier(0.22,1,0.36,1)',
         transform: hovered ? 'translateY(-3px)' : 'translateY(0)',
@@ -323,7 +323,7 @@ const ServiceCard = memo(function ServiceCard({ s, i }) {
               flexShrink: 0,
             }}
           >
-            <Icon className="h-5 w-5" style={{ color: '#020617' }} />
+            <Icon className="h-5 w-5" style={{ color: '#ffffff' }} />
           </div>
           <span
             style={{
@@ -361,7 +361,7 @@ const ServiceCard = memo(function ServiceCard({ s, i }) {
           >
             {s.stat.v}
           </span>
-          <span style={{ fontSize: 9, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+          <span style={{ fontSize: 9, color: 'rgba(15,23,42,0.38)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
             {s.stat.l}
           </span>
         </div>
@@ -374,14 +374,14 @@ const ServiceCard = memo(function ServiceCard({ s, i }) {
           fontWeight: 800,
           letterSpacing: '-0.02em',
           marginBottom: 8,
-          color: 'rgba(255,255,255,0.95)',
+          color: 'rgba(15,23,42,0.95)',
         }}
       >
         {s.t}
       </h3>
 
       {/* Description */}
-      <p style={{ color: 'rgba(255,255,255,0.45)', lineHeight: 1.65, fontSize: 13, marginBottom: 18, maxWidth: 420 }}>
+      <p style={{ color: 'rgba(15,23,42,0.5)', lineHeight: 1.65, fontSize: 13, marginBottom: 18, maxWidth: 420 }}>
         {s.d}
       </p>
 
@@ -398,7 +398,7 @@ const ServiceCard = memo(function ServiceCard({ s, i }) {
                 flexShrink: 0,
               }}
             />
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)' }}>{d}</span>
+            <span style={{ fontSize: 12, color: 'rgba(15,23,42,0.58)' }}>{d}</span>
           </div>
         ))}
       </div>
@@ -441,7 +441,7 @@ const ProcessStep = memo(function ProcessStep({ step, i, total }) {
             boxShadow: `0 0 20px rgba(96,165,250,0.2)`,
           }}
         >
-          <Icon className="h-5 w-5" style={{ color: '#020617' }} />
+          <Icon className="h-5 w-5" style={{ color: '#ffffff' }} />
         </div>
         {i < total - 1 && (
           <div
@@ -463,7 +463,7 @@ const ProcessStep = memo(function ProcessStep({ step, i, total }) {
           <span style={{ fontFamily: 'monospace', fontSize: 11, fontWeight: 700, color: 'rgba(96,165,250,0.5)' }}>
             {step.k}
           </span>
-          <div style={{ height: 1, width: 16, background: 'rgba(255,255,255,0.07)' }} />
+          <div style={{ height: 1, width: 16, background: 'rgba(15,23,42,0.07)' }} />
           <span
             style={{
               fontSize: 9,
@@ -480,10 +480,10 @@ const ProcessStep = memo(function ProcessStep({ step, i, total }) {
             {step.duration}
           </span>
         </div>
-        <h3 style={{ fontSize: 'clamp(1.1rem,2vw,1.4rem)', fontWeight: 800, marginBottom: 6, color: 'rgba(255,255,255,0.95)' }}>
+        <h3 style={{ fontSize: 'clamp(1.1rem,2vw,1.4rem)', fontWeight: 800, marginBottom: 6, color: 'rgba(15,23,42,0.95)' }}>
           {step.t}
         </h3>
-        <p style={{ color: 'rgba(255,255,255,0.4)', lineHeight: 1.65, fontSize: 13, maxWidth: 420, marginBottom: 8 }}>
+        <p style={{ color: 'rgba(15,23,42,0.45)', lineHeight: 1.65, fontSize: 13, maxWidth: 420, marginBottom: 8 }}>
           {step.d}
         </p>
         <div
@@ -492,11 +492,11 @@ const ProcessStep = memo(function ProcessStep({ step, i, total }) {
             alignItems: 'center',
             gap: 5,
             fontSize: 10,
-            color: 'rgba(255,255,255,0.3)',
+            color: 'rgba(15,23,42,0.38)',
             padding: '4px 10px',
             borderRadius: 100,
-            background: 'rgba(255,255,255,0.03)',
-            border: '1px solid rgba(255,255,255,0.06)',
+            background: 'rgba(15,23,42,0.03)',
+            border: '1px solid rgba(15,23,42,0.07)',
           }}
         >
           <CheckCircle className="h-3 w-3" style={{ color: 'rgba(96,165,250,0.5)' }} />
@@ -519,7 +519,7 @@ const ShimmerText = memo(function ShimmerText({ children }) {
           position: 'absolute',
           inset: 0,
           zIndex: 2,
-          backgroundImage: 'linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.35) 50%,transparent 100%)',
+          backgroundImage: 'linear-gradient(90deg,transparent 0%,rgba(15,23,42,0.4) 50%,transparent 100%)',
           backgroundSize: '200% 100%',
           WebkitBackgroundClip: 'text',
           backgroundClip: 'text',
@@ -595,9 +595,9 @@ function Services() {
                 gap: 10,
                 padding: '7px 16px 7px 7px',
                 borderRadius: 100,
-                background: 'rgba(255,255,255,.03)',
+                background: 'rgba(15,23,42,0.03)',
                 backdropFilter: 'blur(20px)',
-                border: '1px solid rgba(255,255,255,.06)',
+                border: '1px solid rgba(15,23,42,0.07)',
               }}
             >
               <span
@@ -629,10 +629,10 @@ function Services() {
               marginBottom: 20,
             }}
           >
-            <span style={wT}>Design, develop &</span>
+            <span style={wT}>Websites, apps &</span>
             <br />
             <ShimmerText>
-              <span style={gT}>launch — all in one studio.</span>
+              <span style={gT}>custom software — built here.</span>
             </ShimmerText>
           </motion.h1>
 
@@ -641,10 +641,10 @@ function Services() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: E }}
-            style={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, fontSize: 'clamp(0.95rem,1.4vw,1.1rem)', maxWidth: 560, marginBottom: 32 }}
+            style={{ color: 'rgba(15,23,42,0.55)', lineHeight: 1.7, fontSize: 'clamp(0.95rem,1.4vw,1.1rem)', maxWidth: 560, marginBottom: 32 }}
           >
-            From brand strategy to production code — we handle every discipline in-house.
-            No outsourcing, no miscommunication, no wasted time.
+            From first idea to a live website, app, or software product — we plan, build,
+            and launch in-house. No outsourcing, no wasted handoffs.
           </motion.p>
 
           {/* CTA row */}
@@ -665,13 +665,13 @@ function Services() {
                 fontWeight: 600,
                 fontSize: 14,
                 background: 'linear-gradient(135deg,#2563eb,#0891b2)',
-                color: '#fff',
+                color: '#0f172a',
                 textDecoration: 'none',
                 boxShadow: '0 4px 24px rgba(59,130,246,0.3)',
                 transition: 'all 0.45s cubic-bezier(0.22,1,0.36,1)',
               }}
             >
-              Start a Project <ArrowUpRight className="h-4 w-4" />
+              Start Building <ArrowUpRight className="h-4 w-4" />
             </Link>
             <Link
               href="/work"
@@ -683,9 +683,9 @@ function Services() {
                 padding: '13px 24px',
                 fontWeight: 600,
                 fontSize: 14,
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
-                color: 'rgba(255,255,255,0.8)',
+                background: 'rgba(15,23,42,0.04)',
+                border: '1px solid rgba(15,23,42,0.08)',
+                color: 'rgba(15,23,42,0.8)',
                 textDecoration: 'none',
                 transition: 'all 0.45s cubic-bezier(0.22,1,0.36,1)',
               }}
@@ -714,7 +714,7 @@ function Services() {
             ].map((s) => (
               <div key={s.l} style={{ display: 'flex', flexDirection: 'column' }}>
                 <span style={{ fontSize: 'clamp(1.3rem,2.5vw,1.8rem)', fontWeight: 900, ...gT }}>{s.v}</span>
-                <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginTop: 2 }}>{s.l}</span>
+                <span style={{ fontSize: 11, color: 'rgba(15,23,42,0.38)', marginTop: 2 }}>{s.l}</span>
               </div>
             ))}
           </motion.div>
@@ -745,8 +745,8 @@ function Services() {
               transition={{ duration: 0.8, delay: 0.1, ease: E }}
               style={{ fontWeight: 900, lineHeight: 1.02, letterSpacing: '-0.03em', fontSize: 'clamp(2rem,4.5vw,3.5rem)' }}
             >
-              <span style={wT}>Everything your product needs, </span>
-              <span style={gT}>under one roof.</span>
+              <span style={wT}>IT solutions for every </span>
+              <span style={gT}>stage of your product.</span>
             </motion.h2>
           </div>
 
@@ -779,7 +779,7 @@ function Services() {
                 <span style={wT}>From idea to live product </span>
                 <span style={gT}>in 4–8 weeks.</span>
               </h2>
-              <p style={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, fontSize: 14, marginTop: 16, maxWidth: 420 }}>
+              <p style={{ color: 'rgba(15,23,42,0.55)', lineHeight: 1.7, fontSize: 14, marginTop: 16, maxWidth: 420 }}>
                 Six focused phases with weekly check-ins, transparent timelines, and zero surprises.
                 You&apos;ll know exactly where your project stands at every step.
               </p>
@@ -790,13 +790,13 @@ function Services() {
                   marginTop: 28,
                   padding: 20,
                   borderRadius: 16,
-                  border: '1px solid rgba(255,255,255,0.06)',
-                  background: 'rgba(255,255,255,0.02)',
+                  border: '1px solid rgba(15,23,42,0.07)',
+                  background: 'rgba(15,23,42,0.03)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
                   <Clock className="h-4 w-4" style={{ color: 'rgba(96,165,250,0.7)' }} />
-                  <span style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.85)' }}>Typical timeline</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: 'rgba(15,23,42,0.85)' }}>Typical timeline</span>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                   {[
@@ -806,8 +806,8 @@ function Services() {
                     { l: 'E-commerce', v: '4–8 weeks' },
                   ].map((t) => (
                     <div key={t.l}>
-                      <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)' }}>{t.l}</span>
-                      <div style={{ fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.8)', marginTop: 2 }}>{t.v}</div>
+                      <span style={{ fontSize: 11, color: 'rgba(15,23,42,0.4)' }}>{t.l}</span>
+                      <div style={{ fontSize: 14, fontWeight: 700, color: 'rgba(15,23,42,0.8)', marginTop: 2 }}>{t.v}</div>
                     </div>
                   ))}
                 </div>
@@ -825,7 +825,7 @@ function Services() {
                     fontWeight: 600,
                     fontSize: 13,
                     background: 'linear-gradient(135deg,#2563eb,#0891b2)',
-                    color: '#fff',
+                    color: '#0f172a',
                     textDecoration: 'none',
                     boxShadow: '0 4px 20px rgba(59,130,246,0.28)',
                     transition: 'all 0.45s cubic-bezier(0.22,1,0.36,1)',
@@ -871,16 +871,16 @@ function Services() {
                   transition={{ duration: 0.6, delay: i * 0.05, ease: E }}
                   style={{
                     borderRadius: 16,
-                    border: '1px solid rgba(255,255,255,0.06)',
-                    background: 'rgba(255,255,255,0.02)',
+                    border: '1px solid rgba(15,23,42,0.07)',
+                    background: 'rgba(15,23,42,0.03)',
                     padding: 'clamp(20px,3vw,28px)',
                     transition: 'all 0.5s cubic-bezier(0.22,1,0.36,1)',
                   }}
-                  className="hover:bg-white/[0.04] hover:border-white/[0.1] hover:-translate-y-0.5"
+                  className="hover:bg-slate-50 hover:border-slate-300 hover:-translate-y-0.5"
                 >
                   <Icon className="h-5 w-5 mb-4" style={{ color: '#60a5fa' }} />
-                  <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6, color: 'rgba(255,255,255,0.92)' }}>{w.title}</h3>
-                  <p style={{ color: 'rgba(255,255,255,0.4)', lineHeight: 1.6, fontSize: 13 }}>{w.desc}</p>
+                  <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6, color: 'rgba(15,23,42,0.92)' }}>{w.title}</h3>
+                  <p style={{ color: 'rgba(15,23,42,0.45)', lineHeight: 1.6, fontSize: 13 }}>{w.desc}</p>
                 </motion.div>
               )
             })}
@@ -912,17 +912,17 @@ function Services() {
                 style={{
                   padding: '10px 18px',
                   borderRadius: 100,
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  background: 'rgba(255,255,255,0.025)',
+                  border: '1px solid rgba(15,23,42,0.07)',
+                  background: 'rgba(15,23,42,0.03)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 8,
                   transition: 'all 0.4s ease',
                 }}
-                className="hover:bg-white/[0.05] hover:border-white/[0.12]"
+                className="hover:bg-slate-50 hover:border-slate-300"
               >
-                <span style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.8)' }}>{t.name}</span>
-                <span style={{ fontSize: 9, color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                <span style={{ fontSize: 13, fontWeight: 600, color: 'rgba(15,23,42,0.8)' }}>{t.name}</span>
+                <span style={{ fontSize: 9, color: 'rgba(15,23,42,0.35)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                   {t.category}
                 </span>
               </motion.div>
@@ -961,8 +961,8 @@ function Services() {
                 style={{
                   borderRadius: 20,
                   padding: 'clamp(22px,3vw,32px)',
-                  border: '1px solid rgba(255,255,255,0.06)',
-                  background: 'rgba(255,255,255,0.02)',
+                  border: '1px solid rgba(15,23,42,0.07)',
+                  background: 'rgba(15,23,42,0.03)',
                   position: 'relative',
                   overflow: 'hidden',
                   display: 'flex',
@@ -1000,7 +1000,7 @@ function Services() {
                   style={{
                     fontSize: 13,
                     lineHeight: 1.7,
-                    color: 'rgba(255,255,255,0.7)',
+                    color: 'rgba(15,23,42,0.72)',
                     flex: 1,
                     marginBottom: 18,
                     fontStyle: 'italic',
@@ -1009,18 +1009,18 @@ function Services() {
                   &ldquo;{t.q}&rdquo;
                 </p>
 
-                <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', marginBottom: 16 }} />
+                <div style={{ height: 1, background: 'rgba(15,23,42,0.07)', marginBottom: 16 }} />
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div
                     className={`h-9 w-9 rounded-full bg-gradient-to-br ${t.c} flex items-center justify-center flex-shrink-0`}
-                    style={{ fontWeight: 800, color: '#020617', fontSize: 13 }}
+                    style={{ fontWeight: 800, color: '#ffffff', fontSize: 13 }}
                   >
                     {t.letter}
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: 13, color: 'rgba(255,255,255,0.9)' }}>{t.n}</div>
-                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)' }}>{t.r}</div>
+                    <div style={{ fontWeight: 700, fontSize: 13, color: 'rgba(15,23,42,0.92)' }}>{t.n}</div>
+                    <div style={{ fontSize: 11, color: 'rgba(15,23,42,0.4)' }}>{t.r}</div>
                   </div>
                 </div>
               </motion.div>
@@ -1035,7 +1035,7 @@ function Services() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'radial-gradient(ellipse at 50% 0%,#0a1a35 0%,#050d1f 40%,#020617 100%)',
+            background: 'radial-gradient(ellipse at 50% 0%,#0a1a35 0%,#f8fafc 40%,#ffffff 100%)',
           }}
         />
         <div
@@ -1080,12 +1080,12 @@ function Services() {
                 fontSize: 'clamp(2rem,4.5vw,3.5rem)',
               }}
             >
-              <span style={wT}>Let&apos;s build something </span>
+              <span style={wT}>Let&apos;s build the IT product </span>
               <br />
-              <span style={gT}>that stands out.</span>
+              <span style={gT}>your business needs.</span>
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, fontSize: 14, marginTop: 18, maxWidth: 460, marginLeft: 'auto', marginRight: 'auto' }}>
-              30-minute free consultation to understand your project, define scope, and map the fastest path to launch.
+            <p style={{ color: 'rgba(15,23,42,0.5)', lineHeight: 1.7, fontSize: 14, marginTop: 18, maxWidth: 460, marginLeft: 'auto', marginRight: 'auto' }}>
+              30-minute free consultation to understand your website, app, or software idea and map the fastest path to launch.
             </p>
             <div style={{ marginTop: 28, display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link
@@ -1099,7 +1099,7 @@ function Services() {
                   fontWeight: 600,
                   fontSize: 14,
                   background: 'linear-gradient(135deg,#2563eb,#0891b2)',
-                  color: '#fff',
+                  color: '#0f172a',
                   boxShadow: '0 4px 24px rgba(59,130,246,.32)',
                   transition: 'all 0.45s cubic-bezier(0.22,1,0.36,1)',
                   textDecoration: 'none',
@@ -1108,7 +1108,7 @@ function Services() {
                 Book Free Consultation <ArrowUpRight className="h-4 w-4" />
               </Link>
               <a
-                href="mailto:standoutdevsolutions@gmail.com"
+                href="mailto:standoutdev20@gmail.com"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -1117,9 +1117,9 @@ function Services() {
                   padding: '13px 22px',
                   fontWeight: 600,
                   fontSize: 14,
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  color: 'rgba(255,255,255,0.7)',
+                  background: 'rgba(15,23,42,0.04)',
+                  border: '1px solid rgba(15,23,42,0.08)',
+                  color: 'rgba(15,23,42,0.72)',
                   textDecoration: 'none',
                   transition: 'all 0.45s cubic-bezier(0.22,1,0.36,1)',
                 }}
@@ -1127,8 +1127,8 @@ function Services() {
                 Email Us
               </a>
             </div>
-            <p style={{ marginTop: 18, fontSize: 11, color: 'rgba(255,255,255,0.2)' }}>
-              standoutdevsolutions@gmail.com • Typically reply within 24 hours
+            <p style={{ marginTop: 18, fontSize: 11, color: 'rgba(15,23,42,0.18)' }}>
+              standoutdev20@gmail.com • Typically reply within 24 hours
             </p>
           </motion.div>
         </div>

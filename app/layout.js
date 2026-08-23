@@ -10,9 +10,9 @@ import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CustomCursor from "@/components/site/CustomCursor";
 
 export const metadata = {
-  title: "StandoutDev — We craft award-winning digital products",
+  title: "StandoutDev — IT solutions for websites, apps & software",
   description:
-    "StandoutDev is a design & engineering studio building cinematic web experiences, brands, and products that stand out.",
+    "StandoutDev is an IT solutions company that builds websites, mobile apps, and custom software for businesses that want to stand out.",
   verification: {
     google: "VeFhhYNtV58B8z-8tQ8fFfDoHlairJsC8GoiBBmv-F4",
   },
@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
@@ -49,7 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </head>
-      <body className="bg-[#0a0e27] text-white antialiased overflow-x-hidden">
+      <body className="bg-white text-slate-900 antialiased overflow-x-hidden">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

@@ -40,7 +40,7 @@ export default function Hero() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #020617;
+          background: #ffffff;
           overflow: hidden;
         }
 
@@ -49,8 +49,8 @@ export default function Hero() {
           position: absolute;
           inset: 0;
           background:
-            radial-gradient(ellipse 80% 60% at 50% -10%, rgba(37,99,235,0.15) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 80% 50%, rgba(6,182,212,0.08) 0%, transparent 50%),
+            radial-gradient(ellipse 80% 60% at 50% -10%, rgba(37,99,235,0.10) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 80% 50%, rgba(6,182,212,0.07) 0%, transparent 50%),
             radial-gradient(ellipse 70% 60% at 20% 80%, rgba(99,102,241,0.06) 0%, transparent 50%);
           pointer-events: none;
         }
@@ -60,8 +60,8 @@ export default function Hero() {
           position: absolute;
           inset: 0;
           background-image:
-            linear-gradient(rgba(148,163,184,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(148,163,184,0.03) 1px, transparent 1px);
+            linear-gradient(rgba(15,23,42,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(15,23,42,0.05) 1px, transparent 1px);
           background-size: 80px 80px;
           mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
           -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
@@ -88,14 +88,14 @@ export default function Hero() {
           gap: 8px;
           padding: 6px 16px 6px 6px;
           border-radius: 100px;
-          background: rgba(255,255,255,0.03);
-          border: 1px solid rgba(255,255,255,0.06);
+          background: rgba(15,23,42,0.03);
+          border: 1px solid rgba(15,23,42,0.08);
           margin-bottom: 28px;
           cursor: default;
           transition: border-color 0.4s ease;
         }
         .hero-badge:hover {
-          border-color: rgba(255,255,255,0.12);
+          border-color: rgba(15,23,42,0.16);
         }
         .hero-badge-dot {
           width: 6px;
@@ -113,7 +113,7 @@ export default function Hero() {
         .hero-badge-text {
           font-size: 12px;
           font-weight: 500;
-          color: rgba(255,255,255,0.5);
+          color: rgba(15,23,42,0.55);
           letter-spacing: 0.02em;
         }
 
@@ -126,7 +126,7 @@ export default function Hero() {
           margin: 0 0 20px;
         }
         .hero-h1-white {
-          background: linear-gradient(180deg, #fff 0%, #94a3b8 100%);
+          background: linear-gradient(180deg, #0f172a 0%, #475569 100%);
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -141,13 +141,13 @@ export default function Hero() {
         /* Subtitle */
         .hero-sub {
           font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-          color: rgba(255,255,255,0.42);
+          color: rgba(15,23,42,0.52);
           line-height: 1.7;
           max-width: 540px;
           margin: 0 auto 36px;
         }
         .hero-sub strong {
-          color: rgba(255,255,255,0.7);
+          color: rgba(15,23,42,0.78);
           font-weight: 500;
         }
 
@@ -190,18 +190,18 @@ export default function Hero() {
           border-radius: 100px;
           font-size: 14px;
           font-weight: 600;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
-          color: rgba(255,255,255,0.65);
+          background: rgba(15,23,42,0.03);
+          border: 1px solid rgba(15,23,42,0.1);
+          color: rgba(15,23,42,0.7);
           cursor: pointer;
           text-decoration: none;
           transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
           white-space: nowrap;
         }
         .hero-btn-ghost:hover {
-          background: rgba(255,255,255,0.08);
-          border-color: rgba(255,255,255,0.16);
-          color: #fff;
+          background: rgba(15,23,42,0.06);
+          border-color: rgba(15,23,42,0.16);
+          color: #0f172a;
           transform: translateY(-1px);
         }
 
@@ -221,7 +221,7 @@ export default function Hero() {
           font-size: clamp(1.2rem, 2vw, 1.5rem);
           font-weight: 800;
           letter-spacing: -0.02em;
-          background: linear-gradient(135deg, #e0f2fe, #67e8f9);
+          background: linear-gradient(135deg, #2563eb, #0891b2);
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -229,7 +229,7 @@ export default function Hero() {
         }
         .hero-stat-lbl {
           font-size: 10px;
-          color: rgba(255,255,255,0.25);
+          color: rgba(15,23,42,0.4);
           font-weight: 600;
           letter-spacing: 0.12em;
           text-transform: uppercase;
@@ -239,7 +239,7 @@ export default function Hero() {
           width: 3px;
           height: 3px;
           border-radius: 50%;
-          background: rgba(255,255,255,0.12);
+          background: rgba(15,23,42,0.18);
           flex-shrink: 0;
         }
 
@@ -258,14 +258,14 @@ export default function Hero() {
         .hero-scroll-label {
           font-size: 9px;
           font-weight: 600;
-          color: rgba(255,255,255,0.15);
+          color: rgba(15,23,42,0.35);
           letter-spacing: 0.3em;
           text-transform: uppercase;
         }
         .hero-scroll-bar {
           width: 1px;
           height: 36px;
-          background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent);
+          background: linear-gradient(180deg, rgba(15,23,42,0.2), transparent);
           position: relative;
           overflow: hidden;
         }
@@ -297,7 +297,7 @@ export default function Hero() {
         .hero-trusted-label {
           font-size: 10px;
           font-weight: 600;
-          color: rgba(255,255,255,0.15);
+          color: rgba(15,23,42,0.38);
           letter-spacing: 0.2em;
           text-transform: uppercase;
         }
@@ -311,12 +311,12 @@ export default function Hero() {
         .hero-trusted-name {
           font-size: clamp(12px, 1.3vw, 15px);
           font-weight: 600;
-          color: rgba(255,255,255,0.1);
+          color: rgba(15,23,42,0.32);
           white-space: nowrap;
           transition: color 0.3s ease;
         }
         .hero-trusted-name:hover {
-          color: rgba(255,255,255,0.3);
+          color: rgba(15,23,42,0.7);
         }
 
         /* Responsive */
@@ -375,7 +375,7 @@ export default function Hero() {
           transition={{ delay: 0.1, duration: 0.8, ease: E }}
         >
           <span className="hero-badge-dot" />
-          <span className="hero-badge-text">Design & Development Studio</span>
+          <span className="hero-badge-text">IT Solutions Company</span>
         </motion.div>
 
         {/* Title */}
@@ -385,9 +385,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ delay: 0.25, duration: 1, ease: E }}
         >
-          <span className="hero-h1-white">We build products</span>
+          <span className="hero-h1-white">IT products that</span>
           <br />
-          <span className="hero-h1-white">that </span>
+          <span className="hero-h1-white">help you </span>
           <span className="hero-h1-grad">stand out.</span>
         </motion.h1>
 
@@ -398,9 +398,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.9, ease: E }}
         >
-          We design and develop <strong>websites</strong>,{' '}
-          <strong>SaaS platforms</strong>, and <strong>digital products</strong>{' '}
-          for ambitious brands that refuse to blend in.
+          We build <strong>websites</strong>, <strong>mobile apps</strong>, and{' '}
+          <strong>custom software</strong> for businesses that need reliable
+          IT products — not templates.
         </motion.p>
 
         {/* CTA */}
@@ -411,7 +411,7 @@ export default function Hero() {
           transition={{ delay: 0.7, duration: 0.9, ease: E }}
         >
           <Link href="/contact" className="hero-btn-primary">
-            <span>Start a Project</span>
+            <span>Start Building</span>
             <ArrowUpRight style={{ width: 15, height: 15 }} />
           </Link>
           <Link href="/work" className="hero-btn-ghost">
@@ -452,7 +452,7 @@ export default function Hero() {
         >
           <span className="hero-trusted-label">Trusted by</span>
           <div className="hero-trusted-logos">
-            {['Uma Metal Craft', 'Siddhanath Physics', 'Digital Developers', 'Vercel', 'Linear'].map(name => (
+            {['Uma Metal Craft', 'Siddhanath Physics', 'Digital Developers'].map(name => (
               <span key={name} className="hero-trusted-name">{name}</span>
             ))}
           </div>

@@ -33,6 +33,11 @@ dist
 # Environment files (comprehensive coverage)
 *token.json*
 *credentials.json*
+.env
+.env.local
+
+# Blog uploads (user-generated, not source — see app/api/admin/upload)
+/public/uploads/
 
 # Logs and debug files
 npm-debug.log*

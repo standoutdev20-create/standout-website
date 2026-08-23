@@ -1,3 +1,8 @@
+const path = require('path')
+
+const ckeditorCss = path.join(__dirname, 'node_modules/ckeditor5/dist/ckeditor5.css')
+const ckeditorWatchdog = path.join(__dirname, 'node_modules/@ckeditor/ckeditor5-watchdog')
+
 const nextConfig = {
   output: 'standalone',
   images: {
@@ -8,6 +13,7 @@ const nextConfig = {
   },
   // Renamed from experimental.serverComponentsExternalPackages in Next 15
   serverExternalPackages: ['mongodb'],
+  transpilePackages: ['@ckeditor/ckeditor5-react'],
   webpack(config, { dev }) {
     if (dev) {
       // Reduce CPU/memory from file watching
@@ -17,6 +23,14 @@ const nextConfig = {
         ignored: ['**/node_modules'],
       };
     }
+
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'ckeditor5/ckeditor5.css': ckeditorCss,
+      'ckeditor5/dist/ckeditor5.css': ckeditorCss,
+      '@ckeditor/ckeditor5-watchdog': ckeditorWatchdog,
+    }
+
     return config;
   },
   onDemandEntries: {

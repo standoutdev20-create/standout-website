@@ -1,5 +1,7 @@
 'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { ADMIN_BASE } from '@/lib/constants/admin'
 
 /* ============================================
    STATIC PARTICLES — deterministic, SSR-safe
@@ -23,19 +25,19 @@ const PARTICLES = [
 ]
 
 const designServices = [
-  { label: 'UI/UX Design',      href: '/services' },
-  { label: 'Branding',          href: '/services' },
-  { label: 'Motion Graphics',   href: '/services' },
-  { label: 'Mobile App Design', href: '/services' },
-  { label: 'SaaS Design',       href: '/services' },
-  { label: 'Web Design',        href: '/services' },
+  { label: 'Website Development',    href: '/services' },
+  { label: 'Mobile App Development', href: '/services' },
+  { label: 'Custom Software',        href: '/services' },
+  { label: 'SaaS & Dashboards',      href: '/services' },
+  { label: 'E-Commerce',             href: '/services' },
+  { label: 'UI/UX for Products',     href: '/services' },
 ]
 
 const devServices = [
-  { label: 'Web Development', href: '/services' },
-  { label: 'WordPress',       href: '/services' },
-  { label: 'Shopify',         href: '/services' },
-  { label: 'Webflow',         href: '/services' },
+  { label: 'Web Applications', href: '/services' },
+  { label: 'WordPress / CMS',  href: '/services' },
+  { label: 'Shopify Stores',   href: '/services' },
+  { label: 'IT Support',       href: '/services' },
 ]
 
 const company = [
@@ -54,6 +56,9 @@ const socials = [
 ]
 
 export default function Footer() {
+  const pathname = usePathname()
+  if (pathname?.startsWith(ADMIN_BASE)) return null
+
   return (
     <footer className="footer-root">
       <style>{`
@@ -61,14 +66,14 @@ export default function Footer() {
           position: relative;
           z-index: 10;
           overflow: hidden;
-          border-top: 1px solid rgba(255,255,255,0.06);
-          background: #020617;
+          border-top: 1px solid rgba(15,23,42,0.08);
+          background: #ffffff;
         }
 
         .footer-bg {
           position: absolute;
           inset: 0;
-          background: radial-gradient(ellipse at 50% 100%, #0a1a35 0%, #050d1f 45%, #020617 100%);
+          background: radial-gradient(ellipse at 50% 100%, #eef6ff 0%, #f8fafc 45%, #ffffff 100%);
           pointer-events: none;
         }
 
@@ -82,8 +87,8 @@ export default function Footer() {
         .footer-grid {
           position: absolute; inset: 0;
           background-image:
-            linear-gradient(rgba(148,163,184,.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(148,163,184,.03) 1px, transparent 1px);
+            linear-gradient(rgba(15,23,42,.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(15,23,42,.05) 1px, transparent 1px);
           background-size: 60px 60px;
           mask-image: radial-gradient(ellipse at 50% 100%, black 10%, transparent 70%);
           -webkit-mask-image: radial-gradient(ellipse at 50% 100%, black 10%, transparent 70%);
@@ -118,27 +123,27 @@ export default function Footer() {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: .2em;
-          color: rgba(255,255,255,.3);
+          color: rgba(15,23,42,.4);
           margin-bottom: 16px;
         }
 
         .footer-link {
           font-size: 14px;
-          color: rgba(255,255,255,.5);
+          color: rgba(15,23,42,.55);
           text-decoration: none;
           transition: color .3s;
         }
-        .footer-link:hover { color: #fff; }
+        .footer-link:hover { color: #0f172a; }
 
         .footer-social {
           border-radius: 100px;
-          border: 1px solid rgba(255,255,255,.1);
-          background: rgba(255,255,255,.03);
+          border: 1px solid rgba(15,23,42,.1);
+          background: rgba(15,23,42,.03);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
           padding: 6px 14px;
           font-size: 12px;
-          color: rgba(255,255,255,.5);
+          color: rgba(15,23,42,.55);
           text-decoration: none;
           transition: all .3s;
         }
@@ -157,7 +162,7 @@ export default function Footer() {
           text-align: center;
           white-space: nowrap;
           user-select: none;
-          background: linear-gradient(180deg, rgba(255,255,255,.045) 0%, rgba(255,255,255,0) 100%);
+          background: linear-gradient(180deg, rgba(15,23,42,.06) 0%, rgba(15,23,42,0) 100%);
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -222,15 +227,15 @@ export default function Footer() {
 
             <p style={{
               marginTop: 20, maxWidth: 380, fontSize: 14,
-              color: 'rgba(255,255,255,.5)', lineHeight: 1.7,
+              color: 'rgba(15,23,42,.55)', lineHeight: 1.7,
             }}>
-              A design &amp; engineering studio building cinematic web experiences,
-              brands, and products for teams that refuse to blend in.
+              An IT solutions company building websites, mobile apps,
+              and custom software for businesses that want to stand out.
             </p>
 
             <div style={{ marginTop: 24 }}>
               <div className="footer-label" style={{ marginBottom: 8 }}>Headquarters</div>
-              <p style={{ fontSize: 14, color: 'rgba(255,255,255,.5)', lineHeight: 1.7 }}>
+              <p style={{ fontSize: 14, color: 'rgba(15,23,42,.55)', lineHeight: 1.7 }}>
                 Pune, Maharashtra 411052<br />
                 India · Available Worldwide
               </p>
@@ -254,7 +259,7 @@ export default function Footer() {
 
           {/* Design Services */}
           <div>
-            <div className="footer-label">Design Services</div>
+            <div className="footer-label">IT Products</div>
             <ul className="space-y-2.5">
               {designServices.map((s) => (
                 <li key={s.label}>
@@ -290,13 +295,13 @@ export default function Footer() {
             <div style={{ marginTop: 28 }}>
               <div className="footer-label" style={{ marginBottom: 8 }}>Get in touch</div>
               <a
-                href="mailto:standoutdevsolutions@gmail.com"
+                href="mailto:standoutdev20@gmail.com"
                 className="footer-grad-text"
                 style={{ fontSize: 14, fontWeight: 500, textDecoration: 'none' }}
               >
-                standoutdevsolutions@gmail.com
+                standoutdev20@gmail.com
               </a>
-              <p style={{ marginTop: 6, fontSize: 12, color: 'rgba(255,255,255,.4)' }}>
+              <p style={{ marginTop: 6, fontSize: 12, color: 'rgba(15,23,42,.45)' }}>
                 +91 93223 96236
               </p>
             </div>
@@ -306,14 +311,17 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           className="mt-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8"
-          style={{ borderTop: '1px solid rgba(255,255,255,.06)' }}
+          style={{ borderTop: '1px solid rgba(15,23,42,.08)' }}
         >
-          <p style={{ fontSize: 12, color: 'rgba(255,255,255,.3)' }}>
+          <p style={{ fontSize: 12, color: 'rgba(15,23,42,.4)' }}>
             © {new Date().getFullYear()} StandoutDev. All rights reserved. WE BUILD, YOU STAND OUT.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link href="/privacy" className="footer-link" style={{ fontSize: 12 }}>Privacy Policy</Link>
             <Link href="/terms"   className="footer-link" style={{ fontSize: 12 }}>Terms of Use</Link>
+            <Link href={ADMIN_BASE} className="footer-social" aria-label="Admin panel login">
+              Admin Login
+            </Link>
           </div>
         </div>
       </div>

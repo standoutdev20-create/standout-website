@@ -10,7 +10,7 @@ const sections = [
   },
   {
     t: 'About Standoutdev',
-    d: 'Standoutdev is a design and engineering studio based in Pune, Maharashtra 411052, India. We provide branding, website, product, motion, and related digital services. Contact: standoutdevsolutions@gmail.com · +91 93223 96236.',
+    d: 'Standoutdev is an IT solutions company based in Pune, Maharashtra 411052, India. We provide website development, mobile apps, custom software, e-commerce, and related IT services. Contact: standoutdev20@gmail.com · +91 93223 96236.',
   },
   {
     t: 'Use of the website',
@@ -54,7 +54,7 @@ const sections = [
   },
   {
     t: 'Contact',
-    d: 'Questions about these Terms & Conditions can be sent to standoutdevsolutions@gmail.com, or by phone at +91 93223 96236. Postal: Standoutdev, Pune, Maharashtra 411052, India.',
+    d: 'Questions about these Terms & Conditions can be sent to standoutdev20@gmail.com, or by phone at +91 93223 96236. Postal: Standoutdev, Pune, Maharashtra 411052, India.',
   },
 ]
 
@@ -65,12 +65,12 @@ export default function TermsPage() {
         <div className="absolute inset-0 bg-aurora opacity-80" />
         <div className="absolute inset-0 grid-lines opacity-25" />
         <div className="relative mx-auto max-w-3xl px-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-8">Legal</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-cyan-600 mb-8">Legal</p>
           <h1 className="font-display text-5xl md:text-7xl font-bold leading-[0.95]">
             Terms & <span className="grad-text">Conditions</span>
           </h1>
-          <p className="mt-6 text-sm text-white/40">Last updated: July 28, 2026</p>
-          <p className="mt-6 text-lg text-white/60 leading-relaxed">
+          <p className="mt-6 text-sm text-slate-400">Last updated: July 28, 2026</p>
+          <p className="mt-6 text-lg text-slate-500 leading-relaxed">
             These terms govern your use of the Standoutdev website and outline how we work with visitors and clients.
           </p>
         </div>
@@ -79,12 +79,12 @@ export default function TermsPage() {
       <section className="pb-32">
         <div className="mx-auto max-w-3xl px-6 space-y-10">
           {sections.map((s, i) => (
-            <div key={s.t} className="border-t border-white/10 pt-8">
+            <div key={s.t} className="border-t border-slate-200 pt-8">
               <div className="flex gap-4">
-                <span className="font-mono text-sm text-cyan-300/80 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                <span className="font-mono text-sm text-cyan-600 shrink-0">{String(i + 1).padStart(2, '0')}</span>
                 <div>
                   <h2 className="font-display text-2xl font-semibold">{s.t}</h2>
-                  <p className="mt-3 text-white/60 leading-relaxed">{s.d}</p>
+                  <p className="mt-3 text-slate-500 leading-relaxed">{s.d}</p>
                 </div>
               </div>
             </div>

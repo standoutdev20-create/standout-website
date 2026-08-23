@@ -7,12 +7,14 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
+import { ADMIN_BASE } from '@/lib/constants/admin'
 
 const links = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About Us' },
+  { href: '/blog', label: 'Blog' },
 ]
 
 export default function Navbar() {
@@ -49,6 +51,8 @@ export default function Navbar() {
     if (deltaY > 80) setOpen(false)
   }, [])
 
+  if (pathname?.startsWith(ADMIN_BASE)) return null
+
   return (
     <motion.header
       initial={{ y: -30, opacity: 0 }}
@@ -60,13 +64,13 @@ export default function Navbar() {
         <div
           className={`flex items-center justify-between rounded-2xl border transition-all duration-500 ${
             scrolled
-              ? 'bg-[#0A0E27]/80 backdrop-blur-2xl border-white/10 shadow-xl shadow-black/20 py-2.5 px-6 lg:px-8'
-              : 'bg-[#0A0E27]/50 backdrop-blur-xl border-white/[0.06] py-3 px-6 lg:px-8'
+              ? 'bg-white/90 backdrop-blur-2xl border-slate-200 shadow-xl shadow-slate-900/5 py-2.5 px-6 lg:px-8'
+              : 'bg-white/75 backdrop-blur-xl border-slate-200/70 py-3 px-6 lg:px-8'
           }`}
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-white/10 group-hover:ring-cyan-400/30 transition-all">
+            <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-slate-200 group-hover:ring-cyan-400/40 transition-all">
               <Image
                 src="/logo.png"
                 alt="StandoutDev"
@@ -75,7 +79,7 @@ export default function Navbar() {
                 className="object-contain transition-transform duration-300 group-hover:scale-110"
               />
             </div>
-            <span className="text-xl font-bold tracking-tight text-white font-display">
+            <span className="text-xl font-bold tracking-tight text-slate-900 font-display">
               Standout<span className="grad-text">Dev</span>
             </span>
           </Link>
@@ -88,8 +92,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-lg ${
                   pathname === link.href
-                    ? 'text-white'
-                    : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
+                    ? 'text-slate-900'
+                    : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
                 {link.label}
@@ -116,7 +120,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden rounded-xl border border-white/10 p-2.5 text-white hover:bg-white/5 transition"
+            className="lg:hidden rounded-xl border border-slate-200 p-2.5 text-slate-900 hover:bg-slate-100 transition"
             aria-label="Toggle menu"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
@@ -132,20 +136,20 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden fixed inset-0 top-0 z-[200] bg-[#0A0E27]/98 backdrop-blur-3xl"
+              className="lg:hidden fixed inset-0 top-0 z-[200] bg-white/98 backdrop-blur-3xl"
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
               {/* Swipe Handle */}
               <div className="flex justify-center pt-4">
-                <div className="w-10 h-1 rounded-full bg-white/20" />
+                <div className="w-10 h-1 rounded-full bg-slate-300" />
               </div>
-              <p className="text-center text-xs text-white/30 mt-2 mb-4">Swipe down to close</p>
+              <p className="text-center text-xs text-slate-400 mt-2 mb-4">Swipe down to close</p>
 
               {/* Close Button */}
               <button
                 onClick={() => setOpen(false)}
-                className="absolute top-6 right-6 rounded-xl border border-white/10 p-2.5 text-white hover:bg-white/5 transition"
+                className="absolute top-6 right-6 rounded-xl border border-slate-200 p-2.5 text-slate-900 hover:bg-slate-100 transition"
                 aria-label="Close menu"
               >
                 <X size={20} />
@@ -167,8 +171,8 @@ export default function Navbar() {
                         onClick={() => setOpen(false)}
                         className={`flex items-center justify-center rounded-2xl px-6 py-4 text-2xl font-display font-semibold transition-all ${
                           pathname === link.href
-                            ? 'bg-white/10 text-white'
-                            : 'text-white/60 hover:bg-white/5 hover:text-white'
+                            ? 'bg-slate-100 text-slate-900'
+                            : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
                         }`}
                       >
                         {link.label}

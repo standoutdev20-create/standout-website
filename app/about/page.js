@@ -15,15 +15,15 @@ import {
    CONSTANTS
 ============================================ */
 const E = [0.22, 1, 0.36, 1]
-const BG = '#020617'
-const BGA = '#050d1f'
+const BG = '#ffffff'
+const BGA = '#f8fafc'
 const gT = {
   background: 'linear-gradient(135deg,#60a5fa 0%,#06b6d4 50%,#818cf8 100%)',
   WebkitBackgroundClip: 'text', backgroundClip: 'text',
   WebkitTextFillColor: 'transparent', color: 'transparent',
 }
 const wT = {
-  background: 'linear-gradient(180deg,#fff 0%,#cbd5e1 100%)',
+  background: 'linear-gradient(180deg,#0f172a 0%,#475569 100%)',
   WebkitBackgroundClip: 'text', backgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
 }
@@ -35,7 +35,7 @@ const HD = {
   fontWeight: 900, lineHeight: 1.02,
   letterSpacing: '-0.03em', fontSize: 'clamp(2.2rem,5vw,3.8rem)',
 }
-const BD = { color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, fontSize: 'clamp(0.9rem,1.3vw,1rem)' }
+const BD = { color: 'rgba(15,23,42,0.55)', lineHeight: 1.7, fontSize: 'clamp(0.9rem,1.3vw,1rem)' }
 
 /* ============================================
    DATA — Real StandoutDev content
@@ -44,14 +44,14 @@ const principles = [
   {
     n: '01',
     icon: Target,
-    t: 'Results over aesthetics',
-    d: 'Beautiful design that doesn\'t convert is decoration. Every design decision we make is tied to a measurable outcome — more inquiries, lower bounce rate, higher retention.',
+    t: 'Results over decoration',
+    d: 'A product that looks good but doesn\'t work is wasted spend. Every decision we make is tied to a measurable outcome — more inquiries, fewer support tickets, higher retention.',
   },
   {
     n: '02',
     icon: Code2,
-    t: 'Design and code, together',
-    d: 'We don\'t hand off wireframes to developers and hope for the best. Our designers think in components, and our developers care about visual quality. One team, one vision.',
+    t: 'Product and code, together',
+    d: 'We don\'t throw a design over the wall and hope it ships. The same team plans the IT product and writes the code — so the website, app, or software actually matches what you approved.',
   },
   {
     n: '03',
@@ -71,7 +71,7 @@ const milestones = [
   {
     y: '2022',
     t: 'StandoutDev founded',
-    d: 'Started with a simple mission: build websites that actually stand out. First client was a local business in Rajkot that needed more than a template.',
+    d: 'Started as an IT solutions company with a simple mission: build websites, apps, and software that actually stand out. First client was a local business in Rajkot that needed more than a template.',
   },
   {
     y: '2023',
@@ -86,13 +86,13 @@ const milestones = [
   {
     y: '2025',
     t: 'Growing with purpose',
-    d: 'Now serving clients across manufacturing, education, and digital agencies. Building systems, not just websites — design systems, brand systems, growth systems.',
+    d: 'Now serving clients across manufacturing, education, and digital businesses. Building websites, apps, and custom software — not just one-off pages.',
   },
 ]
 
 const values = [
   { icon: Zap,          t: 'Ship fast, iterate faster',  d: 'We move quickly and learn from real users. Speed is a feature, not a shortcut.' },
-  { icon: Target,       t: 'Every pixel has a purpose',  d: 'We don\'t add animations or elements that don\'t serve the user or the goal.' },
+  { icon: Target,       t: 'Every feature has a purpose', d: 'We don\'t add screens or extras that don\'t help the user or the business goal.' },
   { icon: Shield,       t: 'You own everything',          d: 'All source code, all design files, all assets — yours from day one. No lock-in ever.' },
   { icon: MessageSquare,t: 'Radical transparency',        d: 'Weekly updates, honest timelines, clear scope. You\'ll never wonder what\'s happening.' },
   { icon: TrendingUp,   t: 'Measure what matters',        d: 'We track load times, conversion rates, and bounce rates — not just aesthetics.' },
@@ -120,7 +120,7 @@ const testimonials = [
     c: 'from-blue-500 to-indigo-600', letter: 'S',
   },
   {
-    q: 'Cinematic animations, perfect performance score. Clients now call us premium because of the website StandoutDev built. Worth every rupee.',
+    q: 'Fast, professional, and easy to maintain. Clients now treat us as a serious IT partner because of the website StandoutDev built. Worth every rupee.',
     n: 'Digital Developers', r: 'Digital Agency',
     c: 'from-violet-500 to-purple-600', letter: 'D',
   },
@@ -136,7 +136,7 @@ const ShimmerText = memo(function ShimmerText({ children }) {
       <motion.span
         style={{
           position: 'absolute', inset: 0, zIndex: 2,
-          backgroundImage: 'linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.35) 50%,transparent 100%)',
+          backgroundImage: 'linear-gradient(90deg,transparent 0%,rgba(15,23,42,0.4) 50%,transparent 100%)',
           backgroundSize: '200% 100%',
           WebkitBackgroundClip: 'text', backgroundClip: 'text',
           WebkitTextFillColor: 'transparent', pointerEvents: 'none',
@@ -193,8 +193,8 @@ function About() {
             <span style={{
               display:'inline-flex', alignItems:'center', gap:10,
               padding:'7px 16px 7px 7px', borderRadius:100,
-              background:'rgba(255,255,255,.03)', backdropFilter:'blur(20px)',
-              border:'1px solid rgba(255,255,255,.06)',
+              background:'rgba(15,23,42,0.03)', backdropFilter:'blur(20px)',
+              border:'1px solid rgba(15,23,42,0.07)',
             }}>
               <span style={{
                 width:6, height:6, borderRadius:'50%', background:'#06b6d4',
@@ -213,8 +213,8 @@ function About() {
             transition={{ duration:0.8, delay:0.1, ease:E }}
             style={{ ...HD, fontSize:'clamp(2.5rem,6vw,4.8rem)', marginBottom:20 }}
           >
-            <span style={wT}>A studio obsessed with</span><br />
-            <ShimmerText><span style={gT}>results, not just looks.</span></ShimmerText>
+            <span style={wT}>An IT company built for</span><br />
+            <ShimmerText><span style={gT}>products that work.</span></ShimmerText>
           </motion.h1>
 
           {/* Description */}
@@ -223,9 +223,9 @@ function About() {
             transition={{ duration:0.7, delay:0.2, ease:E }}
             style={{ ...BD, maxWidth:580, marginBottom:32 }}
           >
-            StandoutDev is a design and development studio based in India. We build websites and digital
-            products that don&apos;t just look great — they convert visitors, retain users, and drive
-            real business outcomes. No fluff. No templates. No compromises.
+            StandoutDev is an IT solutions company based in India. We build websites, mobile apps,
+            and custom software that convert visitors, retain users, and support real business work.
+            No fluff. No templates. No compromises.
           </motion.p>
 
           {/* CTAs */}
@@ -246,11 +246,11 @@ function About() {
             <Link href="/contact" style={{
               display:'inline-flex', alignItems:'center', gap:7,
               borderRadius:100, padding:'12px 22px', fontWeight:600, fontSize:14,
-              background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)',
-              color:'rgba(255,255,255,0.8)', textDecoration:'none',
+              background:'rgba(15,23,42,0.04)', border:'1px solid rgba(15,23,42,0.08)',
+              color:'rgba(15,23,42,0.8)', textDecoration:'none',
               transition:'all 0.45s cubic-bezier(0.22,1,0.36,1)',
             }}>
-              Start a Project <ArrowRight className="h-4 w-4" />
+              Start Building <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
 
@@ -271,7 +271,7 @@ function About() {
             ].map((s) => (
               <div key={s.l} style={{ display:'flex', flexDirection:'column' }}>
                 <span style={{ fontSize:'clamp(1.3rem,2.5vw,1.8rem)', fontWeight:900, ...gT }}>{s.v}</span>
-                <span style={{ fontSize:11, color:'rgba(255,255,255,0.3)', marginTop:2 }}>{s.l}</span>
+                <span style={{ fontSize:11, color:'rgba(15,23,42,0.38)', marginTop:2 }}>{s.l}</span>
               </div>
             ))}
           </motion.div>
@@ -282,7 +282,7 @@ function About() {
       <section style={{
         position:'relative', padding:'clamp(64px,8vw,112px) 0',
         background:BGA, overflow:'hidden',
-        borderTop:'1px solid rgba(255,255,255,0.04)',
+        borderTop:'1px solid rgba(15,23,42,0.04)',
       }}>
         <div className="pg-orb" style={{ top:60, right:'-8%', width:380, height:380, background:'radial-gradient(circle,rgba(99,102,241,.07) 0%,transparent 70%)' }} />
         <div className="mx-auto max-w-7xl px-6">
@@ -294,22 +294,22 @@ function About() {
             >
               <p style={LBL}>Who we are</p>
               <h2 style={HD}>
-                <span style={wT}>We build websites that </span>
+                <span style={wT}>We build IT products that </span>
                 <span style={gT}>actually work.</span>
               </h2>
               <div style={{ display:'flex', flexDirection:'column', gap:16, marginTop:20 }}>
                 <p style={BD}>
-                  StandoutDev was founded with one belief: most websites are built to look good in screenshots,
-                  not to generate real results. We set out to change that.
+                  StandoutDev was founded with one belief: most IT projects look good in a demo
+                  and fail in day-to-day use. We set out to build products that actually work.
                 </p>
                 <p style={BD}>
-                  We&apos;re a focused team of designers and developers who work closely with every client —
+                  We&apos;re a focused team of developers and product people who work closely with every client —
                   no outsourcing, no account managers, no diluted vision. When you work with us,
-                  you work directly with the people building your product.
+                  you work directly with the people building your website, app, or software.
                 </p>
                 <p style={BD}>
-                  Our clients are manufacturers, educators, agencies, and founders who need more than
-                  a pretty website. They need something that drives inquiries, earns trust, and converts.
+                  Our clients are manufacturers, educators, agencies, and founders who need a real
+                  IT product — a website, an app, or custom software that drives inquiries and daily work.
                 </p>
               </div>
 
@@ -323,7 +323,7 @@ function About() {
                 ].map((item) => (
                   <div key={item} style={{ display:'flex', alignItems:'flex-start', gap:10 }}>
                     <CheckCircle className="h-4 w-4 flex-shrink-0" style={{ color:'rgba(96,165,250,0.7)', marginTop:2 }} />
-                    <span style={{ fontSize:14, color:'rgba(255,255,255,0.65)', lineHeight:1.5 }}>{item}</span>
+                    <span style={{ fontSize:14, color:'rgba(15,23,42,0.68)', lineHeight:1.5 }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -348,19 +348,19 @@ function About() {
                       viewport={{ once:true }} transition={{ duration:0.55, delay:i*0.06, ease:E }}
                       style={{
                         borderRadius:16,
-                        border:'1px solid rgba(255,255,255,0.06)',
-                        background:'rgba(255,255,255,0.025)',
+                        border:'1px solid rgba(15,23,42,0.07)',
+                        background:'rgba(15,23,42,0.03)',
                         padding:'clamp(16px,2.5vw,24px)',
                         display:'flex', flexDirection:'column',
                         transition:'all 0.5s cubic-bezier(0.22,1,0.36,1)',
                       }}
-                      className="hover:bg-white/[0.04] hover:border-white/[0.1]"
+                      className="hover:bg-slate-50 hover:border-slate-300"
                     >
                       <Icon className="h-4 w-4 mb-3" style={{ color:'rgba(96,165,250,0.6)' }} />
                       <span style={{ fontSize:'clamp(1.4rem,3vw,1.9rem)', fontWeight:900, lineHeight:1, ...gT }}>
                         {s.v}
                       </span>
-                      <span style={{ fontSize:11, color:'rgba(255,255,255,0.35)', marginTop:5 }}>{s.l}</span>
+                      <span style={{ fontSize:11, color:'rgba(15,23,42,0.4)', marginTop:5 }}>{s.l}</span>
                     </motion.div>
                   )
                 })}
@@ -381,8 +381,8 @@ function About() {
                 <p style={{ fontSize:11, fontWeight:700, color:'rgba(96,165,250,0.6)', textTransform:'uppercase', letterSpacing:'0.1em', marginBottom:10 }}>
                   Our mission
                 </p>
-                <p style={{ fontSize:'clamp(0.95rem,1.5vw,1.1rem)', fontWeight:600, color:'rgba(255,255,255,0.85)', lineHeight:1.55 }}>
-                  &ldquo;Every business deserves a website that works as hard as they do.
+                <p style={{ fontSize:'clamp(0.95rem,1.5vw,1.1rem)', fontWeight:600, color:'rgba(15,23,42,0.85)', lineHeight:1.55 }}>
+                  &ldquo;Every business deserves an IT product that works as hard as they do.
                   We make that possible — without the agency price tag or the 6-month timeline.&rdquo;
                 </p>
               </div>
@@ -395,7 +395,7 @@ function About() {
       <section style={{
         position:'relative', padding:'clamp(64px,8vw,112px) 0',
         background:BG, overflow:'hidden',
-        borderTop:'1px solid rgba(255,255,255,0.04)',
+        borderTop:'1px solid rgba(15,23,42,0.04)',
       }}>
         <div className="pg-orb" style={{ top:80, left:'-8%', width:360, height:360, background:'radial-gradient(circle,rgba(6,182,212,.07) 0%,transparent 70%)' }} />
         <div className="mx-auto max-w-7xl px-6">
@@ -407,7 +407,7 @@ function About() {
                 <span style={gT}>guide every project.</span>
               </h2>
               <p style={{ ...BD, marginTop:14, maxWidth:380, fontSize:14 }}>
-                These aren&apos;t values on a wall. They&apos;re the actual decisions we make every day — in design reviews, client calls, and code.
+                These aren&apos;t values on a wall. They&apos;re the actual decisions we make every day — in product reviews, client calls, and code.
               </p>
             </div>
           </div>
@@ -425,7 +425,7 @@ function About() {
                     display:'grid', gridTemplateColumns:'auto 1fr auto',
                     gap:'clamp(16px,3vw,40px)', alignItems:'start',
                     padding:'clamp(20px,3vw,32px) 0',
-                    borderTop:'1px solid rgba(255,255,255,0.06)',
+                    borderTop:'1px solid rgba(15,23,42,0.07)',
                     transition:'background 0.4s ease',
                   }}
                   className="group"
@@ -434,8 +434,8 @@ function About() {
                   <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:8, width:48 }}>
                     <div style={{
                       width:42, height:42, borderRadius:12,
-                      background:'rgba(255,255,255,0.03)',
-                      border:'1px solid rgba(255,255,255,0.07)',
+                      background:'rgba(15,23,42,0.03)',
+                      border:'1px solid rgba(15,23,42,0.07)',
                       display:'flex', alignItems:'center', justifyContent:'center',
                       transition:'all 0.5s cubic-bezier(0.22,1,0.36,1)',
                     }} className="group-hover:border-blue-400/20 group-hover:bg-blue-500/05">
@@ -450,7 +450,7 @@ function About() {
                   <div>
                     <h3 style={{
                       fontSize:'clamp(1.1rem,2.2vw,1.5rem)', fontWeight:800,
-                      color:'rgba(255,255,255,0.92)', marginBottom:8,
+                      color:'rgba(15,23,42,0.92)', marginBottom:8,
                       letterSpacing:'-0.02em',
                     }}>
                       {p.t}
@@ -461,7 +461,7 @@ function About() {
                   {/* Arrow indicator */}
                   <div style={{
                     width:32, height:32, borderRadius:'50%',
-                    border:'1px solid rgba(255,255,255,0.06)',
+                    border:'1px solid rgba(15,23,42,0.07)',
                     display:'flex', alignItems:'center', justifyContent:'center',
                     opacity:0, transform:'translateX(-8px)',
                     transition:'all 0.4s ease',
@@ -472,7 +472,7 @@ function About() {
                 </motion.div>
               )
             })}
-            <div style={{ borderTop:'1px solid rgba(255,255,255,0.06)' }} />
+            <div style={{ borderTop:'1px solid rgba(15,23,42,0.07)' }} />
           </div>
         </div>
       </section>
@@ -481,7 +481,7 @@ function About() {
       <section style={{
         position:'relative', padding:'clamp(64px,8vw,112px) 0',
         background:BGA, overflow:'hidden',
-        borderTop:'1px solid rgba(255,255,255,0.04)',
+        borderTop:'1px solid rgba(15,23,42,0.04)',
       }}>
         <div className="pg-orb" style={{ bottom:60, right:'-10%', width:400, height:400, background:'radial-gradient(circle,rgba(139,92,246,.07) 0%,transparent 70%)' }} />
         <div className="mx-auto max-w-7xl px-6">
@@ -501,8 +501,8 @@ function About() {
               {/* Current focus card */}
               <div style={{
                 marginTop:28, padding:'clamp(16px,2.5vw,24px)',
-                borderRadius:16, border:'1px solid rgba(255,255,255,0.06)',
-                background:'rgba(255,255,255,0.02)',
+                borderRadius:16, border:'1px solid rgba(15,23,42,0.07)',
+                background:'rgba(15,23,42,0.03)',
               }}>
                 <p style={{ fontSize:11, fontWeight:700, color:'rgba(96,165,250,0.6)', textTransform:'uppercase', letterSpacing:'0.1em', marginBottom:10 }}>
                   What we&apos;re focused on now
@@ -511,12 +511,12 @@ function About() {
                   {[
                     'Delivering measurable results for every client',
                     'Building in public — showing our process',
-                    'Expanding into SaaS and product design',
+                    'Expanding into apps, SaaS, and custom software',
                     'Keeping every engagement personal',
                   ].map((f) => (
                     <div key={f} style={{ display:'flex', alignItems:'flex-start', gap:8 }}>
                       <div style={{ width:5, height:5, borderRadius:'50%', background:'rgba(96,165,250,0.5)', flexShrink:0, marginTop:5 }} />
-                      <span style={{ fontSize:13, color:'rgba(255,255,255,0.55)', lineHeight:1.5 }}>{f}</span>
+                      <span style={{ fontSize:13, color:'rgba(15,23,42,0.58)', lineHeight:1.5 }}>{f}</span>
                     </div>
                   ))}
                 </div>
@@ -535,7 +535,7 @@ function About() {
                     display:'flex', gap:'clamp(16px,3vw,32px)',
                     paddingBottom:'clamp(24px,4vw,40px)',
                     marginBottom:'clamp(24px,4vw,40px)',
-                    borderBottom: i < milestones.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
+                    borderBottom: i < milestones.length - 1 ? '1px solid rgba(15,23,42,0.07)' : 'none',
                   }}
                 >
                   {/* Year badge */}
@@ -555,7 +555,7 @@ function About() {
                   <div>
                     <h3 style={{
                       fontSize:'clamp(1rem,2vw,1.35rem)', fontWeight:800,
-                      color:'rgba(255,255,255,0.92)', marginBottom:8,
+                      color:'rgba(15,23,42,0.92)', marginBottom:8,
                       letterSpacing:'-0.02em',
                     }}>
                       {m.t}
@@ -573,7 +573,7 @@ function About() {
       <section style={{
         position:'relative', padding:'clamp(64px,8vw,112px) 0',
         background:BG, overflow:'hidden',
-        borderTop:'1px solid rgba(255,255,255,0.04)',
+        borderTop:'1px solid rgba(15,23,42,0.04)',
       }}>
         <div className="pg-orb" style={{ top:80, right:'-8%', width:360, height:360, background:'radial-gradient(circle,rgba(37,99,235,.07) 0%,transparent 70%)' }} />
         <div className="mx-auto max-w-7xl px-6">
@@ -595,18 +595,18 @@ function About() {
                   viewport={{ once:true, margin:'-40px' }}
                   transition={{ duration:0.6, delay:i*0.05, ease:E }}
                   style={{
-                    borderRadius:16, border:'1px solid rgba(255,255,255,0.06)',
-                    background:'rgba(255,255,255,0.02)',
+                    borderRadius:16, border:'1px solid rgba(15,23,42,0.07)',
+                    background:'rgba(15,23,42,0.03)',
                     padding:'clamp(18px,2.5vw,28px)',
                     transition:'all 0.5s cubic-bezier(0.22,1,0.36,1)',
                   }}
-                  className="hover:bg-white/[0.04] hover:border-white/[0.1] hover:-translate-y-0.5"
+                  className="hover:bg-slate-50 hover:border-slate-300 hover:-translate-y-0.5"
                 >
                   <Icon className="h-5 w-5 mb-4" style={{ color:'rgba(96,165,250,0.7)' }} />
-                  <h3 style={{ fontSize:16, fontWeight:700, marginBottom:6, color:'rgba(255,255,255,0.92)' }}>
+                  <h3 style={{ fontSize:16, fontWeight:700, marginBottom:6, color:'rgba(15,23,42,0.92)' }}>
                     {v.t}
                   </h3>
-                  <p style={{ color:'rgba(255,255,255,0.42)', lineHeight:1.6, fontSize:13 }}>{v.d}</p>
+                  <p style={{ color:'rgba(15,23,42,0.5)', lineHeight:1.6, fontSize:13 }}>{v.d}</p>
                 </motion.div>
               )
             })}
@@ -618,7 +618,7 @@ function About() {
       <section style={{
         position:'relative', padding:'clamp(64px,8vw,112px) 0',
         background:BGA, overflow:'hidden',
-        borderTop:'1px solid rgba(255,255,255,0.04)',
+        borderTop:'1px solid rgba(15,23,42,0.04)',
       }}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center" style={{ marginBottom:'clamp(32px,5vw,56px)' }}>
@@ -638,13 +638,13 @@ function About() {
                 transition={{ duration:0.7, delay:i*0.08, ease:E }}
                 style={{
                   borderRadius:20, padding:'clamp(22px,3vw,32px)',
-                  border:'1px solid rgba(255,255,255,0.06)',
-                  background:'rgba(255,255,255,0.02)',
+                  border:'1px solid rgba(15,23,42,0.07)',
+                  background:'rgba(15,23,42,0.03)',
                   position:'relative', overflow:'hidden',
                   display:'flex', flexDirection:'column',
                   transition:'all 0.5s cubic-bezier(0.22,1,0.36,1)',
                 }}
-                className="hover:bg-white/[0.04] hover:border-white/[0.1] hover:-translate-y-0.5"
+                className="hover:bg-slate-50 hover:border-slate-300 hover:-translate-y-0.5"
               >
                 <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${t.c}`} style={{ opacity:0.55 }} />
 
@@ -656,24 +656,24 @@ function About() {
 
                 <p style={{
                   fontSize:13, lineHeight:1.7,
-                  color:'rgba(255,255,255,0.72)', flex:1,
+                  color:'rgba(15,23,42,0.72)', flex:1,
                   marginBottom:18, fontStyle:'italic',
                 }}>
                   &ldquo;{t.q}&rdquo;
                 </p>
 
-                <div style={{ height:1, background:'rgba(255,255,255,0.06)', marginBottom:16 }} />
+                <div style={{ height:1, background:'rgba(15,23,42,0.07)', marginBottom:16 }} />
 
                 <div style={{ display:'flex', alignItems:'center', gap:10 }}>
                   <div
                     className={`h-9 w-9 rounded-full bg-gradient-to-br ${t.c} flex items-center justify-center flex-shrink-0`}
-                    style={{ fontWeight:800, color:'#020617', fontSize:13 }}
+                    style={{ fontWeight:800, color:'#ffffff', fontSize:13 }}
                   >
                     {t.letter}
                   </div>
                   <div>
-                    <div style={{ fontWeight:700, fontSize:13, color:'rgba(255,255,255,0.9)' }}>{t.n}</div>
-                    <div style={{ fontSize:11, color:'rgba(255,255,255,0.35)' }}>{t.r}</div>
+                    <div style={{ fontWeight:700, fontSize:13, color:'rgba(15,23,42,0.92)' }}>{t.n}</div>
+                    <div style={{ fontSize:11, color:'rgba(15,23,42,0.4)' }}>{t.r}</div>
                   </div>
                 </div>
               </motion.div>
@@ -684,7 +684,7 @@ function About() {
 
       {/* ══════════ FINAL CTA ══════════ */}
       <section style={{ position:'relative', padding:'clamp(64px,8vw,112px) 0', overflow:'hidden' }}>
-        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse at 50% 0%,#0a1a35 0%,#050d1f 40%,#020617 100%)' }} />
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse at 50% 0%,#0a1a35 0%,#f8fafc 40%,#ffffff 100%)' }} />
         <div style={{
           position:'absolute', inset:0,
           backgroundImage:'linear-gradient(rgba(148,163,184,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.02) 1px,transparent 1px)',
@@ -706,12 +706,12 @@ function About() {
           >
             <p style={LBL}>Ready to work together?</p>
             <h2 style={HD}>
-              <span style={wT}>Let&apos;s build something </span>
+              <span style={wT}>Let&apos;s build the IT product </span>
               <br />
-              <span style={gT}>that stands out.</span>
+              <span style={gT}>your business needs.</span>
             </h2>
             <p style={{ ...BD, marginTop:18, maxWidth:460, marginLeft:'auto', marginRight:'auto', fontSize:14 }}>
-              30-minute free consultation to understand your project, define scope,
+              30-minute free consultation to understand your website, app, or software idea
               and map the fastest path to launch.
             </p>
             <div style={{ marginTop:28, display:'flex', gap:10, justifyContent:'center', flexWrap:'wrap' }}>
@@ -727,15 +727,15 @@ function About() {
               <Link href="/work" style={{
                 display:'inline-flex', alignItems:'center', gap:6,
                 borderRadius:100, padding:'13px 22px', fontWeight:600, fontSize:14,
-                background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)',
-                color:'rgba(255,255,255,0.7)', textDecoration:'none',
+                background:'rgba(15,23,42,0.04)', border:'1px solid rgba(15,23,42,0.08)',
+                color:'rgba(15,23,42,0.72)', textDecoration:'none',
                 transition:'all 0.45s cubic-bezier(0.22,1,0.36,1)',
               }}>
                 View Our Work <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <p style={{ marginTop:18, fontSize:11, color:'rgba(255,255,255,0.2)' }}>
-              standoutdevsolutions@gmail.com &bull; Reply within 24 hours
+            <p style={{ marginTop:18, fontSize:11, color:'rgba(15,23,42,0.18)' }}>
+              standoutdev20@gmail.com &bull; Reply within 24 hours
             </p>
           </motion.div>
         </div>

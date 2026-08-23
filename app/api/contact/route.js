@@ -1,12 +1,41 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { v4 as uuidv4 } from 'uuid'
+import { getDb } from '@/lib/mongodb'
+
+function createTransporter() {
+  const user = String(process.env.SMTP_USER || '').trim()
+  const pass = String(process.env.SMTP_PASS || '').replace(/\s/g, '')
+  const host = process.env.SMTP_HOST || 'smtp.gmail.com'
+  const port = Number(process.env.SMTP_PORT || 587)
+
+  if (!user || !pass) return { transporter: null, user, to: '' }
+
+  const transporter = nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465,
+    requireTLS: port === 587,
+    auth: { user, pass },
+  })
+
+  return {
+    transporter,
+    user,
+    to: String(process.env.CONTACT_TO || user).trim(),
+  }
+}
 
 export async function POST(request) {
   try {
     const body = await request.json()
-    const { name, email, phone, service, description } = body
+    const name = String(body.name || '').trim()
+    const email = String(body.email || '').trim()
+    const phone = String(body.phone || '').trim()
+    const service = String(body.service || '').trim()
+    const description = String(body.description || body.details || '').trim()
 
-    if (!name?.trim() || !email?.trim() || !phone?.trim() || !service?.trim() || !description?.trim()) {
+    if (!name || !email || !phone || !service || !description) {
       return NextResponse.json({ error: 'All fields are required.' }, { status: 400 })
     }
 
@@ -15,24 +44,31 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
     }
 
-    const user = process.env.SMTP_USER
-    const pass = process.env.SMTP_PASS
-    const to = process.env.CONTACT_TO || user
+    try {
+      const db = await getDb()
+      await db.collection('contact_messages').insertOne({
+        id: uuidv4(),
+        name,
+        email,
+        phone,
+        service,
+        description,
+        read: false,
+        createdAt: new Date(),
+      })
+    } catch (dbError) {
+      console.error('Failed to save contact message to DB:', dbError)
+    }
 
-    if (!user || !pass) {
+    const { transporter, user, to } = createTransporter()
+
+    if (!transporter) {
       console.error('SMTP credentials missing. Set SMTP_USER and SMTP_PASS in .env')
       return NextResponse.json({ error: 'Email is not configured. Please try again later.' }, { status: 500 })
     }
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: false,
-      auth: { user, pass },
-    })
-
     await transporter.sendMail({
-      from: `"Standoutdev Contact" <${user}>`,
+      from: `"StandoutDev Contact" <${user}>`,
       to,
       replyTo: email,
       subject: `New inquiry from ${name} — ${service}`,
@@ -61,7 +97,12 @@ export async function POST(request) {
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('Contact form email failed:', error)
-    return NextResponse.json({ error: 'Failed to send message. Please try again.' }, { status: 500 })
+    const authFailed = error?.code === 'EAUTH'
+    return NextResponse.json({
+      error: authFailed
+        ? 'Email login failed. Check SMTP_USER and the Gmail App Password in .env, then restart the server.'
+        : 'Failed to send message. Please try again.',
+    }, { status: 500 })
   }
 }
 
