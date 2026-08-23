@@ -44,6 +44,7 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
     }
 
+    let saved = false
     try {
       const db = await getDb()
       await db.collection('contact_messages').insertOne({
@@ -56,52 +57,61 @@ export async function POST(request) {
         read: false,
         createdAt: new Date(),
       })
+      saved = true
     } catch (dbError) {
       console.error('Failed to save contact message to DB:', dbError)
     }
 
     const { transporter, user, to } = createTransporter()
+    let emailed = false
 
-    if (!transporter) {
+    if (transporter) {
+      try {
+        await transporter.sendMail({
+          from: `"StandoutDev Contact" <${user}>`,
+          to,
+          replyTo: email,
+          subject: `New inquiry from ${name} — ${service}`,
+          text: [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            `Phone: ${phone}`,
+            `Service: ${service}`,
+            '',
+            'Description:',
+            description,
+          ].join('\n'),
+          html: `
+            <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;color:#111">
+              <h2 style="margin:0 0 16px">New contact form message</h2>
+              <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+              <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
+              <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+              <p><strong>Service:</strong> ${escapeHtml(service)}</p>
+              <p><strong>Description:</strong></p>
+              <p style="white-space:pre-wrap;background:#f5f5f5;padding:12px;border-radius:8px">${escapeHtml(description)}</p>
+            </div>
+          `,
+        })
+        emailed = true
+      } catch (mailError) {
+        console.error('Contact form email failed:', mailError)
+      }
+    } else {
       console.error('SMTP credentials missing. Set SMTP_USER and SMTP_PASS in .env')
-      return NextResponse.json({ error: 'Email is not configured. Please try again later.' }, { status: 500 })
     }
 
-    await transporter.sendMail({
-      from: `"StandoutDev Contact" <${user}>`,
-      to,
-      replyTo: email,
-      subject: `New inquiry from ${name} — ${service}`,
-      text: [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Phone: ${phone}`,
-        `Service: ${service}`,
-        '',
-        'Description:',
-        description,
-      ].join('\n'),
-      html: `
-        <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;color:#111">
-          <h2 style="margin:0 0 16px">New contact form message</h2>
-          <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-          <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
-          <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
-          <p><strong>Service:</strong> ${escapeHtml(service)}</p>
-          <p><strong>Description:</strong></p>
-          <p style="white-space:pre-wrap;background:#f5f5f5;padding:12px;border-radius:8px">${escapeHtml(description)}</p>
-        </div>
-      `,
-    })
+    if (saved || emailed) {
+      return NextResponse.json({ success: true })
+    }
 
-    return NextResponse.json({ success: true })
-  } catch (error) {
-    console.error('Contact form email failed:', error)
-    const authFailed = error?.code === 'EAUTH'
     return NextResponse.json({
-      error: authFailed
-        ? 'Email login failed. Check SMTP_USER and the Gmail App Password in .env, then restart the server.'
-        : 'Failed to send message. Please try again.',
+      error: 'Failed to send message. Please try again.',
+    }, { status: 500 })
+  } catch (error) {
+    console.error('Contact form failed:', error)
+    return NextResponse.json({
+      error: 'Failed to send message. Please try again.',
     }, { status: 500 })
   }
 }
