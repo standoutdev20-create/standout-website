@@ -9,19 +9,125 @@ import Grain from "@/components/site/Grain";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CustomCursor from "@/components/site/CustomCursor";
 
+const SITE_URL = "https://standoutdev.co";
+const SITE_NAME = "StandoutDev";
+const DEFAULT_TITLE = "StandoutDev — IT solutions for websites, apps & software";
+const DEFAULT_DESCRIPTION =
+  "StandoutDev is an IT solutions company that builds websites, mobile apps, e-commerce stores, and custom software for businesses that want to stand out. Based in Pune, India.";
+
 export const metadata = {
-  title: "StandoutDev — IT solutions for websites, apps & software",
-  description:
-    "StandoutDev is an IT solutions company that builds websites, mobile apps, and custom software for businesses that want to stand out.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: DEFAULT_TITLE,
+    template: "%s — StandoutDev",
+  },
+  description: DEFAULT_DESCRIPTION,
+  keywords: [
+    "IT solutions company",
+    "website development",
+    "mobile app development",
+    "custom software development",
+    "e-commerce development",
+    "SaaS development",
+    "web design agency",
+    "Pune IT company",
+  ],
+  authors: [{ name: "StandoutDev", url: SITE_URL }],
+  creator: "StandoutDev",
+  publisher: "StandoutDev",
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: [
+      {
+        url: "/logo.png",
+        width: 464,
+        height: 386,
+        alt: SITE_NAME,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: ["/logo.png"],
+  },
   verification: {
     google: "VeFhhYNtV58B8z-8tQ8fFfDoHlairJsC8GoiBBmv-F4",
   },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
+  email: "standoutdev20@gmail.com",
+  telephone: "+91-93223-96236",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Pune",
+    addressRegion: "Maharashtra",
+    postalCode: "411052",
+    addressCountry: "IN",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-93223-96236",
+    email: "standoutdev20@gmail.com",
+    contactType: "customer service",
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: SITE_NAME,
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Structured data: Organization + WebSite */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

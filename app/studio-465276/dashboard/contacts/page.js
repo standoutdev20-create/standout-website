@@ -2,7 +2,7 @@ import { getDb } from '@/lib/mongodb'
 import ContactTable from '@/components/admin/ContactTable'
 
 export const dynamic = 'force-dynamic'
-export const metadata = { title: 'Contact Requests', robots: { index: false, follow: false } }
+export const metadata = { title: 'Contact Requests — StandoutDev', robots: { index: false, follow: false } }
 
 export default async function ContactRequestsPage() {
   const db = await getDb()

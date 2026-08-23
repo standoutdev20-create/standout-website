@@ -1,6 +1,8 @@
 export const metadata = {
-  title: 'Privacy Policy — Standoutdev',
+  title: 'Privacy Policy',
   description: 'How Standoutdev collects, uses, and protects your personal information.',
+  alternates: { canonical: '/privacy' },
+  robots: { index: true, follow: true },
 }
 
 const sections = [

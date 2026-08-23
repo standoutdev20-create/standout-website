@@ -69,8 +69,8 @@ export default function ContactTable({ messages }) {
               <div className="flex items-center gap-3">
                 {!msg.read && <span className="h-2 w-2 rounded-full bg-cyan-500" />}
                 <div>
-                  <p className="text-sm font-medium text-slate-800">{msg.name} — {msg.service}</p>
-                  <p className="text-xs text-slate-500">{msg.email} · {msg.phone}</p>
+                  <p className="text-sm font-medium text-slate-800">{msg.name}{msg.service ? ` — ${msg.service}` : ''}</p>
+                  <p className="text-xs text-slate-500">{[msg.email, msg.phone].filter(Boolean).join(' · ')}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">

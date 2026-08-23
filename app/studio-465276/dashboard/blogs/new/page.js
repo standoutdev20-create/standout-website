@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ADMIN_BLOGS } from '@/lib/constants/admin'
 import BlogForm from '@/components/admin/BlogForm'
 
-export const metadata = { title: 'New Post', robots: { index: false, follow: false } }
+export const metadata = { title: 'New Post — StandoutDev', robots: { index: false, follow: false } }
 
 export default function NewBlogPostPage() {
   return (

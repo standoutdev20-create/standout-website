@@ -1,6 +1,8 @@
 export const metadata = {
-  title: 'Terms & Conditions — Standoutdev',
+  title: 'Terms & Conditions',
   description: 'Terms and conditions governing use of the Standoutdev website and services.',
+  alternates: { canonical: '/terms' },
+  robots: { index: true, follow: true },
 }
 
 const sections = [

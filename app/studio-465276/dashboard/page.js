@@ -4,7 +4,7 @@ import { getDb } from '@/lib/mongodb'
 import { ADMIN_BLOGS, ADMIN_CONTACTS } from '@/lib/constants/admin'
 
 export const dynamic = 'force-dynamic'
-export const metadata = { title: 'Dashboard', robots: { index: false, follow: false } }
+export const metadata = { title: 'Dashboard — StandoutDev', robots: { index: false, follow: false } }
 
 export default async function AdminOverviewPage() {
   const db = await getDb()

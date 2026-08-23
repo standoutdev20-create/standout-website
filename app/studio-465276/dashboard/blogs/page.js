@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import BlogTable from '@/components/admin/BlogTable'
 
 export const dynamic = 'force-dynamic'
-export const metadata = { title: 'Blogs', robots: { index: false, follow: false } }
+export const metadata = { title: 'Blogs — StandoutDev', robots: { index: false, follow: false } }
 
 export default async function BlogsListPage() {
   const db = await getDb()

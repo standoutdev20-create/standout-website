@@ -5,7 +5,7 @@ import { ADMIN_BLOGS } from '@/lib/constants/admin'
 import BlogForm from '@/components/admin/BlogForm'
 
 export const dynamic = 'force-dynamic'
-export const metadata = { title: 'Edit Post', robots: { index: false, follow: false } }
+export const metadata = { title: 'Edit Post — StandoutDev', robots: { index: false, follow: false } }
 
 export default async function EditBlogPostPage({ params }) {
   const { id } = await params

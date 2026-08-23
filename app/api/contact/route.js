@@ -32,11 +32,11 @@ export async function POST(request) {
     const name = String(body.name || '').trim()
     const email = String(body.email || '').trim()
     const phone = String(body.phone || '').trim()
-    const service = String(body.service || '').trim()
+    const service = String(body.service || '').trim() || 'General inquiry'
     const description = String(body.description || body.details || '').trim()
 
-    if (!name || !email || !phone || !service || !description) {
-      return NextResponse.json({ error: 'All fields are required.' }, { status: 400 })
+    if (!name || !email || !description) {
+      return NextResponse.json({ error: 'Name, email, and project details are required.' }, { status: 400 })
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { LayoutDashboard, FileText, Mail } from 'lucide-react'
 import { ADMIN_DASHBOARD, ADMIN_BLOGS, ADMIN_CONTACTS } from '@/lib/constants/admin'
@@ -21,22 +22,22 @@ export default function AdminShell({ username, children }) {
       <div className="flex min-h-screen bg-white text-slate-900">
         <aside className="flex w-[240px] shrink-0 flex-col border-r border-slate-200 bg-slate-50">
           <div className="border-b border-slate-200 p-6">
-            <div className="flex items-center gap-2.5">
-              <span
-                style={{
-                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                  height: 34, width: 34, borderRadius: 10,
-                  background: 'linear-gradient(135deg, #2563eb, #06b6d4)',
-                  color: '#fff', fontWeight: 900, fontSize: 15,
-                }}
-              >
-                S
+            <Link href={ADMIN_DASHBOARD} className="flex items-center gap-2.5">
+              <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-[10px] ring-1 ring-slate-200">
+                <Image
+                  src="/logo.png"
+                  alt="StandoutDev"
+                  fill
+                  sizes="36px"
+                  priority
+                  className="object-cover"
+                />
               </span>
               <div>
                 <p className="text-sm font-semibold leading-tight text-slate-900">StandoutDev</p>
                 <p className="text-[10px] uppercase tracking-wider text-slate-400">Admin Panel</p>
               </div>
-            </div>
+            </Link>
           </div>
 
           <div className="border-b border-slate-200 px-5 py-4">

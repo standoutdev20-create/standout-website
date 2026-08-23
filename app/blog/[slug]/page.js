@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getDb } from '@/lib/mongodb'
+import { defaultOgImages, defaultTwitterImages } from '@/lib/seo'
 
 export const dynamic = 'force-dynamic'
 
@@ -8,13 +9,26 @@ export async function generateMetadata({ params }) {
   const { slug } = await params
   const db = await getDb()
   const post = await db.collection('blogs').findOne({ slug, status: 'published' })
-  if (!post) return { title: 'Post not found — StandoutDev' }
+  if (!post) return { title: 'Post not found', robots: { index: false, follow: false } }
   return {
-    title: `${post.title} — StandoutDev Blog`,
+    title: post.title,
     description: post.excerpt || undefined,
+    alternates: { canonical: `/blog/${slug}` },
     openGraph: {
+      type: 'article',
       title: post.title,
       description: post.excerpt || undefined,
+      url: `/blog/${slug}`,
+      publishedTime: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
+      modifiedTime: post.updatedAt ? new Date(post.updatedAt).toISOString() : undefined,
+      tags: post.tags || undefined,
+      images: defaultOgImages,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt || undefined,
+      images: defaultTwitterImages,
     },
   }
 }
@@ -25,8 +39,24 @@ export default async function BlogPostPage({ params }) {
   const post = await db.collection('blogs').findOne({ slug, status: 'published' })
   if (!post) notFound()
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt || undefined,
+    datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
+    dateModified: post.updatedAt ? new Date(post.updatedAt).toISOString() : (post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined),
+    author: { '@type': 'Organization', name: 'StandoutDev' },
+    publisher: { '@type': 'Organization', name: 'StandoutDev', logo: { '@type': 'ImageObject', url: 'https://standoutdev.co/logo.png' } },
+    mainEntityOfPage: `https://standoutdev.co/blog/${slug}`,
+  }
+
   return (
     <article className="mx-auto max-w-3xl px-6 py-24 md:py-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Link href="/blog" className="text-sm text-slate-400 hover:text-slate-600">← Back to Blog</Link>
 
       <div className="mt-6">

@@ -1,10 +1,18 @@
 import Link from 'next/link'
 import { getDb } from '@/lib/mongodb'
+import { defaultOgImages } from '@/lib/seo'
 
 export const dynamic = 'force-dynamic'
 export const metadata = {
-  title: 'Blog — StandoutDev',
+  title: 'Blog',
   description: 'Notes on websites, apps, and custom software from the StandoutDev team.',
+  alternates: { canonical: '/blog' },
+  openGraph: {
+    title: 'Blog — StandoutDev',
+    description: 'Notes on websites, apps, and custom software from the StandoutDev team.',
+    url: '/blog',
+    images: defaultOgImages,
+  },
 }
 
 const gT = {
