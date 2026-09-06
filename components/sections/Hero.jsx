@@ -381,9 +381,9 @@ export default function Hero() {
         {/* Title */}
         <motion.h1
           className="hero-h1"
-          initial={{ opacity: 0, y: 24, filter: 'blur(10px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ delay: 0.25, duration: 1, ease: E }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25, duration: 0.8, ease: E }}
         >
           <span className="hero-h1-white">IT products that</span>
           <br />
