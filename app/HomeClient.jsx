@@ -46,7 +46,7 @@ const portfolioWork = [
     colorRgb: '245,158,11',
     url: 'https://umametalcraft.com/',
     desc: 'A premium manufacturing website with conversion-focused design that tripled inquiries.',
-    thumbnail: '/uma1.png',
+    thumbnail: '/uma1.webp',
     results: [{ v:'3×', l:'Inquiries' },{ v:'60%', l:'Bounce ↓' },{ v:'2.1s', l:'Load' }],
     services: ['Web Design','Development','SEO'],
     year: '2024',
@@ -62,7 +62,7 @@ const portfolioWork = [
     colorRgb: '59,130,246',
     url: 'https://siddhanath-physics.vercel.app/',
     desc: 'An interactive education platform making physics accessible and engaging.',
-    thumbnail: '/phy1.png',
+    thumbnail: '/phy1.webp',
     results: [{ v:'150+', l:'Students' },{ v:'95%', l:'Satisfaction' },{ v:'<1s', l:'Load' }],
     services: ['Web App','Development','UI/UX'],
     year: '2024',
@@ -78,7 +78,7 @@ const portfolioWork = [
     colorRgb: '139,92,246',
     url: 'https://digitaldeveloperss.com/',
     desc: 'A high-performance agency website built to generate leads and showcase their IT services.',
-    thumbnail: '/dg.png',
+    thumbnail: '/dg.webp',
     results: [{ v:'5×', l:'Leads' },{ v:'40%', l:'Conversion' },{ v:'100', l:'Perf.' }],
     services: ['Website','Development','SEO'],
     year: '2024',
@@ -619,7 +619,7 @@ export default function HomeClient() {
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none"><div style={{width:380,height:380,borderRadius:'50%',border:'1px solid rgba(96,165,250,0.1)',animation:'orbit 60s linear infinite',position:'relative'}}><div style={{position:'absolute',top:-4,left:'50%',marginLeft:-4,height:8,width:8,borderRadius:'50%',background:'#60a5fa',boxShadow:'0 0 14px rgba(96,165,250,0.9)'}}/></div></div>
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none"><div style={{width:270,height:270,borderRadius:'50%',border:'1px solid rgba(6,182,212,0.08)',animation:'orbit 40s linear infinite reverse',position:'relative'}}><div style={{position:'absolute',bottom:-3,left:'50%',marginLeft:-3,height:6,width:6,borderRadius:'50%',background:'#06b6d4',boxShadow:'0 0 10px rgba(6,182,212,0.9)'}}/></div></div>
               <div style={{position:'relative',zIndex:10,width:'clamp(140px,20vw,240px)',height:'clamp(140px,20vw,240px)',animation:'logo-float 6s ease-in-out infinite',filter:'drop-shadow(0 0 36px rgba(59,130,246,0.5)) drop-shadow(0 0 70px rgba(6,182,212,0.22))'}}>
-                <Image src="/logo1.png" alt="StandoutDev Logo" fill style={{objectFit:'contain'}} priority />
+                <Image src="/logo1.webp" alt="StandoutDev Logo" fill style={{objectFit:'contain'}} priority />
               </div>
               <div className="absolute pointer-events-none" style={{bottom:'clamp(20px,4vw,48px)',left:0,right:0,display:'flex',justifyContent:'center'}}>
                 <div style={{position:'relative'}}>

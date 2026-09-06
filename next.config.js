@@ -6,10 +6,10 @@ const ckeditorWatchdog = path.join(__dirname, 'node_modules/@ckeditor/ckeditor5-
 const nextConfig = {
   output: 'standalone',
   images: {
-    unoptimized: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'avatars.githubusercontent.com', pathname: '/**' },
     ],
+    formats: ['image/avif', 'image/webp'],
   },
   // Renamed from experimental.serverComponentsExternalPackages in Next 15
   serverExternalPackages: ['mongodb'],

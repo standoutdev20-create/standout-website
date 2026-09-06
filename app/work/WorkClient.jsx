@@ -53,11 +53,11 @@ const projects = [
       name: 'Uma Metal Craft',
       role: 'Management Team',
     },
-    thumbnail: '/uma1.png',
+    thumbnail: '/uma1.webp',
     screenshots: [
-      '/uma1.png',
-      '/uma2.png',
-      '/uma3.png',
+      '/uma1.webp',
+      '/uma2.webp',
+      '/uma3.webp',
     ],
   },
   {
@@ -98,11 +98,11 @@ const projects = [
       name: 'Siddhanath Krupa Physics',
       role: 'Institute Director',
     },
-    thumbnail: '/phy1.png',
+    thumbnail: '/phy1.webp',
     screenshots: [
-      '/phy1.png',
-      '/phy2.png',
-      '/phy3.png',
+      '/phy1.webp',
+      '/phy2.webp',
+      '/phy3.webp',
     ],
   },
   {
@@ -143,11 +143,11 @@ const projects = [
       name: 'Digital Developers',
       role: 'Founding Team',
     },
-    thumbnail: '/dg.png',
+    thumbnail: '/dg.webp',
     screenshots: [
-      '/dg.png',
-      '/dgg.png',
-      '/gdd.png',
+      '/dg.webp',
+      '/dgg.webp',
+      '/gdd.webp',
     ],
   },
 ]
