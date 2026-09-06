@@ -11,6 +11,7 @@ import {
   CheckCircle, Clock, Target, Award, Layout, Search,
   PenTool, Megaphone, BarChart3, Shield
 } from 'lucide-react'
+import { blurFor } from '@/lib/blurPlaceholders'
 
 const smoothEase = [0.22, 1, 0.36, 1]
 
@@ -719,6 +720,8 @@ function ProjectDetail({ project, onClose }) {
                     fill className="detail-gallery-img"
                     onError={() => handleImgError(`shot-${activeScreenshot}`)}
                     priority
+                    placeholder={blurFor(project.screenshots[activeScreenshot]) ? 'blur' : 'empty'}
+                    blurDataURL={blurFor(project.screenshots[activeScreenshot])}
                   />
                 )}
               </div>
@@ -752,7 +755,9 @@ function ProjectDetail({ project, onClose }) {
                   ) : (
                     <Image src={src} alt={`Thumb ${i + 1}`} fill
                       className="detail-thumb-img"
-                      onError={() => handleImgError(`thumb-${i}`)} />
+                      onError={() => handleImgError(`thumb-${i}`)}
+                      placeholder={blurFor(src) ? 'blur' : 'empty'}
+                      blurDataURL={blurFor(src)} />
                   )}
                 </button>
               ))}
@@ -1030,7 +1035,9 @@ function ProjectCard({ project, index, onOpen }) {
                 <Image src={project.thumbnail} alt={project.title} fill
                   className="project-screenshot-img"
                   onError={() => setImgError(true)}
-                  sizes="(max-width: 768px) 100vw, 60vw" />
+                  sizes="(max-width: 768px) 100vw, 60vw"
+                  placeholder={blurFor(project.thumbnail) ? 'blur' : 'empty'}
+                  blurDataURL={blurFor(project.thumbnail)} />
               )}
             </div>
             <div className="project-hover-overlay">

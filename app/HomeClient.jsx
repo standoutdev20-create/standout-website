@@ -16,6 +16,7 @@ import {
 import CountUp from '@/components/site/CountUp';
 import Hero from '@/components/sections/Hero';
 import { faqs } from './homeFaqs';
+import { blurFor } from '@/lib/blurPlaceholders';
 
 /* ============================================
    DATA
@@ -271,6 +272,8 @@ const GridProjectCard = memo(function GridProjectCard({ p, i }) {
                   sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
                   quality={85}
                   priority={i === 0}
+                  placeholder={blurFor(p.thumbnail) ? 'blur' : 'empty'}
+                  blurDataURL={blurFor(p.thumbnail)}
                 />
               )}
             </div>
@@ -619,7 +622,7 @@ export default function HomeClient() {
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none"><div style={{width:380,height:380,borderRadius:'50%',border:'1px solid rgba(96,165,250,0.1)',animation:'orbit 60s linear infinite',position:'relative'}}><div style={{position:'absolute',top:-4,left:'50%',marginLeft:-4,height:8,width:8,borderRadius:'50%',background:'#60a5fa',boxShadow:'0 0 14px rgba(96,165,250,0.9)'}}/></div></div>
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none"><div style={{width:270,height:270,borderRadius:'50%',border:'1px solid rgba(6,182,212,0.08)',animation:'orbit 40s linear infinite reverse',position:'relative'}}><div style={{position:'absolute',bottom:-3,left:'50%',marginLeft:-3,height:6,width:6,borderRadius:'50%',background:'#06b6d4',boxShadow:'0 0 10px rgba(6,182,212,0.9)'}}/></div></div>
               <div style={{position:'relative',zIndex:10,width:'clamp(140px,20vw,240px)',height:'clamp(140px,20vw,240px)',animation:'logo-float 6s ease-in-out infinite',filter:'drop-shadow(0 0 36px rgba(59,130,246,0.5)) drop-shadow(0 0 70px rgba(6,182,212,0.22))'}}>
-                <Image src="/logo1.webp" alt="StandoutDev Logo" fill style={{objectFit:'contain'}} priority />
+                <Image src="/logo1.webp" alt="StandoutDev Logo" fill style={{objectFit:'contain'}} priority placeholder="blur" blurDataURL={blurFor('/logo1.webp')} />
               </div>
               <div className="absolute pointer-events-none" style={{bottom:'clamp(20px,4vw,48px)',left:0,right:0,display:'flex',justifyContent:'center'}}>
                 <div style={{position:'relative'}}>
