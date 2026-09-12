@@ -150,6 +150,129 @@ const projects = [
       '/gdd.png',
     ],
   },
+
+  {
+  id: 'meteoroid-stones',
+  title: 'Meteoroid Stone Cladding',
+  subtitle: 'Luxury Stone Cladding Website',
+  tag: 'Business · Website',
+  cat: 'Website',
+  year: '2025',
+  duration: '5 Weeks',
+
+  colors: {
+    from: 'from-amber-500 to-yellow-600',
+    hex: '#D4A24C',
+    accentLight: 'rgba(212,162,76,0.10)',
+    accentBorder: 'rgba(212,162,76,0.25)',
+  },
+
+  url: 'https://example.com/',
+
+  desc:
+    'A premium business website created to showcase luxury stone cladding, CNC designs, and bespoke interior solutions.',
+
+  fullDesc:
+    'Meteoroid Stone Cladding is a luxury stone design and cladding brand focused on transforming architectural and interior spaces with precision-cut stone, CNC designs, and bespoke finishes.',
+
+  challenge:
+    'The brand needed a premium digital presence that could communicate the quality of its stone cladding, showcase its collections and projects, and make it easy for potential customers to enquire.',
+
+  solution:
+    'We created a sophisticated, image-focused website with an elegant visual identity, clear navigation, immersive stone imagery, project showcases, collections, CNC design sections, and strong enquiry-focused calls-to-action.',
+
+  keyFeatures: [
+    {
+      icon: Globe,
+      title: 'Responsive Design',
+      desc:
+        'Premium responsive experience optimized across desktop, tablet, and mobile devices.',
+    },
+    {
+      icon: Layout,
+      title: 'Luxury UI',
+      desc:
+        'Elegant and minimal interface designed to reflect the premium nature of the brand.',
+    },
+    {
+      icon: Smartphone,
+      title: 'Mobile Friendly',
+      desc:
+        'Smooth browsing experience across mobile and smaller screen devices.',
+    },
+    {
+      icon: Zap,
+      title: 'Visual Experience',
+      desc:
+        'Large-format imagery and refined layouts designed to highlight stone textures and finishes.',
+    },
+    {
+      icon: Users,
+      title: 'Customer Enquiries',
+      desc:
+        'Clear calls-to-action help visitors explore collections and contact the business.',
+    },
+    {
+      icon: Shield,
+      title: 'Professional Brand',
+      desc:
+        'Consistent visual presentation that builds trust and communicates premium craftsmanship.',
+    },
+  ],
+
+  services: [
+    'Stone Cladding',
+    'CNC Stone Designs',
+    'Luxury Interior Design',
+    'Bespoke Stone Design',
+    'Stone Collections',
+    'Architectural Projects',
+  ],
+
+  tech: [
+    'Next.js',
+    'React',
+    'Tailwind CSS',
+    'Framer Motion',
+    'Vercel',
+  ],
+
+  results: [
+    {
+      value: 'Premium',
+      label: 'Brand Experience',
+    },
+    {
+      value: 'Responsive',
+      label: 'Multi-device Design',
+    },
+    {
+      value: 'Visual',
+      label: 'Product Showcase',
+    },
+    {
+      value: 'Direct',
+      label: 'Customer Enquiries',
+    },
+  ],
+
+  testimonial: {
+    name: 'Meteoroid Stone Cladding',
+    role: 'Luxury Stone & Interior Design',
+    quote:
+      'A premium digital experience designed to showcase our stone cladding, collections, CNC designs, and architectural projects.',
+  },
+
+  thumbnail: '/ss1.png',
+
+  screenshots: [
+    '/ss1.png',
+    '/ss2.png',
+    '/ss3.png',
+  ],
+}
+
+  
 ]
 
 const filters = ['All', 'Website', 'Product']
