@@ -383,92 +383,92 @@ export default function Hero() {
           className="hero-h1"
           initial={{ opacity: 0, y: 24, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ delay: 0.25, duration: 1, ease: E }}
-        >
-          <span className="hero-h1-white">IT products that</span>
-          <br />
-          <span className="hero-h1-white">help you </span>
-          <span className="hero-h1-grad">stand out.</span>
-        </motion.h1>
+          transition={{ delay: 0.25, duration: 1, ease: E }}>
 
-        {/* Subtitle */}
-        <motion.p
-          className="hero-sub"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.9, ease: E }}
-        >
-          We build <strong>websites</strong>, <strong>mobile apps</strong>, and{' '}
-          <strong>custom software</strong> for businesses that need reliable
-          IT products — not templates.
-        </motion.p>
 
-        {/* CTA */}
-        <motion.div
-          className="hero-cta-row"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.9, ease: E }}
-        >
-          <Link href="/contact" className="hero-btn-primary">
-            <span>Start Building</span>
-            <ArrowUpRight style={{ width: 15, height: 15 }} />
-          </Link>
-          <Link href="/work" className="hero-btn-ghost">
-            <span>View Our Work</span>
-            <ArrowUpRight style={{ width: 14, height: 14 }} />
-          </Link>
-        </motion.div>
+        <span className="hero-h1-white">We build products</span>
+        <br />
+        <span className="hero-h1-white">that </span>
+        <span className="hero-h1-grad">stand out.</span>
+      </motion.h1>
 
-        {/* Stats */}
-        <motion.div
-          className="hero-stats-strip"
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.9, ease: E }}
-        >
-          {[
-            { v: '15+', l: 'Projects' },
-            { v: '10+', l: 'Clients' },
-            { v: '4.9★', l: 'Rating' },
-            { v: '95%', l: 'Satisfaction' },
-          ].map((s, i, arr) => (
-            <div key={s.l} style={{ display: 'contents' }}>
-              <div className="hero-stat-item">
-                <span className="hero-stat-val">{s.v}</span>
-                <span className="hero-stat-lbl">{s.l}</span>
-              </div>
-              {i < arr.length - 1 && <span className="hero-stat-dot" />}
-            </div>
-          ))}
-        </motion.div>
+      {/* Subtitle */}
+      <motion.p
+        className="hero-sub"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.9, ease: E }}
+      >
+        We design and develop <strong>websites</strong>, <strong>Saas platforms</strong>, and{' '}
+        <strong>digital Products</strong> for ambitious brands that refuse to blend 
+      </motion.p>
 
-        {/* Trusted */}
-        <motion.div
-          className="hero-trusted"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.1, duration: 1, ease: E }}
-        >
-          <span className="hero-trusted-label">Trusted by</span>
-          <div className="hero-trusted-logos">
-            {['Uma Metal Craft', 'Siddhanath Physics', 'Digital Developers'].map(name => (
-              <span key={name} className="hero-trusted-name">{name}</span>
-            ))}
-          </div>
-        </motion.div>
+      {/* CTA */}
+      <motion.div
+        className="hero-cta-row"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.9, ease: E }}
+      >
+        <Link href="/contact" className="hero-btn-primary">
+          <span>Start a Project</span>
+          <ArrowUpRight style={{ width: 15, height: 15 }} />
+        </Link>
+        <Link href="/work" className="hero-btn-ghost">
+          <span>View Our Work</span>
+          <ArrowUpRight style={{ width: 14, height: 14 }} />
+        </Link>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Stats */}
       <motion.div
-        className="hero-scroll-cue"
+        className="hero-stats-strip"
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.9, duration: 0.9, ease: E }}
+      >
+        {[
+          { v: '15+', l: 'Projects' },
+          { v: '10+', l: 'Clients' },
+          { v: '4.9★', l: 'Rating' },
+          { v: '95%', l: 'Satisfaction' },
+        ].map((s, i, arr) => (
+          <div key={s.l} style={{ display: 'contents' }}>
+            <div className="hero-stat-item">
+              <span className="hero-stat-val">{s.v}</span>
+              <span className="hero-stat-lbl">{s.l}</span>
+            </div>
+            {i < arr.length - 1 && <span className="hero-stat-dot" />}
+          </div>
+        ))}
+      </motion.div>
+
+      {/* Trusted */}
+      <motion.div
+        className="hero-trusted"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 1.2 }}
+        transition={{ delay: 1.1, duration: 1, ease: E }}
       >
-        <span className="hero-scroll-label">Scroll</span>
-        <div className="hero-scroll-bar" />
+        <span className="hero-trusted-label">Trusted by</span>
+        <div className="hero-trusted-logos">
+          {['Uma Metal Craft', 'Siddhanath Physics', 'Digital Developers'].map(name => (
+            <span key={name} className="hero-trusted-name">{name}</span>
+          ))}
+        </div>
       </motion.div>
-    </section>
+    </motion.div>
+
+      {/* Scroll indicator */ }
+  <motion.div
+    className="hero-scroll-cue"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 1.6, duration: 1.2 }}
+  >
+    <span className="hero-scroll-label">Scroll</span>
+    <div className="hero-scroll-bar" />
+  </motion.div>
+    </section >
   );
 }
