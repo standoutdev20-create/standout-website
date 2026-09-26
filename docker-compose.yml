@@ -1,0 +1,30 @@
+services:
+  web:
+    build: .
+    image: standout-website
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    # Mount .env as a file (rather than env_file) so Next.js parses it itself —
+    # keeps the existing \$ escaping for ADMIN_PASSWORD_HASH working unchanged.
+    volumes:
+      - ./.env:/app/.env:ro
+      - uploads:/app/public/uploads
+    environment:
+      # Real env vars take precedence over .env; point at the mongo service.
+      MONGO_URL: mongodb://mongo:27017
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    # Uncomment to reach the DB from the host (e.g. Compass):
+    # ports:
+    #   - "27017:27017"
+
+volumes:
+  uploads:
+  mongo-data:

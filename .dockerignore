@@ -1,0 +1,16 @@
+.git
+.next
+node_modules
+.env
+.env.*
+memory
+public/uploads
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+.idea
+.vscode
+Dockerfile
+docker-compose.yml
+.dockerignore

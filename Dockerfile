@@ -1,0 +1,36 @@
+# syntax=docker/dockerfile:1
+
+# ---- deps: install node_modules with the pinned Yarn from packageManager ----
+FROM node:22-alpine AS deps
+RUN apk add --no-cache libc6-compat && corepack enable
+WORKDIR /app
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
+
+# ---- build: next build + postbuild (assembles .next/standalone) ----
+FROM node:22-alpine AS build
+RUN corepack enable
+WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED=1
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN yarn build
+
+# ---- runtime: only the pruned standalone server ----
+FROM node:22-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV=production \
+    NEXT_TELEMETRY_DISABLED=1 \
+    PORT=3000 \
+    HOSTNAME=0.0.0.0
+
+RUN addgroup -S nodejs -g 1001 && adduser -S nextjs -u 1001 -G nodejs
+
+# postbuild.js already copied public/ and .next/static/ into standalone/
+COPY --from=build --chown=nextjs:nodejs /app/.next/standalone ./
+# Blog image uploads are written here at runtime (app/api/admin/upload)
+RUN mkdir -p public/uploads && chown -R nextjs:nodejs public/uploads
+
+USER nextjs
+EXPOSE 3000
+CMD ["node", "server.js"]
