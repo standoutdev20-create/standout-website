@@ -8,18 +8,24 @@ export const metadata = { title: 'Dashboard — StandoutDev', robots: { index: f
 
 export default async function AdminOverviewPage() {
   const db = await getDb()
-  const [total, published, drafts, contacts] = await Promise.all([
+  const [total, published, drafts, contacts, unread, recent] = await Promise.all([
     db.collection('blogs').countDocuments({}),
     db.collection('blogs').countDocuments({ status: 'published' }),
     db.collection('blogs').countDocuments({ status: 'draft' }),
     db.collection('contact_messages').countDocuments({}),
+    db.collection('contact_messages').countDocuments({ read: { $ne: true } }),
+    db.collection('blogs')
+      .find({}, { projection: { id: 1, title: 1, status: 1, updatedAt: 1 } })
+      .sort({ updatedAt: -1 })
+      .limit(5)
+      .toArray(),
   ])
 
   const stats = [
     { label: 'Total Posts', value: total, icon: FileText, href: ADMIN_BLOGS },
     { label: 'Published', value: published, icon: CheckCircle2, href: ADMIN_BLOGS },
     { label: 'Drafts', value: drafts, icon: PenLine, href: ADMIN_BLOGS },
-    { label: 'Contact Requests', value: contacts, icon: Mail, href: ADMIN_CONTACTS },
+    { label: unread ? `Contact Requests · ${unread} new` : 'Contact Requests', value: contacts, icon: Mail, href: ADMIN_CONTACTS },
   ]
 
   return (
@@ -40,6 +46,28 @@ export default async function AdminOverviewPage() {
           </Link>
         ))}
       </div>
+
+      {recent.length > 0 && (
+        <div className="mt-10 rounded-xl border border-slate-200 bg-white">
+          <h2 className="border-b border-slate-100 px-6 py-4 text-sm font-semibold text-slate-800">Recently edited</h2>
+          <ul className="divide-y divide-slate-100">
+            {recent.map((post) => (
+              <li key={post.id}>
+                <Link
+                  href={`${ADMIN_BLOGS}/${post.id}`}
+                  className="flex items-center justify-between gap-4 px-6 py-3 text-sm hover:bg-slate-50"
+                >
+                  <span className="truncate font-medium text-slate-700">{post.title}</span>
+                  <span className="flex shrink-0 items-center gap-3 text-xs text-slate-400">
+                    <span className={post.status === 'published' ? 'text-emerald-600' : 'text-amber-600'}>{post.status}</span>
+                    {post.updatedAt ? new Date(post.updatedAt).toLocaleDateString() : ''}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <div className="mt-10 rounded-xl border border-slate-200 bg-white p-6">
         <h2 className="text-sm font-semibold text-slate-800">Quick actions</h2>

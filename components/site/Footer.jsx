@@ -1,13 +1,13 @@
-'use client'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { ADMIN_BASE } from '@/lib/constants/admin'
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ADMIN_BASE } from "@/lib/constants/admin";
 
 /* ============================================
    STATIC PARTICLES — deterministic, SSR-safe
    ============================================ */
 const PARTICLES = [
-  { left: 4,  top: 18, size: 2.4, dur: 6.2, delay: 0.4 },
+  { left: 4, top: 18, size: 2.4, dur: 6.2, delay: 0.4 },
   { left: 12, top: 62, size: 1.6, dur: 7.8, delay: 1.9 },
   { left: 19, top: 33, size: 3.1, dur: 5.4, delay: 3.2 },
   { left: 26, top: 78, size: 1.9, dur: 8.5, delay: 0.9 },
@@ -22,42 +22,39 @@ const PARTICLES = [
   { left: 89, top: 59, size: 2.0, dur: 6.7, delay: 3.4 },
   { left: 94, top: 30, size: 1.8, dur: 7.4, delay: 0.2 },
   { left: 98, top: 73, size: 2.6, dur: 5.9, delay: 2.9 },
-]
+];
 
 const designServices = [
-  { label: 'Website Development',    href: '/services' },
-  { label: 'Mobile App Development', href: '/services' },
-  { label: 'Custom Software',        href: '/services' },
-  { label: 'SaaS & Dashboards',      href: '/services' },
-  { label: 'E-Commerce',             href: '/services' },
-  { label: 'UI/UX for Products',     href: '/services' },
-]
+  { label: "Website Development", href: "/services" },
+  { label: "Mobile App Development", href: "/services" },
+  { label: "Custom Software", href: "/services" },
+  { label: "SaaS & Dashboards", href: "/services" },
+  { label: "E-Commerce", href: "/services" },
+  { label: "UI/UX for Products", href: "/services" },
+];
 
 const devServices = [
-  { label: 'Web Applications', href: '/services' },
-  { label: 'WordPress / CMS',  href: '/services' },
-  { label: 'Shopify Stores',   href: '/services' },
-  { label: 'IT Support',       href: '/services' },
-]
+  { label: "Web Applications", href: "/services" },
+  { label: "WordPress / CMS", href: "/services" },
+  { label: "Shopify Stores", href: "/services" },
+  { label: "IT Support", href: "/services" },
+];
 
 const company = [
-  { label: 'About Us', href: '/about'   },
-  { label: 'FAQs',     href: '/faq'     },
-  { label: 'Blog',     href: '/blog'    },
-  { label: 'Team',     href: '/about'   },
-  { label: 'Career',   href: '/contact' },
-]
+  { label: "About Us", href: "/about" },
+  { label: "FAQs", href: "/#faq" },
+  { label: "Blog", href: "/blog" },
+  { label: "Team", href: "/about" },
+  { label: "Career", href: "/contact" },
+];
 
 const socials = [
-  { label: 'Dribbble',  href: '#' },
-  { label: 'X',         href: '#' },
-  { label: 'Instagram', href: 'https://www.instagram.com/standout.dev' },
-  { label: 'GitHub',    href: '#' },
-]
+  { label: "Instagram", href: "https://www.instagram.com/standout.dev" },
+];
 
 export default function Footer() {
-  const pathname = usePathname()
-  if (pathname?.startsWith(ADMIN_BASE)) return null
+  const pathname = usePathname();
+  if (pathname?.startsWith(ADMIN_BASE)) return null;
 
   return (
     <footer className="footer-root">
@@ -173,16 +170,28 @@ export default function Footer() {
       <div className="footer-bg" />
       <div className="footer-grid" />
 
-      <div className="footer-orb" style={{
-        bottom: '-20%', left: '-5%',
-        width: 'min(600px, 70vw)', height: 'min(600px, 70vw)',
-        background: 'radial-gradient(circle, rgba(37,99,235,.18) 0%, transparent 70%)',
-      }} />
-      <div className="footer-orb" style={{
-        top: '-10%', right: '-5%',
-        width: 'min(500px, 60vw)', height: 'min(500px, 60vw)',
-        background: 'radial-gradient(circle, rgba(6,182,212,.14) 0%, transparent 70%)',
-      }} />
+      <div
+        className="footer-orb"
+        style={{
+          bottom: "-20%",
+          left: "-5%",
+          width: "min(600px, 70vw)",
+          height: "min(600px, 70vw)",
+          background:
+            "radial-gradient(circle, rgba(37,99,235,.18) 0%, transparent 70%)",
+        }}
+      />
+      <div
+        className="footer-orb"
+        style={{
+          top: "-10%",
+          right: "-5%",
+          width: "min(500px, 60vw)",
+          height: "min(500px, 60vw)",
+          background:
+            "radial-gradient(circle, rgba(6,182,212,.14) 0%, transparent 70%)",
+        }}
+      />
 
       {/* Particles — deterministic */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -206,49 +215,84 @@ export default function Footer() {
       {/* Content */}
       <div className="relative mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
-
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2.5 group">
-              <span style={{
-                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                height: 40, width: 40, borderRadius: 12,
-                background: 'linear-gradient(135deg, #2563eb, #06b6d4)',
-                color: '#020617', fontWeight: 900, fontSize: 18,
-                boxShadow: '0 4px 20px rgba(59,130,246,.4)',
-                transition: 'transform .3s',
-              }} className="group-hover:scale-105">
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: 40,
+                  width: 40,
+                  borderRadius: 12,
+                  background: "linear-gradient(135deg, #2563eb, #06b6d4)",
+                  color: "#020617",
+                  fontWeight: 900,
+                  fontSize: 18,
+                  boxShadow: "0 4px 20px rgba(59,130,246,.4)",
+                  transition: "transform .3s",
+                }}
+                className="group-hover:scale-105"
+              >
                 S
               </span>
-              <span style={{ fontSize: 20, fontWeight: 700, letterSpacing: '-.02em' }}>
+              <span
+                style={{
+                  fontSize: 20,
+                  fontWeight: 700,
+                  letterSpacing: "-.02em",
+                }}
+              >
                 Standout<span className="footer-grad-text">Dev</span>
               </span>
             </Link>
 
-            <p style={{
-              marginTop: 20, maxWidth: 380, fontSize: 14,
-              color: 'rgba(15,23,42,.55)', lineHeight: 1.7,
-            }}>
-              An IT solutions company building websites, mobile apps,
-              and custom software for businesses that want to stand out.
+            <p
+              style={{
+                marginTop: 20,
+                maxWidth: 380,
+                fontSize: 14,
+                color: "rgba(15,23,42,.55)",
+                lineHeight: 1.7,
+              }}
+            >
+              An IT solutions company building websites, mobile apps, and custom
+              software for businesses that want to stand out.
             </p>
 
             <div style={{ marginTop: 24 }}>
-              <div className="footer-label" style={{ marginBottom: 8 }}>Headquarters</div>
-              <p style={{ fontSize: 14, color: 'rgba(15,23,42,.55)', lineHeight: 1.7 }}>
-                Pune, Maharashtra 411052<br />
+              <div className="footer-label" style={{ marginBottom: 8 }}>
+                Headquarters
+              </div>
+              <p
+                style={{
+                  fontSize: 14,
+                  color: "rgba(15,23,42,.55)",
+                  lineHeight: 1.7,
+                }}
+              >
+                Pune, Maharashtra 411052
+                <br />
                 India · Available Worldwide
               </p>
             </div>
 
-            <div style={{ marginTop: 24, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            <div
+              style={{
+                marginTop: 24,
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 8,
+              }}
+            >
               {socials.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   className="footer-social"
-                  {...(s.href.startsWith('http')
-                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                  {...(s.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
                 >
                   {s.label}
@@ -263,7 +307,9 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {designServices.map((s) => (
                 <li key={s.label}>
-                  <Link href={s.href} className="footer-link">{s.label}</Link>
+                  <Link href={s.href} className="footer-link">
+                    {s.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -275,7 +321,9 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {devServices.map((s) => (
                 <li key={s.label}>
-                  <Link href={s.href} className="footer-link">{s.label}</Link>
+                  <Link href={s.href} className="footer-link">
+                    {s.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -287,21 +335,35 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {company.map((s) => (
                 <li key={s.label}>
-                  <Link href={s.href} className="footer-link">{s.label}</Link>
+                  <Link href={s.href} className="footer-link">
+                    {s.label}
+                  </Link>
                 </li>
               ))}
             </ul>
 
             <div style={{ marginTop: 28 }}>
-              <div className="footer-label" style={{ marginBottom: 8 }}>Get in touch</div>
+              <div className="footer-label" style={{ marginBottom: 8 }}>
+                Get in touch
+              </div>
               <a
-                href="mailto:standoutdev20@gmail.com"
+                href="mailto:contact@standoutdev.com"
                 className="footer-grad-text"
-                style={{ fontSize: 14, fontWeight: 500, textDecoration: 'none' }}
+                style={{
+                  fontSize: 14,
+                  fontWeight: 500,
+                  textDecoration: "none",
+                }}
               >
-                standoutdev20@gmail.com
+                contact@standoutdev.com
               </a>
-              <p style={{ marginTop: 6, fontSize: 12, color: 'rgba(15,23,42,.45)' }}>
+              <p
+                style={{
+                  marginTop: 6,
+                  fontSize: 12,
+                  color: "rgba(15,23,42,.45)",
+                }}
+              >
                 +91 93223 96236
               </p>
             </div>
@@ -311,15 +373,32 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           className="mt-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8"
-          style={{ borderTop: '1px solid rgba(15,23,42,.08)' }}
+          style={{ borderTop: "1px solid rgba(15,23,42,.08)" }}
         >
-          <p style={{ fontSize: 12, color: 'rgba(15,23,42,.4)' }}>
-            © {new Date().getFullYear()} StandoutDev. All rights reserved. WE BUILD, YOU STAND OUT.
+          <p style={{ fontSize: 12, color: "rgba(15,23,42,.4)" }}>
+            © {new Date().getFullYear()} StandoutDev. All rights reserved. WE
+            BUILD, YOU STAND OUT.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <Link href="/privacy" className="footer-link" style={{ fontSize: 12 }}>Privacy Policy</Link>
-            <Link href="/terms"   className="footer-link" style={{ fontSize: 12 }}>Terms of Use</Link>
-            <Link href={ADMIN_BASE} className="footer-social" aria-label="Admin panel login">
+            <Link
+              href="/privacy"
+              className="footer-link"
+              style={{ fontSize: 12 }}
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="footer-link"
+              style={{ fontSize: 12 }}
+            >
+              Terms of Use
+            </Link>
+            <Link
+              href={ADMIN_BASE}
+              className="footer-social"
+              aria-label="Admin panel login"
+            >
               Admin Login
             </Link>
           </div>
@@ -331,5 +410,5 @@ export default function Footer() {
         <div className="footer-watermark">STANDOUTDEV</div>
       </div>
     </footer>
-  )
+  );
 }

@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { toast } from 'sonner'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { useConfirm } from './ConfirmProvider'
@@ -12,22 +13,33 @@ export default function ContactTable({ messages }) {
   const [openId, setOpenId] = useState(null)
   const [busyId, setBusyId] = useState(null)
 
-  async function toggleOpen(msg) {
+  async function request(url, init, fallback) {
+    const res = await fetch(url, init)
+    const data = await res.json().catch(() => ({}))
+    if (res.status === 401) throw new Error('Your session expired — sign in again.')
+    if (!res.ok) throw new Error(data.error || fallback)
+  }
+
+  async function setRead(msg, read) {
+    setBusyId(msg.id)
+    try {
+      await request(
+        `/api/admin/contacts/${msg.id}`,
+        { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ read }) },
+        'Failed to update message.',
+      )
+      router.refresh()
+    } catch (err) {
+      toast.error(err.message)
+    } finally {
+      setBusyId(null)
+    }
+  }
+
+  function toggleOpen(msg) {
     const nextOpen = openId === msg.id ? null : msg.id
     setOpenId(nextOpen)
-    if (nextOpen && !msg.read) {
-      setBusyId(msg.id)
-      try {
-        await fetch(`/api/admin/contacts/${msg.id}`, {
-          method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ read: true }),
-        })
-        router.refresh()
-      } finally {
-        setBusyId(null)
-      }
-    }
+    if (nextOpen && !msg.read) setRead(msg, true)
   }
 
   async function handleDelete(id) {
@@ -40,8 +52,11 @@ export default function ContactTable({ messages }) {
     if (!ok) return
     setBusyId(id)
     try {
-      await fetch(`/api/admin/contacts/${id}`, { method: 'DELETE' })
+      await request(`/api/admin/contacts/${id}`, { method: 'DELETE' }, 'Failed to delete message.')
+      toast.success('Message deleted.')
       router.refresh()
+    } catch (err) {
+      toast.error(err.message)
     } finally {
       setBusyId(null)
     }
@@ -76,7 +91,7 @@ export default function ContactTable({ messages }) {
               <div className="flex items-center gap-3">
                 <Badge variant={msg.read ? 'secondary' : 'default'}>{msg.read ? 'Read' : 'New'}</Badge>
                 <span className="text-xs text-slate-400">
-                  {msg.createdAt ? new Date(msg.createdAt).toLocaleDateString() : ''}
+                  {msg.createdAt ? new Date(msg.createdAt).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : ''}
                 </span>
               </div>
             </button>
@@ -84,14 +99,25 @@ export default function ContactTable({ messages }) {
             {isOpen && (
               <div className="border-t border-slate-200 px-5 py-4">
                 <p className="whitespace-pre-wrap text-sm text-slate-600">{msg.description}</p>
-                <div className="mt-4 flex justify-end">
+                <div className="mt-4 flex flex-wrap justify-end gap-2">
+                  <a href={`mailto:${msg.email}?subject=${encodeURIComponent(`Re: your ${msg.service || 'project'} inquiry — StandoutDev`)}`}>
+                    <Button size="sm" variant="outline">Reply by email</Button>
+                  </a>
+                  {msg.phone && (
+                    <a href={`tel:${msg.phone}`}>
+                      <Button size="sm" variant="outline">Call</Button>
+                    </a>
+                  )}
+                  <Button size="sm" variant="ghost" disabled={busyId === msg.id} onClick={() => setRead(msg, false)}>
+                    Mark unread
+                  </Button>
                   <Button
                     size="sm"
                     variant="destructive"
                     disabled={busyId === msg.id}
                     onClick={() => handleDelete(msg.id)}
                   >
-                    {busyId === msg.id ? 'Deleting…' : 'Delete'}
+                    Delete
                   </Button>
                 </div>
               </div>

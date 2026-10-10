@@ -393,6 +393,30 @@ body {
 .blog-content th { background: rgba(15, 23, 42, 0.04); color: #0f172a; }
 .blog-content hr { border-color: rgba(15, 23, 42, 0.1); margin: 2em 0; }
 
+/* CKEditor output: figures, image alignment/resize, font-size classes, marks */
+.blog-content figure { margin: 2em 0; }
+.blog-content figure.image { display: table; clear: both; margin-left: auto; margin-right: auto; }
+.blog-content figure.image img { display: block; width: 100%; }
+.blog-content figure.image_resized { max-width: 100%; display: block; box-sizing: border-box; }
+.blog-content figure.image_resized img { width: 100%; }
+.blog-content figure.image-style-align-left { float: left; margin: 0.4em 1.5em 1em 0; max-width: 50%; }
+.blog-content figure.image-style-align-right { float: right; margin: 0.4em 0 1em 1.5em; max-width: 50%; }
+.blog-content figure.image-style-align-center { margin-left: auto; margin-right: auto; }
+.blog-content figure.image-style-block-align-left { margin-left: 0; margin-right: auto; }
+.blog-content figure.image-style-block-align-right { margin-left: auto; margin-right: 0; }
+.blog-content figcaption { margin-top: 0.6em; text-align: center; font-size: 0.85em; color: rgba(15, 23, 42, 0.5); }
+.blog-content figure.table { display: block; overflow-x: auto; }
+.blog-content::after { content: ''; display: table; clear: both; }
+.blog-content .text-tiny { font-size: 0.7em; }
+.blog-content .text-small { font-size: 0.85em; }
+.blog-content .text-big { font-size: 1.4em; }
+.blog-content .text-huge { font-size: 1.8em; }
+.blog-content mark { background: #fef08a; padding: 0 0.15em; border-radius: 2px; }
+@media (max-width: 640px) {
+  .blog-content figure.image-style-align-left,
+  .blog-content figure.image-style-align-right { float: none; max-width: 100%; margin: 1.5em auto; }
+}
+
 /* ---- Admin CKEditor ---- */
 .ck-field-wrapper {
   overflow: visible;

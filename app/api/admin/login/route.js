@@ -2,8 +2,21 @@ import { NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
 import { createSessionToken } from '@/lib/adminAuth'
 import { ADMIN_COOKIE } from '@/lib/constants/admin'
+import { checkRateLimit, clientIp, recordHit, resetHits } from '@/lib/rateLimit'
+
+// 5 failed attempts per IP per 15 minutes.
+const LOGIN_LIMIT = { limit: 5, windowMs: 15 * 60 * 1000 }
 
 export async function POST(request) {
+  const rateKey = `login:${clientIp(request)}`
+  const { allowed, retryAfter } = checkRateLimit(rateKey, LOGIN_LIMIT)
+  if (!allowed) {
+    return NextResponse.json(
+      { error: `Too many failed attempts. Try again in ${Math.ceil(retryAfter / 60)} min.` },
+      { status: 429, headers: { 'Retry-After': String(retryAfter) } },
+    )
+  }
+
   try {
     const { username, password } = await request.json()
 
@@ -23,9 +36,11 @@ export async function POST(request) {
     const passwordMatches = await bcrypt.compare(password, passwordHash)
 
     if (!usernameMatches || !passwordMatches) {
+      recordHit(rateKey, LOGIN_LIMIT)
       return NextResponse.json({ error: 'Invalid username or password.' }, { status: 401 })
     }
 
+    resetHits(rateKey)
     const token = await createSessionToken({ sub: validUsername, role: 'admin' })
 
     const response = NextResponse.json({ success: true })

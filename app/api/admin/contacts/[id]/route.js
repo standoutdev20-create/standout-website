@@ -6,10 +6,11 @@ export async function PATCH(request, { params }) {
   try {
     const body = await request.json()
     const db = await getDb()
-    await db.collection('contact_messages').updateOne(
+    const result = await db.collection('contact_messages').updateOne(
       { id },
       { $set: { read: Boolean(body.read) } }
     )
+    if (!result.matchedCount) return NextResponse.json({ error: 'Not found.' }, { status: 404 })
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('Failed to update contact message:', error)

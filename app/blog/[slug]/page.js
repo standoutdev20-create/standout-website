@@ -1,15 +1,27 @@
-import Link from 'next/link'
+import { cache } from 'react'
 import { notFound } from 'next/navigation'
 import { getDb } from '@/lib/mongodb'
-import { defaultOgImages, defaultTwitterImages } from '@/lib/seo'
+import { SITE_URL, defaultOgImages, defaultTwitterImages } from '@/lib/seo'
+import BlogArticle from '@/components/blog/BlogArticle'
 
 export const dynamic = 'force-dynamic'
 
+// Shared between generateMetadata and the page so it's one DB round-trip.
+const getPublishedPost = cache(async (slug) => {
+  const db = await getDb()
+  return db.collection('blogs').findOne({ slug, status: 'published' })
+})
+
+function absolute(url) {
+  return url?.startsWith('/') ? `${SITE_URL}${url}` : url
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = await params
-  const db = await getDb()
-  const post = await db.collection('blogs').findOne({ slug, status: 'published' })
+  const post = await getPublishedPost(slug)
   if (!post) return { title: 'Post not found', robots: { index: false, follow: false } }
+
+  const ogImages = post.coverImage ? [{ url: post.coverImage, alt: post.title }] : defaultOgImages
   return {
     title: post.title,
     description: post.excerpt || undefined,
@@ -22,66 +34,44 @@ export async function generateMetadata({ params }) {
       publishedTime: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
       modifiedTime: post.updatedAt ? new Date(post.updatedAt).toISOString() : undefined,
       tags: post.tags || undefined,
-      images: defaultOgImages,
+      images: ogImages,
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt || undefined,
-      images: defaultTwitterImages,
+      images: post.coverImage ? [post.coverImage] : defaultTwitterImages,
     },
   }
 }
 
 export default async function BlogPostPage({ params }) {
   const { slug } = await params
-  const db = await getDb()
-  const post = await db.collection('blogs').findOne({ slug, status: 'published' })
+  const post = await getPublishedPost(slug)
   if (!post) notFound()
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt || undefined,
+    image: post.coverImage ? absolute(post.coverImage) : undefined,
+    keywords: post.tags?.length ? post.tags.join(', ') : undefined,
     datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
     dateModified: post.updatedAt ? new Date(post.updatedAt).toISOString() : (post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined),
     author: { '@type': 'Organization', name: 'StandoutDev' },
-    publisher: { '@type': 'Organization', name: 'StandoutDev', logo: { '@type': 'ImageObject', url: 'https://standoutdev.co/logo.png' } },
-    mainEntityOfPage: `https://standoutdev.co/blog/${slug}`,
+    publisher: { '@type': 'Organization', name: 'StandoutDev', logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` } },
+    mainEntityOfPage: `${SITE_URL}/blog/${slug}`,
   }
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-24 md:py-32">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        // Escape "<" so post text can never close the script tag.
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c') }}
       />
-      <Link href="/blog" className="text-sm text-slate-400 hover:text-slate-600">← Back to Blog</Link>
-
-      <div className="mt-6">
-        {post.tags?.[0] && (
-          <div className="mb-3 text-xs uppercase tracking-wider text-cyan-600">{post.tags[0]}</div>
-        )}
-        <h1 className="text-3xl font-black tracking-tight md:text-5xl">{post.title}</h1>
-        <p className="mt-4 text-sm text-slate-400">
-          {post.publishedAt
-            ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-            : ''}
-        </p>
-      </div>
-
-      <div className="blog-content mt-10" dangerouslySetInnerHTML={{ __html: post.content }} />
-
-      {post.tags?.length > 0 && (
-        <div className="mt-12 flex flex-wrap gap-2 border-t border-slate-200 pt-8">
-          {post.tags.map((tag) => (
-            <span key={tag} className="rounded-full border border-slate-200 px-3 py-1 text-xs text-slate-500">
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
+      <BlogArticle post={post} />
     </article>
   )
 }

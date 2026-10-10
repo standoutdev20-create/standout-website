@@ -428,10 +428,10 @@ export default function Hero() {
           transition={{ delay: 0.9, duration: 0.9, ease: E }}
         >
           {[
-            { v: '15+', l: 'Projects' },
-            { v: '10+', l: 'Clients' },
-            { v: '4.9★', l: 'Rating' },
-            { v: '95%', l: 'Satisfaction' },
+            { v: '3', l: 'Projects live' },
+            { v: '3', l: 'Industries' },
+            { v: '24hr', l: 'Reply time' },
+            { v: '100%', l: 'Code ownership' },
           ].map((s, i, arr) => (
             <div key={s.l} style={{ display: 'contents' }}>
               <div className="hero-stat-item">
@@ -452,7 +452,7 @@ export default function Hero() {
         >
           <span className="hero-trusted-label">Trusted by</span>
           <div className="hero-trusted-logos">
-            {['Uma Metal Craft', 'Siddhanath Physics', 'Digital Developers'].map(name => (
+            {['Uma Metal Craft', 'Siddhanath Krupa Physics', 'Digital Developers'].map(name => (
               <span key={name} className="hero-trusted-name">{name}</span>
             ))}
           </div>

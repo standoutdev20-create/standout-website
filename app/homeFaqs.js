@@ -7,7 +7,7 @@ export const faqs = [
   { q:'How long does a typical engagement take?',            a:'Business websites usually take 3–6 weeks. Mobile apps and custom software typically take 2–4 months. We scope tightly and ship in phases so you see progress early.' },
   { q:'Do you work with startups and small businesses?',     a:'Yes. We work with founders, local businesses, and growing companies that need a website, app, or custom IT product without a large in-house team.' },
   { q:'What tech stack do you build in?',                    a:'Next.js, React, and Node.js for web products. React Native for mobile apps. Tailwind CSS for UI. Vercel or similar cloud hosting. We also work with WordPress, Shopify, and your existing stack when needed.' },
-  { q:'Do you offer ongoing support after launch?',          a:'Yes. Most clients stay with us for updates, new features, hosting help, and maintenance after the first launch.' },
+  { q:'Do you offer ongoing support after launch?',          a:'Yes. After launch we can stay on for updates, new features, hosting help, and maintenance — on a simple monthly plan or as needed.' },
   { q:'Can you work with our in-house team?',                a:'Yes. We can lead the build, support your developers, or take a specific module — depending on what you need.' },
   { q:'How do you handle pricing?',                          a:"We scope each project based on the product and outcome, not open-ended hours. We'll share a range on the first call and a firm number after discovery." },
 ];

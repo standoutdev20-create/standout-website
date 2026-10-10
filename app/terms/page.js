@@ -12,7 +12,7 @@ const sections = [
   },
   {
     t: 'About Standoutdev',
-    d: 'Standoutdev is an IT solutions company based in Pune, Maharashtra 411052, India. We provide website development, mobile apps, custom software, e-commerce, and related IT services. Contact: standoutdev20@gmail.com · +91 93223 96236.',
+    d: 'Standoutdev is an IT solutions company based in Pune, Maharashtra 411052, India. We provide website development, mobile apps, custom software, e-commerce, and related IT services. Contact: contact@standoutdev.com · +91 93223 96236.',
   },
   {
     t: 'Use of the website',
@@ -56,7 +56,7 @@ const sections = [
   },
   {
     t: 'Contact',
-    d: 'Questions about these Terms & Conditions can be sent to standoutdev20@gmail.com, or by phone at +91 93223 96236. Postal: Standoutdev, Pune, Maharashtra 411052, India.',
+    d: 'Questions about these Terms & Conditions can be sent to contact@standoutdev.com, or by phone at +91 93223 96236. Postal: Standoutdev, Pune, Maharashtra 411052, India.',
   },
 ]
 

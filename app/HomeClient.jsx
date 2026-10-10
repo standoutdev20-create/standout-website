@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowUpRight, Layers,
-  Plus, Minus, Star, Globe,
+  Plus, Minus, Globe,
   Palette, Code, Smartphone, MonitorPlay, ShoppingCart,
   LayoutDashboard,
   ExternalLink, CheckCircle, ArrowRight,
@@ -21,7 +21,7 @@ import { blurFor } from '@/lib/blurPlaceholders';
 /* ============================================
    DATA
 ============================================ */
-const clientLogos  = ['Uma Metal Craft','Siddhanath Physics','Digital Developers','Manufacturing','Education','Retail','Healthcare','Startups'];
+const clientLogos  = ['Uma Metal Craft','Siddhanath Krupa Physics','Digital Developers','Manufacturing','Education','Digital Agencies'];
 const clientLogos2 = ['Websites','Mobile Apps','Web Apps','E-Commerce','SaaS','Custom Software','CMS','APIs'];
 
 const services = [
@@ -46,9 +46,9 @@ const portfolioWork = [
     colorHex: '#f59e0b',
     colorRgb: '245,158,11',
     url: 'https://umametalcraft.com/',
-    desc: 'A premium manufacturing website with conversion-focused design that tripled inquiries.',
+    desc: 'A premium manufacturing website that showcases their products and makes it easy for buyers to send inquiries.',
     thumbnail: '/uma1.webp',
-    results: [{ v:'3×', l:'Inquiries' },{ v:'60%', l:'Bounce ↓' },{ v:'2.1s', l:'Load' }],
+    results: [{ v:'Live', l:'Status' },{ v:'Mobile', l:'Responsive' },{ v:'SEO', l:'Ready' }],
     services: ['Web Design','Development','SEO'],
     year: '2024',
   },
@@ -64,7 +64,7 @@ const portfolioWork = [
     url: 'https://siddhanath-physics.vercel.app/',
     desc: 'An interactive education platform making physics accessible and engaging.',
     thumbnail: '/phy1.webp',
-    results: [{ v:'150+', l:'Students' },{ v:'95%', l:'Satisfaction' },{ v:'<1s', l:'Load' }],
+    results: [{ v:'Live', l:'Status' },{ v:'Mobile', l:'Responsive' },{ v:'Courses', l:'Catalog' }],
     services: ['Web App','Development','UI/UX'],
     year: '2024',
   },
@@ -80,7 +80,7 @@ const portfolioWork = [
     url: 'https://digitaldeveloperss.com/',
     desc: 'A high-performance agency website built to generate leads and showcase their IT services.',
     thumbnail: '/dg.webp',
-    results: [{ v:'5×', l:'Leads' },{ v:'40%', l:'Conversion' },{ v:'100', l:'Perf.' }],
+    results: [{ v:'Live', l:'Status' },{ v:'Mobile', l:'Responsive' },{ v:'SEO', l:'Ready' }],
     services: ['Website','Development','SEO'],
     year: '2024',
   },
@@ -88,20 +88,13 @@ const portfolioWork = [
 
 const portfolioFilters = ['All','Website Design','Web Development','UI/UX Design'];
 
-const testimonials = [
-  { q:'StandoutDev transformed our online presence completely. The new website is professional, fast, and has tripled our inquiry rate. Best investment we made for our business.', n:'Uma Metal Craft', r:'Manufacturing, Rajkot', c:'from-amber-500 to-orange-600', letter:'U', project:'umametalcraft.com' },
-  { q:"Our students and parents love the new platform. It's clean, loads instantly, and makes it easy to find course information. Enrollment went up significantly after launch.", n:'Siddhanath Krupa Physics', r:'Education Institute', c:'from-blue-500 to-indigo-600', letter:'S', project:'siddhanath-physics.vercel.app' },
-  { q:'We hired StandoutDev to build our agency website and the result exceeded every expectation. Fast, professional, and clients now reach out calling us a serious IT partner.', n:'Digital Developers', r:'Digital Agency', c:'from-violet-500 to-purple-600', letter:'D', project:'digitaldeveloperss.com' },
-  { q:'They understood our business first, then built the product. The new web app is easy for our team to use and our conversion rate went from near zero to 40% on the contact page.', n:'Rohan Mehta', r:'Founder, TechStart India', c:'from-cyan-400 to-emerald-400', letter:'R', project:'Client project' },
-];
-
 const stats = [
-  { value:15, suffix:'+',  prefix:'', label:'Projects Delivered' },
-  { value:10, suffix:'+',  prefix:'', label:'Happy Clients' },
-  { value:95, suffix:'%',  prefix:'', label:'Client Satisfaction' },
-  { value:3,  suffix:'+',  prefix:'', label:'Industries Served' },
-  { value:48, suffix:'hr', prefix:'', label:'Avg Kickoff Time' },
-  { value:4.9,suffix:'★',  prefix:'', label:'Average Rating' },
+  { value:3,    suffix:'',   prefix:'', label:'Client Projects Live' },
+  { value:3,    suffix:'',   prefix:'', label:'Industries Served' },
+  { value:2026, suffix:'',   prefix:'', label:'Founded' },
+  { value:24,   suffix:'hr', prefix:'', label:'Reply Time' },
+  { value:100,  suffix:'%',  prefix:'', label:'Code Ownership' },
+  { value:0,    suffix:'',   prefix:'', label:'Vendor Lock-in' },
 ];
 
 const processSteps = [
@@ -401,51 +394,6 @@ const GridProjectCard = memo(function GridProjectCard({ p, i }) {
 });
 
 /* ============================================
-   TESTIMONIAL CARD
-============================================ */
-const TestimonialCard = memo(function TestimonialCard({ t, i }) {
-  const ref   = useRef(null);
-  const inView = useInView(ref, { once:true, margin:'-60px' });
-  return (
-    <motion.div ref={ref}
-      initial={{ opacity:0, y:30 }}
-      animate={inView ? { opacity:1, y:0 } : {}}
-      transition={{ duration:0.7, delay:i*0.08, ease:E }}
-    >
-      <div style={{
-        borderRadius:20, padding:'clamp(22px,3vw,32px)',
-        border:'1px solid rgba(15,23,42,0.07)',
-        background:'linear-gradient(135deg, rgba(15,23,42,0.03) 0%, rgba(15,23,42,0.02) 100%)',
-        position:'relative', overflow:'hidden',
-        transition:'all 0.5s cubic-bezier(0.22,1,0.36,1)',
-        display:'flex', flexDirection:'column', height:'100%',
-      }} className="testimonial-card-hover">
-        <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${t.c}`} style={{ opacity:0.6 }} />
-        <div className={`absolute -right-12 -top-12 h-36 w-36 rounded-full bg-gradient-to-br ${t.c}`} style={{ opacity:0.04, filter:'blur(32px)' }} />
-        <div style={{ display:'flex', gap:3, marginBottom:14 }}>
-          {[...Array(5)].map((_,k)=><Star key={k} className="h-3.5 w-3.5" style={{ fill:'#60a5fa', color:'#60a5fa' }} />)}
-        </div>
-        <p style={{ fontSize:'clamp(0.875rem,1.4vw,1rem)', lineHeight:1.7, color:'rgba(15,23,42,0.72)', flex:1, marginBottom:18, fontStyle:'italic' }}>
-          &ldquo;{t.q}&rdquo;
-        </p>
-        <div style={{ height:1, background:'rgba(15,23,42,0.07)', marginBottom:16 }} />
-        <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', gap:10 }}>
-          <div style={{ display:'flex', alignItems:'center', gap:10 }}>
-            <div className={`h-10 w-10 rounded-full bg-gradient-to-br ${t.c} flex items-center justify-center flex-shrink-0`}
-              style={{ fontWeight:800, color:'#ffffff', fontSize:14 }}>{t.letter}</div>
-            <div>
-              <div style={{ fontWeight:700, fontSize:13, color:'rgba(15,23,42,0.92)' }}>{t.n}</div>
-              <div style={{ fontSize:11, color:'rgba(15,23,42,0.4)' }}>{t.r}</div>
-            </div>
-          </div>
-          <div style={{ fontSize:9, padding:'3px 8px', borderRadius:100, background:'rgba(15,23,42,0.04)', border:'1px solid rgba(15,23,42,0.07)', color:'rgba(15,23,42,0.38)', whiteSpace:'nowrap' }}>{t.project}</div>
-        </div>
-      </div>
-    </motion.div>
-  );
-});
-
-/* ============================================
    PROCESS STEP
 ============================================ */
 const ProcessStep = memo(function ProcessStep({ step, i, total }) {
@@ -494,7 +442,7 @@ function ContactFormEmbed() {
       const d = await r.json();
       if(!r.ok){setError(d.error||'Something went wrong.');return;}
       setSubmitted(true);
-    } catch { setError('Could not send. Email us at standoutdev20@gmail.com'); }
+    } catch { setError('Could not send. Email us at contact@standoutdev.com'); }
     finally { setLoading(false); }
   };
   if (submitted) return (
@@ -530,7 +478,7 @@ function ContactFormEmbed() {
       <button type="submit" disabled={loading} style={{display:'inline-flex',alignItems:'center',gap:7,borderRadius:100,padding:'12px 24px',fontWeight:600,fontSize:13,background:'linear-gradient(135deg,#2563eb,#0891b2)',color:'#fff',border:'none',cursor:loading?'wait':'pointer',boxShadow:'0 4px 24px rgba(59,130,246,.28)',transition:'all 0.45s cubic-bezier(0.22,1,0.36,1)',opacity:loading?0.55:1}}>
         {loading?'Sending…':'Send Message'}{!loading&&<ArrowUpRight className="h-4 w-4"/>}
       </button>
-      <p style={{marginTop:12,fontSize:10,color:'rgba(15,23,42,0.16)'}}>Or email us at <a href="mailto:standoutdev20@gmail.com" style={{color:'rgba(96,165,250,0.45)'}}>standoutdev20@gmail.com</a></p>
+      <p style={{marginTop:12,fontSize:10,color:'rgba(15,23,42,0.16)'}}>Or email us at <a href="mailto:contact@standoutdev.com" style={{color:'rgba(96,165,250,0.45)'}}>contact@standoutdev.com</a></p>
     </form>
   );
 }
@@ -577,7 +525,6 @@ export default function HomeClient() {
         .pg-card{border-radius:16px;border:1px solid rgba(15,23,42,0.07);background:rgba(15,23,42,0.03);transition:all .5s cubic-bezier(0.22,1,0.36,1)}
         .pg-card:hover{background:rgba(15,23,42,0.04);border-color:rgba(15,23,42,0.09);transform:translateY(-2px)}
         :focus-visible{outline:2px solid #60a5fa;outline-offset:2px}
-        .testimonial-card-hover:hover{border-color:rgba(15,23,42,0.1)!important;transform:translateY(-3px);box-shadow:0 14px 44px rgba(0,0,0,0.28)}
       `}</style>
 
       <Hero />
@@ -638,7 +585,7 @@ export default function HomeClient() {
 
       {/* ══════════ MARQUEE ══════════ */}
       <section style={{position:'relative',padding:'44px 0',borderTop:'1px solid rgba(15,23,42,0.04)',borderBottom:'1px solid rgba(15,23,42,0.04)',background:BGA,overflow:'hidden'}}>
-        <p style={{textAlign:'center',...LBL,marginBottom:20}}>Trusted by businesses building with us</p>
+        <p style={{textAlign:'center',...LBL,marginBottom:20}}>Businesses we&apos;ve built for</p>
         {[clientLogos,clientLogos2].map((row,ri)=>(
           <div key={ri} style={{overflow:'hidden',marginBottom:ri===0?10:0}}>
             <div className={ri===0?'marquee-track':'marquee-track-reverse'} style={{gap:56,paddingRight:56}}>
@@ -753,30 +700,11 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* ══════════ TESTIMONIALS ══════════ */}
-      <section className="pg-section" style={{background:BG,padding:'clamp(64px,8vw,112px) 0'}}>
-        <div className="pg-orb" style={{top:60,left:'-10%',width:380,height:380,background:'radial-gradient(circle,rgba(37,99,235,.1) 0%,transparent 70%)'}} />
-        <div className="pg-orb" style={{bottom:60,right:'-8%',width:320,height:320,background:'radial-gradient(circle,rgba(139,92,246,.08) 0%,transparent 70%)'}} />
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center mb-12">
-            <p style={LBL}>Kind words</p>
-            <h2 style={{...HD,maxWidth:640,margin:'0 auto'}}><span style={wT}>Real results from </span><span style={gT}>real clients.</span></h2>
-            <div className="flex items-center justify-center gap-2 mt-5">
-              {[...Array(5)].map((_,i)=><Star key={i} className="h-4 w-4" style={{fill:'#60a5fa',color:'#60a5fa'}} />)}
-              <span style={{marginLeft:6,color:'rgba(15,23,42,0.42)',fontSize:13}}>4.9 / 5 average</span>
-            </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-5">
-            {testimonials.map((t,i)=><TestimonialCard key={t.n} t={t} i={i} />)}
-          </div>
-        </div>
-      </section>
-
       {/* ══════════ STATS ══════════ */}
       <section style={{position:'relative',padding:'clamp(64px,8vw,112px) 0',borderTop:'1px solid rgba(15,23,42,0.04)',borderBottom:'1px solid rgba(15,23,42,0.04)',background:`linear-gradient(to bottom,${BGA},${BG})`,overflow:'hidden'}}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-12">
-            <p style={LBL}>By the numbers</p>
+            <p style={LBL}>Where we stand</p>
             <h2 style={{...HD,maxWidth:860,margin:'0 auto'}}><span style={wT}>Why businesses choose StandoutDev for </span><span style={gT}>IT solutions</span><span style={wT}>?</span></h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { CKEditor } from '@ckeditor/ckeditor5-react'
 import CustomEditor from './ckeditor/CustomEditor'
+import { uploadBlogImage } from '@/lib/adminUpload'
 import 'ckeditor5/ckeditor5.css'
 
 class BlogImageUploadAdapter {
@@ -11,12 +12,13 @@ class BlogImageUploadAdapter {
   }
   async upload() {
     const file = await this.loader.file
-    const formData = new FormData()
-    formData.append('upload', file)
-    const res = await fetch('/api/admin/upload', { method: 'POST', body: formData })
-    const data = await res.json()
-    if (!res.ok) throw new Error(data.error || 'Upload failed.')
-    return { default: data.url, url: data.url }
+    try {
+      const url = await uploadBlogImage(file)
+      return { default: url }
+    } catch (error) {
+      // CKEditor shows a rejected string to the user.
+      throw error.message
+    }
   }
   abort() {}
 }
@@ -26,7 +28,7 @@ function uploadAdapterPlugin(editor) {
     new BlogImageUploadAdapter(loader)
 }
 
-export default function CKEditorField({ initialValue, onChange, placeholder }) {
+export default function CKEditorField({ initialValue, onChange, onReady, placeholder }) {
   const [loadError, setLoadError] = useState('')
 
   if (loadError) {
@@ -49,6 +51,9 @@ export default function CKEditorField({ initialValue, onChange, placeholder }) {
         onReady={(editor) => {
           const editable = editor.ui?.view?.editable?.element
           if (editable) editable.style.minHeight = '520px'
+          // CKEditor normalises the HTML it is given; report that baseline so
+          // the form doesn't flag an untouched post as having unsaved changes.
+          onReady?.(editor.getData())
         }}
         onChange={(_event, editor) => onChange(editor.getData())}
         onError={(error, { willEditorRestart }) => {

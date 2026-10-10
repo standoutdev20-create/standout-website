@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
-  ArrowUpRight, ArrowRight, CheckCircle, Star,
+  ArrowUpRight, ArrowRight, CheckCircle,
   Zap, Target, Shield, HeartHandshake, TrendingUp,
   Clock, Code2, Palette, Users, Award, Globe,
   Rocket, Lightbulb, Heart, MessageSquare,
@@ -57,7 +57,7 @@ const principles = [
     n: '03',
     icon: Clock,
     t: 'Speed without shortcuts',
-    d: 'Most agencies take 3–6 months. We ship in 4–8 weeks. Not because we cut corners — because we have a proven process and we don\'t waste time in unnecessary meetings.',
+    d: 'Most agencies take 3–6 months. We ship in 4–8 weeks. Not by cutting corners — by following a clear process and skipping unnecessary meetings.',
   },
   {
     n: '04',
@@ -69,24 +69,19 @@ const principles = [
 
 const milestones = [
   {
-    y: '2022',
+    y: 'Aug 2026',
     t: 'StandoutDev founded',
-    d: 'Started as an IT solutions company with a simple mission: build websites, apps, and software that actually stand out. First client was a local business in Rajkot that needed more than a template.',
+    d: 'Started in Pune as an IT solutions company with a simple mission: build websites, apps, and software that actually stand out — not templates.',
   },
   {
-    y: '2023',
-    t: 'First 5 projects shipped',
-    d: 'Expanded beyond local clients. Delivered manufacturing websites, education platforms, and agency sites. Learned what works and what doesn\'t.',
+    y: 'Today',
+    t: 'First client projects live',
+    d: 'Websites for Uma Metal Craft (manufacturing), Siddhanath Krupa Physics (education), and Digital Developers (agency) are live and serving their customers.',
   },
   {
-    y: '2024',
-    t: 'Results started speaking',
-    d: 'Uma Metal Craft saw 3× more inquiries. Siddhanath Physics enrolled 150+ students. Digital Developers generated 5× more leads. The proof was in the numbers.',
-  },
-  {
-    y: '2025',
+    y: 'Next',
     t: 'Growing with purpose',
-    d: 'Now serving clients across manufacturing, education, and digital businesses. Building websites, apps, and custom software — not just one-off pages.',
+    d: 'Taking on a small number of new clients at a time — websites, mobile apps, and custom software — so every project gets our full attention.',
   },
 ]
 
@@ -96,34 +91,16 @@ const values = [
   { icon: Shield,       t: 'You own everything',          d: 'All source code, all design files, all assets — yours from day one. No lock-in ever.' },
   { icon: MessageSquare,t: 'Radical transparency',        d: 'Weekly updates, honest timelines, clear scope. You\'ll never wonder what\'s happening.' },
   { icon: TrendingUp,   t: 'Measure what matters',        d: 'We track load times, conversion rates, and bounce rates — not just aesthetics.' },
-  { icon: HeartHandshake,t:'Long-term thinking',          d: 'We build relationships, not just projects. Most clients come back for their next thing.' },
+  { icon: HeartHandshake,t:'Long-term thinking',          d: 'We build relationships, not just projects — we want to be the team you call for your next one too.' },
 ]
 
 const stats = [
-  { v: '15+',  l: 'Projects delivered',   icon: Rocket },
-  { v: '10+',  l: 'Happy clients',         icon: Users },
-  { v: '95%',  l: 'Satisfaction rate',     icon: Star },
+  { v: '2026', l: 'Founded',               icon: Rocket },
+  { v: '3',    l: 'Client projects live',  icon: Users },
+  { v: '3',    l: 'Industries served',     icon: Globe },
   { v: '4–8',  l: 'Weeks to launch',       icon: Clock },
-  { v: '100',  l: 'Avg Lighthouse score',  icon: Zap },
-  { v: '3+',   l: 'Industries served',     icon: Globe },
-]
-
-const testimonials = [
-  {
-    q: 'StandoutDev transformed our online presence completely. The new website tripled our inquiry rate. Professional, fast, and exactly what we needed.',
-    n: 'Uma Metal Craft', r: 'Manufacturing, Rajkot',
-    c: 'from-amber-500 to-orange-600', letter: 'U',
-  },
-  {
-    q: 'Enrollment went up significantly after launch. The platform is clean, loads instantly, and students actually enjoy using it. Incredible work.',
-    n: 'Siddhanath Krupa Physics', r: 'Education Institute',
-    c: 'from-blue-500 to-indigo-600', letter: 'S',
-  },
-  {
-    q: 'Fast, professional, and easy to maintain. Clients now treat us as a serious IT partner because of the website StandoutDev built. Worth every rupee.',
-    n: 'Digital Developers', r: 'Digital Agency',
-    c: 'from-violet-500 to-purple-600', letter: 'D',
-  },
+  { v: '24hr', l: 'Reply time',            icon: Zap },
+  { v: '100%', l: 'Code ownership',        icon: Shield },
 ]
 
 /* ============================================
@@ -264,10 +241,10 @@ function About() {
             }}
           >
             {[
-              { v:'2022', l:'Founded' },
-              { v:'15+', l:'Projects shipped' },
-              { v:'95%', l:'Client satisfaction' },
-              { v:'3+', l:'Industries' },
+              { v:'2026', l:'Founded' },
+              { v:'3', l:'Client projects live' },
+              { v:'3', l:'Industries' },
+              { v:'24hr', l:'Reply time' },
             ].map((s) => (
               <div key={s.l} style={{ display:'flex', flexDirection:'column' }}>
                 <span style={{ fontSize:'clamp(1.3rem,2.5vw,1.8rem)', fontWeight:900, ...gT }}>{s.v}</span>
@@ -494,8 +471,8 @@ function About() {
                 <span style={gT}>where we&apos;re going.</span>
               </h2>
               <p style={{ ...BD, marginTop:16, maxWidth:420, fontSize:14 }}>
-                StandoutDev started small and stayed focused. Here&apos;s the honest version of our journey —
-                no exaggeration, no hype.
+                StandoutDev is a young company, and we&apos;re proud of it. Here&apos;s the honest version of
+                our journey — no exaggeration, no hype.
               </p>
 
               {/* Current focus card */}
@@ -614,74 +591,6 @@ function About() {
         </div>
       </section>
 
-      {/* ══════════ TESTIMONIALS ══════════ */}
-      <section style={{
-        position:'relative', padding:'clamp(64px,8vw,112px) 0',
-        background:BGA, overflow:'hidden',
-        borderTop:'1px solid rgba(15,23,42,0.04)',
-      }}>
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center" style={{ marginBottom:'clamp(32px,5vw,56px)' }}>
-            <p style={LBL}>From our clients</p>
-            <h2 style={{ ...HD, maxWidth:640, margin:'0 auto' }}>
-              <span style={wT}>What it&apos;s like to </span>
-              <span style={gT}>work with us.</span>
-            </h2>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={t.n}
-                initial={{ opacity:0, y:28 }} whileInView={{ opacity:1, y:0 }}
-                viewport={{ once:true }}
-                transition={{ duration:0.7, delay:i*0.08, ease:E }}
-                style={{
-                  borderRadius:20, padding:'clamp(22px,3vw,32px)',
-                  border:'1px solid rgba(15,23,42,0.07)',
-                  background:'rgba(15,23,42,0.03)',
-                  position:'relative', overflow:'hidden',
-                  display:'flex', flexDirection:'column',
-                  transition:'all 0.5s cubic-bezier(0.22,1,0.36,1)',
-                }}
-                className="hover:bg-slate-50 hover:border-slate-300 hover:-translate-y-0.5"
-              >
-                <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${t.c}`} style={{ opacity:0.55 }} />
-
-                <div style={{ display:'flex', gap:2, marginBottom:14 }}>
-                  {[...Array(5)].map((_, k) => (
-                    <Star key={k} className="h-3.5 w-3.5" style={{ fill:'#60a5fa', color:'#60a5fa' }} />
-                  ))}
-                </div>
-
-                <p style={{
-                  fontSize:13, lineHeight:1.7,
-                  color:'rgba(15,23,42,0.72)', flex:1,
-                  marginBottom:18, fontStyle:'italic',
-                }}>
-                  &ldquo;{t.q}&rdquo;
-                </p>
-
-                <div style={{ height:1, background:'rgba(15,23,42,0.07)', marginBottom:16 }} />
-
-                <div style={{ display:'flex', alignItems:'center', gap:10 }}>
-                  <div
-                    className={`h-9 w-9 rounded-full bg-gradient-to-br ${t.c} flex items-center justify-center flex-shrink-0`}
-                    style={{ fontWeight:800, color:'#ffffff', fontSize:13 }}
-                  >
-                    {t.letter}
-                  </div>
-                  <div>
-                    <div style={{ fontWeight:700, fontSize:13, color:'rgba(15,23,42,0.92)' }}>{t.n}</div>
-                    <div style={{ fontSize:11, color:'rgba(15,23,42,0.4)' }}>{t.r}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ══════════ FINAL CTA ══════════ */}
       <section style={{ position:'relative', padding:'clamp(64px,8vw,112px) 0', overflow:'hidden' }}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse at 50% 0%,#0a1a35 0%,#f8fafc 40%,#ffffff 100%)' }} />
@@ -735,7 +644,7 @@ function About() {
               </Link>
             </div>
             <p style={{ marginTop:18, fontSize:11, color:'rgba(15,23,42,0.18)' }}>
-              standoutdev20@gmail.com &bull; Reply within 24 hours
+              contact@standoutdev.com &bull; Reply within 24 hours
             </p>
           </motion.div>
         </div>

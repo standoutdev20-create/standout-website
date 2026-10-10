@@ -103,7 +103,7 @@ const organizationJsonLd = {
   name: SITE_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
-  email: "standoutdev20@gmail.com",
+  email: "contact@standoutdev.com",
   telephone: "+91-93223-96236",
   address: {
     "@type": "PostalAddress",
@@ -115,7 +115,7 @@ const organizationJsonLd = {
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+91-93223-96236",
-    email: "standoutdev20@gmail.com",
+    email: "contact@standoutdev.com",
     contactType: "customer service",
   },
 };

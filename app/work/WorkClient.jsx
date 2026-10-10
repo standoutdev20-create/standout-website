@@ -31,7 +31,7 @@ const projects = [
     url: 'https://umametalcraft.com/',
     desc: 'A premium manufacturing website for Uma Metal Craft — showcasing their industrial expertise with a modern, conversion-focused design.',
     fullDesc: 'Uma Metal Craft is a leading manufacturer specializing in precision metal components, custom fabrication, and industrial solutions. They needed a digital presence that reflected the quality and precision of their metalwork while driving business inquiries from potential clients across industries.',
-    challenge: 'The existing web presence was outdated and failed to communicate the company\'s manufacturing capabilities effectively. Potential clients couldn\'t easily browse products, understand capabilities, or submit inquiries. The site had high bounce rates and minimal lead generation.',
+    challenge: 'The existing web presence was outdated and failed to communicate the company\'s manufacturing capabilities effectively. Potential clients couldn\'t easily browse products, understand capabilities, or submit inquiries.',
     solution: 'We designed and developed a complete website overhaul with an intuitive product catalog system, detailed capability showcases, and a streamlined inquiry flow. The site features smooth scroll animations, responsive design across all devices, and an SEO-optimized structure to improve organic discoverability.',
     keyFeatures: [
       { icon: Layout, title: 'Product Catalog', desc: 'Organized product showcase with categories, specifications, and high-quality imagery' },
@@ -44,16 +44,11 @@ const projects = [
     services: ['Web Design', 'Frontend Development', 'UI/UX Design', 'SEO Optimization', 'Content Strategy', 'Performance Tuning'],
     tech: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
     results: [
-      { metric: '3×', label: 'More Inquiries', desc: 'Lead generation tripled within 2 months of launch' },
-      { metric: '60%', label: 'Bounce Rate Drop', desc: 'Visitors now explore an average of 4+ pages per session' },
-      { metric: '2.1s', label: 'Load Time', desc: 'From 8+ seconds down to under 2.5s on mobile networks' },
-      { metric: '85+', label: 'Performance Score', desc: 'Lighthouse performance score across all key pages' },
+      { metric: 'Live', label: 'In Production', desc: 'Live at umametalcraft.com and open to buyers' },
+      { metric: '100%', label: 'Responsive', desc: 'Works on desktop, tablet, and mobile' },
+      { metric: 'SEO', label: 'Ready', desc: 'Clean structure and metadata for search engines' },
+      { metric: 'Direct', label: 'Inquiry Flow', desc: 'Buyers can go from product to inquiry in a few clicks' },
     ],
-    testimonial: {
-      quote: 'StandoutDev transformed our online presence completely. We now receive quality inquiries daily through the website.',
-      name: 'Uma Metal Craft',
-      role: 'Management Team',
-    },
     thumbnail: '/uma1.webp',
     screenshots: [
       '/uma1.webp',
@@ -82,23 +77,18 @@ const projects = [
       { icon: Users, title: 'Student Portal', desc: 'Dedicated sections for course details, schedules, and faculty information' },
       { icon: Layout, title: 'Clean Interface', desc: 'Student-friendly design with clear typography and intuitive navigation' },
       { icon: Smartphone, title: 'Mobile First', desc: 'Optimized for mobile devices where most students access the platform' },
-      { icon: Zap, title: 'Instant Loading', desc: 'Sub-second page loads for seamless browsing experience' },
+      { icon: Zap, title: 'Fast Loading', desc: 'Lightweight pages for a smooth browsing experience' },
       { icon: Megaphone, title: 'Announcements', desc: 'Real-time updates for schedule changes, exam dates, and notices' },
       { icon: PenTool, title: 'Brand Identity', desc: 'Complete visual identity reflecting academic excellence and trust' },
     ],
     services: ['UI/UX Design', 'Web Development', 'Web App', 'Content Strategy', 'Mobile Optimization', 'Deployment'],
     tech: ['Next.js', 'React', 'Tailwind CSS', 'Vercel', 'Responsive Design'],
     results: [
-      { metric: '150+', label: 'Students Enrolled', desc: 'New enrollments driven directly through the website' },
-      { metric: '95%', label: 'Satisfaction Rate', desc: 'Based on student and parent feedback surveys' },
-      { metric: '<1s', label: 'Page Load', desc: 'Blazing fast performance across all pages' },
-      { metric: '4.9★', label: 'User Rating', desc: 'Average rating from student feedback' },
+      { metric: 'Live', label: 'In Production', desc: 'Live and used by students and parents' },
+      { metric: 'Mobile', label: 'First', desc: 'Designed for the phones most students use' },
+      { metric: '1', label: 'Place for Info', desc: 'Courses, schedules, and contact details in one site' },
+      { metric: 'Fast', label: 'Page Loads', desc: 'Lightweight pages that load quickly on mobile data' },
     ],
-    testimonial: {
-      quote: 'The website has become an essential part of our institute. Students and parents love how easy it is to find information.',
-      name: 'Siddhanath Krupa Physics',
-      role: 'Institute Director',
-    },
     thumbnail: '/phy1.webp',
     screenshots: [
       '/phy1.webp',
@@ -128,22 +118,17 @@ const projects = [
       { icon: Monitor, title: '3D Elements', desc: 'Three.js powered 3D visuals showcasing technical capabilities' },
       { icon: BarChart3, title: 'Case Studies', desc: 'Detailed project showcases with results and testimonials' },
       { icon: Target, title: 'Conversion Focused', desc: 'Strategic CTA placement and lead capture throughout the site' },
-      { icon: Zap, title: 'Performance', desc: 'Perfect 100 Lighthouse score with optimized assets and code' },
+      { icon: Zap, title: 'Performance', desc: 'Optimized assets and code for fast loading' },
       { icon: Award, title: 'Brand Authority', desc: 'Visual design that positions the agency as an industry leader' },
     ],
     services: ['Website', 'Web Design', 'Full-Stack Development', 'Lead Generation', 'SEO & Analytics'],
     tech: ['Next.js', 'Three.js', 'Framer Motion', 'Tailwind CSS', 'React', 'Vercel'],
     results: [
-      { metric: '5×', label: 'Lead Generation', desc: 'Five-fold increase in qualified project inquiries' },
-      { metric: '40%', label: 'Conversion Rate', desc: 'Visitor-to-lead conversion rate on contact pages' },
-      { metric: '100', label: 'Performance Score', desc: 'Perfect Google Lighthouse performance score' },
-      { metric: '12s', label: 'Avg. Session', desc: 'Average time spent on site per visitor' },
+      { metric: 'Live', label: 'In Production', desc: 'Live at digitaldeveloperss.com' },
+      { metric: '3D', label: 'Visuals', desc: 'Three.js visuals that showcase their technical skills' },
+      { metric: 'Clear', label: 'Service Pages', desc: 'Each service explained with its own structured page' },
+      { metric: 'Lead', label: 'Focused', desc: 'Contact paths placed throughout the site' },
     ],
-    testimonial: {
-      quote: 'Our new website has completely changed how clients perceive us. We\'re now landing enterprise projects we couldn\'t before.',
-      name: 'Digital Developers',
-      role: 'Founding Team',
-    },
     thumbnail: '/dg.webp',
     screenshots: [
       '/dg.webp',
@@ -832,8 +817,8 @@ function ProjectDetail({ project, onClose }) {
             <span className="detail-section-label-dot" /> Results
           </div>
           <div className="detail-section-title" style={{ marginBottom: 32 }}>
-            <span className="white">The </span>
-            <span className="grad">Impact.</span>
+            <span className="white">What we </span>
+            <span className="grad">delivered.</span>
           </div>
           <div className="detail-results-grid">
             {project.results.map((r, i) => (
@@ -878,27 +863,29 @@ function ProjectDetail({ project, onClose }) {
           </div>
         </motion.div>
 
-        {/* ── Testimonial ── */}
-        <motion.div className="detail-section"
-          initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.7, ease: smoothEase }}>
-          <div className="detail-section-label">
-            <span className="detail-section-label-dot" /> Client Feedback
-          </div>
-          <div className="detail-testimonial">
-            <div className={`detail-testimonial-glow bg-gradient-to-br ${project.color}`} />
-            <p className="detail-testimonial-quote">"{project.testimonial.quote}"</p>
-            <div className="detail-testimonial-author">
-              <div className={`detail-testimonial-avatar bg-gradient-to-br ${project.color}`}>
-                {project.testimonial.name.charAt(0)}
-              </div>
-              <div>
-                <div className="detail-testimonial-name">{project.testimonial.name}</div>
-                <div className="detail-testimonial-role">{project.testimonial.role}</div>
+        {/* ── Testimonial (only when a real, client-approved quote exists) ── */}
+        {project.testimonial && (
+          <motion.div className="detail-section"
+            initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.7, ease: smoothEase }}>
+            <div className="detail-section-label">
+              <span className="detail-section-label-dot" /> Client Feedback
+            </div>
+            <div className="detail-testimonial">
+              <div className={`detail-testimonial-glow bg-gradient-to-br ${project.color}`} />
+              <p className="detail-testimonial-quote">"{project.testimonial.quote}"</p>
+              <div className="detail-testimonial-author">
+                <div className={`detail-testimonial-avatar bg-gradient-to-br ${project.color}`}>
+                  {project.testimonial.name.charAt(0)}
+                </div>
+                <div>
+                  <div className="detail-testimonial-name">{project.testimonial.name}</div>
+                  <div className="detail-testimonial-role">{project.testimonial.role}</div>
+                </div>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        )}
 
         {/* ── Live Preview ── */}
         <motion.div className="detail-section"

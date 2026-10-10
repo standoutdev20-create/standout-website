@@ -7,7 +7,7 @@ import Image from 'next/image'
 import {
   ArrowUpRight, ArrowRight, Palette, Code2, Play, Rocket, Brain, Cpu,
   Globe, Smartphone, ShoppingCart, LayoutDashboard, Layers,
-  MonitorPlay, CheckCircle, Star, Zap, Target, Users,
+  MonitorPlay, CheckCircle, Zap, Target, Users,
   Clock, Shield, HeartHandshake, MessagesSquare, Search, Eye,
   FlaskConical, Sparkles, TrendingUp, Award,
 } from 'lucide-react'
@@ -33,7 +33,7 @@ const services = [
     deliverables: ['Business & marketing websites', 'SEO-ready structure', 'CMS so you can update content', 'Contact & lead forms'],
     color: 'from-emerald-400 to-teal-500',
     colorRgb: '52,211,153',
-    stat: { v: '3×', l: 'Avg inquiry lift' },
+    stat: { v: 'SEO', l: 'Built in from day one' },
   },
   {
     icon: Smartphone,
@@ -43,7 +43,7 @@ const services = [
     deliverables: ['iOS & Android apps', 'Cross-platform builds', 'API & backend integration', 'App store submission'],
     color: 'from-sky-400 to-blue-500',
     colorRgb: '56,189,248',
-    stat: { v: '4.8★', l: 'Avg app rating' },
+    stat: { v: 'iOS + Android', l: 'Store-ready builds' },
   },
   {
     icon: Code2,
@@ -53,7 +53,7 @@ const services = [
     deliverables: ['Custom web applications', 'API & backend development', 'Third-party integrations', 'Admin panels'],
     color: 'from-cyan-400 to-emerald-400',
     colorRgb: '6,182,212',
-    stat: { v: '100', l: 'Lighthouse score' },
+    stat: { v: '100%', l: 'Code ownership' },
   },
   {
     icon: LayoutDashboard,
@@ -63,7 +63,7 @@ const services = [
     deliverables: ['SaaS platforms', 'Admin & analytics dashboards', 'User roles & permissions', 'Onboarding flows'],
     color: 'from-indigo-500 to-violet-500',
     colorRgb: '99,102,241',
-    stat: { v: '40%', l: 'Fewer support tickets' },
+    stat: { v: 'Multi-user', l: 'Roles & permissions' },
   },
   {
     icon: ShoppingCart,
@@ -73,7 +73,7 @@ const services = [
     deliverables: ['Shopify & custom stores', 'Product catalog & checkout', 'Payment integration', 'Order & inventory setup'],
     color: 'from-pink-500 to-rose-500',
     colorRgb: '236,72,153',
-    stat: { v: '2.5×', l: 'Revenue increase' },
+    stat: { v: 'Shopify', l: 'Or fully custom' },
   },
   {
     icon: Palette,
@@ -83,7 +83,7 @@ const services = [
     deliverables: ['User flows & wireframes', 'Product UI design', 'Interactive prototypes', 'Usability reviews'],
     color: 'from-blue-500 to-cyan-500',
     colorRgb: '59,130,246',
-    stat: { v: '95%', l: 'Client satisfaction' },
+    stat: { v: 'Prototype', l: 'Before we code' },
   },
   {
     icon: MonitorPlay,
@@ -93,7 +93,7 @@ const services = [
     deliverables: ['WordPress & headless CMS', 'Custom content types', 'Editor-friendly admin', 'Training & handoff'],
     color: 'from-amber-400 to-orange-500',
     colorRgb: '251,191,36',
-    stat: { v: '15+', l: 'CMS sites shipped' },
+    stat: { v: 'Self-edit', l: 'No developer needed' },
   },
   {
     icon: Layers,
@@ -103,7 +103,7 @@ const services = [
     deliverables: ['Product & tech scoping', 'Architecture advice', 'Launch support', 'Ongoing maintenance'],
     color: 'from-violet-500 to-purple-600',
     colorRgb: '139,92,246',
-    stat: { v: '48hr', l: 'Avg kickoff time' },
+    stat: { v: '24hr', l: 'Reply time' },
   },
 ]
 
@@ -176,37 +176,7 @@ const whyUs = [
   { icon: Shield, title: '100% ownership', desc: 'You own everything — code, designs, assets. No lock-in, no recurring fees.' },
   { icon: MessagesSquare, title: 'Direct communication', desc: 'Talk directly to the people doing the work. No account managers in between.' },
   { icon: TrendingUp, title: 'Measurable results', desc: 'We track what matters: load time, conversion rate, bounce rate, revenue.' },
-  { icon: HeartHandshake, title: 'Long-term partnership', desc: 'Most clients stay with us after launch for iterations and new features.' },
-]
-
-/* ============================================
-   REAL TESTIMONIALS
-============================================ */
-const testimonials = [
-  {
-    q: 'StandoutDev transformed our online presence completely. The new website tripled our inquiry rate within the first month. Professional, fast, and exactly what we needed.',
-    n: 'Uma Metal Craft',
-    r: 'Manufacturing, Rajkot',
-    c: 'from-amber-500 to-orange-600',
-    letter: 'U',
-    result: '3× more inquiries',
-  },
-  {
-    q: "Students and parents love the platform. It loads instantly, looks professional, and enrollment went up significantly after launch. Best decision we made.",
-    n: 'Siddhanath Krupa Physics',
-    r: 'Education Institute',
-    c: 'from-blue-500 to-indigo-600',
-    letter: 'S',
-    result: '150+ students enrolled',
-  },
-  {
-    q: 'The result exceeded every expectation. Fast website, clean product, and clients now treat us as a serious IT partner. Worth every rupee.',
-    n: 'Digital Developers',
-    r: 'Digital Agency',
-    c: 'from-violet-500 to-purple-600',
-    letter: 'D',
-    result: '5× lead generation',
-  },
+  { icon: HeartHandshake, title: 'Long-term partnership', desc: 'We stay on after launch for updates, iterations, and new features when you need them.' },
 ]
 
 /* ============================================
@@ -707,10 +677,10 @@ function Services() {
             }}
           >
             {[
-              { v: '15+', l: 'Projects shipped' },
-              { v: '95%', l: 'Satisfaction rate' },
+              { v: '3', l: 'Client projects live' },
               { v: '4–8', l: 'Weeks to launch' },
-              { v: '100', l: 'Lighthouse avg' },
+              { v: '24hr', l: 'Reply time' },
+              { v: '100%', l: 'Code ownership' },
             ].map((s) => (
               <div key={s.l} style={{ display: 'flex', flexDirection: 'column' }}>
                 <span style={{ fontSize: 'clamp(1.3rem,2.5vw,1.8rem)', fontWeight: 900, ...gT }}>{s.v}</span>
@@ -933,102 +903,6 @@ function Services() {
 
  
 
-      {/* ══════════ TESTIMONIALS ══════════ */}
-      <section style={{ position: 'relative', padding: 'clamp(64px,8vw,112px) 0', background: BG, overflow: 'hidden' }}>
-        <div
-          className="pg-orb"
-          style={{ top: 60, left: '-8%', width: 350, height: 350, background: 'radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 70%)' }}
-        />
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center" style={{ marginBottom: 'clamp(32px,5vw,56px)' }}>
-            <p style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.3em', color: 'rgba(96,165,250,0.8)', marginBottom: 16, fontWeight: 600 }}>
-              Client results
-            </p>
-            <h2 style={{ fontWeight: 900, lineHeight: 1.02, letterSpacing: '-0.03em', fontSize: 'clamp(2rem,4.5vw,3.5rem)', maxWidth: 600, margin: '0 auto' }}>
-              <span style={wT}>Don&apos;t take our word for it. </span>
-              <span style={gT}>See the results.</span>
-            </h2>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={t.n}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: i * 0.08, ease: E }}
-                style={{
-                  borderRadius: 20,
-                  padding: 'clamp(22px,3vw,32px)',
-                  border: '1px solid rgba(15,23,42,0.07)',
-                  background: 'rgba(15,23,42,0.03)',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}
-              >
-                <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${t.c}`} style={{ opacity: 0.5 }} />
-
-                {/* Result badge */}
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 5,
-                    padding: '5px 12px',
-                    borderRadius: 100,
-                    background: 'rgba(52,211,153,0.08)',
-                    border: '1px solid rgba(52,211,153,0.15)',
-                    marginBottom: 16,
-                    width: 'fit-content',
-                  }}
-                >
-                  <TrendingUp className="h-3 w-3" style={{ color: 'rgba(52,211,153,0.8)' }} />
-                  <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(52,211,153,0.9)' }}>{t.result}</span>
-                </div>
-
-                {/* Stars */}
-                <div style={{ display: 'flex', gap: 2, marginBottom: 14 }}>
-                  {[...Array(5)].map((_, k) => (
-                    <Star key={k} className="h-3.5 w-3.5" style={{ fill: '#60a5fa', color: '#60a5fa' }} />
-                  ))}
-                </div>
-
-                <p
-                  style={{
-                    fontSize: 13,
-                    lineHeight: 1.7,
-                    color: 'rgba(15,23,42,0.72)',
-                    flex: 1,
-                    marginBottom: 18,
-                    fontStyle: 'italic',
-                  }}
-                >
-                  &ldquo;{t.q}&rdquo;
-                </p>
-
-                <div style={{ height: 1, background: 'rgba(15,23,42,0.07)', marginBottom: 16 }} />
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <div
-                    className={`h-9 w-9 rounded-full bg-gradient-to-br ${t.c} flex items-center justify-center flex-shrink-0`}
-                    style={{ fontWeight: 800, color: '#ffffff', fontSize: 13 }}
-                  >
-                    {t.letter}
-                  </div>
-                  <div>
-                    <div style={{ fontWeight: 700, fontSize: 13, color: 'rgba(15,23,42,0.92)' }}>{t.n}</div>
-                    <div style={{ fontSize: 11, color: 'rgba(15,23,42,0.4)' }}>{t.r}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ══════════ FINAL CTA ══════════ */}
       <section style={{ position: 'relative', padding: 'clamp(64px,8vw,112px) 0', overflow: 'hidden' }}>
         <div
@@ -1108,7 +982,7 @@ function Services() {
                 Book Free Consultation <ArrowUpRight className="h-4 w-4" />
               </Link>
               <a
-                href="mailto:standoutdev20@gmail.com"
+                href="mailto:contact@standoutdev.com"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -1128,7 +1002,7 @@ function Services() {
               </a>
             </div>
             <p style={{ marginTop: 18, fontSize: 11, color: 'rgba(15,23,42,0.18)' }}>
-              standoutdev20@gmail.com • Typically reply within 24 hours
+              contact@standoutdev.com • Typically reply within 24 hours
             </p>
           </motion.div>
         </div>

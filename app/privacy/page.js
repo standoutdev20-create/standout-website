@@ -52,7 +52,7 @@ const sections = [
   },
   {
     t: 'Contact us',
-    d: 'If you have questions about this Privacy Policy or how we handle your data, contact us at standoutdev20@gmail.com, call +91 93223 96236, or write to Standoutdev, Pune, Maharashtra 411052, India.',
+    d: 'If you have questions about this Privacy Policy or how we handle your data, contact us at contact@standoutdev.com, call +91 93223 96236, or write to Standoutdev, Pune, Maharashtra 411052, India.',
   },
 ]
 

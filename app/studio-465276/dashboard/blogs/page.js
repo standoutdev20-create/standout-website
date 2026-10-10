@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getDb } from '@/lib/mongodb'
+import { serializeBlogForClient } from '@/lib/blog'
 import { ADMIN_BLOGS } from '@/lib/constants/admin'
 import { Button } from '@/components/ui/button'
 import BlogTable from '@/components/admin/BlogTable'
@@ -9,13 +10,11 @@ export const metadata = { title: 'Blogs — StandoutDev', robots: { index: false
 
 export default async function BlogsListPage() {
   const db = await getDb()
-  const posts = await db.collection('blogs').find({}).sort({ createdAt: -1 }).toArray()
-  const serialized = posts.map(({ _id, ...rest }) => ({
-    ...rest,
-    createdAt: rest.createdAt?.toISOString?.() ?? null,
-    updatedAt: rest.updatedAt?.toISOString?.() ?? null,
-    publishedAt: rest.publishedAt?.toISOString?.() ?? null,
-  }))
+  const posts = await db.collection('blogs')
+    .find({}, { projection: { content: 0 } })
+    .sort({ updatedAt: -1 })
+    .toArray()
+  const serialized = posts.map(serializeBlogForClient)
 
   return (
     <div>
