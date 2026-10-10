@@ -28,7 +28,7 @@ const localBusinessJsonLd = {
   name: 'StandoutDev',
   url: `${SITE_URL}/contact`,
   email: 'contact@standoutdev.com',
-  telephone: '+91-93223-96236',
+  telephone: '+91-88780-25649',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Pune',

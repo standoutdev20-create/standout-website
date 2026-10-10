@@ -9,7 +9,7 @@ const emptyForm = { name: '', email: '', phone: '', service: '', description: ''
 
 const contactItems = [
   { icon: Mail, label: 'Email', value: 'contact@standoutdev.com', href: 'mailto:contact@standoutdev.com' },
-  { icon: Phone, label: 'Phone', value: '+91 93223 96236', href: 'tel:+919322396236' },
+  { icon: Phone, label: 'Phone', value: '+91 88780 25649', href: 'tel:+918878025649' },
   { icon: MapPin, label: 'Studio', value: 'Pune, Maharashtra 411052 · Working worldwide' },
   { icon: Clock, label: 'Response time', value: 'Within one business day' },
 ]

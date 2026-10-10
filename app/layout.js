@@ -9,6 +9,7 @@ import Footer from "@/components/site/Footer";
 import Grain from "@/components/site/Grain";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CustomCursor from "@/components/site/CustomCursor";
+import WhatsAppButton from "@/components/site/WhatsAppButton";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -104,7 +105,7 @@ const organizationJsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   email: "contact@standoutdev.com",
-  telephone: "+91-93223-96236",
+  telephone: "+91-88780-25649",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Pune",
@@ -114,7 +115,7 @@ const organizationJsonLd = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+91-93223-96236",
+    telephone: "+91-88780-25649",
     email: "contact@standoutdev.com",
     contactType: "customer service",
   },
@@ -179,6 +180,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <Navbar />
             <main className="relative z-10">{children}</main>
             <Footer />
+            <WhatsAppButton />
           </SmoothScrollProvider>
         </Providers>
       </body>

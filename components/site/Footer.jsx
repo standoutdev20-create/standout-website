@@ -364,7 +364,7 @@ export default function Footer() {
                   color: "rgba(15,23,42,.45)",
                 }}
               >
-                +91 93223 96236
+                +91 88780 25649
               </p>
             </div>
           </div>
