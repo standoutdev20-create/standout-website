@@ -5,7 +5,7 @@ import Script from "next/script";
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Providers } from "./providers";
 import Navbar from "@/components/site/Navbar";
-import Footer from "@/components/site/Footer";
+//import Footer from "@/components/site/Footer";
 import Grain from "@/components/site/Grain";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CustomCursor from "@/components/site/CustomCursor";
@@ -179,7 +179,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <CustomCursor />
             <Navbar />
             <main className="relative z-10">{children}</main>
-            <Footer />
+     
             <WhatsAppButton />
           </SmoothScrollProvider>
         </Providers>
