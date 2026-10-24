@@ -6,6 +6,7 @@ export default function HomePage() {
     <>
       <HomeClient />
       <ServiceClient />
+      <WorkClient />
     </>
   );
 }
