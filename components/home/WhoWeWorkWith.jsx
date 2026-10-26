@@ -89,11 +89,11 @@ export default function WhoWeWorkWith() {
 
         {/* RIGHT IMAGE CONTAINER */}
         <div className="rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 min-h-[420px] relative flex">
-          <img 
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" 
-            alt="Team Working Together" 
-            className="w-full h-full object-cover rounded-3xl"
-          />
+          <img
+  src="/images/WeWork.png"
+  alt="How We Work"
+  className="w-full h-auto object-contain"
+/>
         </div>
 
       </div>
