@@ -2,6 +2,18 @@
 export default function HeroSection() {
   return (
     <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#b8bec9] via-[#dcdfe5] to-[#f8f9fa] px-4 py-20 font-sans text-slate-900">
+
+      {/* Background image */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/Gradient.png')",
+        }}
+      />
+
+      {/* Light overlay for text readability */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-900/20 via-white/40 to-white/95" />
+
       {/* Background glass effect */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-30">
         <div className="h-[400px] w-[600px] rotate-12 transform rounded-3xl border border-blue-400/40 shadow-2xl backdrop-blur-sm" />
@@ -46,7 +58,7 @@ export default function HeroSection() {
 
           <button
             type="button"
-            className="flex items-center justify-between gap-4 rounded-full border border-slate-300 bg-white py-2 pl-6 pr-2 font-medium text-slate-900 shadow-sm transition-all duration-300 hover:border-slate-400"
+            className="flex items-center justify-between gap-4 rounded-full border border-slate-300 bg-white/80 py-2 pl-6 pr-2 font-medium text-slate-900 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-slate-400"
           >
             <span>Explore Our Services</span>
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
