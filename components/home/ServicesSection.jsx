@@ -43,10 +43,12 @@ export default function ServicesSection() {
       {/* Top Header Badge with Logo */}
       <div className="flex items-center justify-center gap-3 mb-6">
         {/* Dark Logo Icon */}
-        <div className="w-10 h-10 bg-[#0B0F19] rounded-full flex items-center justify-center shadow-md">
-          <svg className="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
+        <div className="w-10 h-10 bg-[#0B0F19] rounded-xl flex items-center justify-center shadow-md overflow-hidden p-1.5">
+          <img 
+            src="/images/Group.png" 
+            alt="StandoutDev Logo" 
+            className="w-full h-full object-contain"
+          />
         </div>
 
         {/* Pill Badge */}

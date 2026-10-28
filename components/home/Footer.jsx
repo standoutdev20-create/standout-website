@@ -12,10 +12,12 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
             <div className="flex items-center gap-2">
               {/* StandoutDev Logo Icon */}
-              <div className="w-9 h-9 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-md">
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
+              <div className="w-9 h-9 bg-[#0B0F19] border border-slate-800 rounded-xl flex items-center justify-center shadow-md overflow-hidden p-1.5">
+                <img 
+                  src="/images/Group.png" 
+                  alt="StandoutDev Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="text-xl font-extrabold text-white tracking-tight">
                 Standout<span className="text-blue-500">Dev</span>

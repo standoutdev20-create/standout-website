@@ -41,8 +41,12 @@ export default function ContactSection() {
           <div>
             {/* Top Badge */}
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 bg-white/10 border border-white/20 rounded-full flex items-center justify-center font-extrabold text-white text-lg backdrop-blur-md">
-                S.
+              <div className="w-10 h-10 bg-[#0B0F19] border border-white/20 rounded-xl flex items-center justify-center shadow-md overflow-hidden p-1.5 backdrop-blur-md">
+                <img 
+                  src="/images/Group.png" 
+                  alt="StandoutDev Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="inline-flex items-center bg-white/5 border border-white/10 px-4 py-1.5 rounded-full backdrop-blur-md">
                 <span className="text-[11px] font-bold tracking-widest text-slate-300 uppercase">
@@ -79,7 +83,10 @@ export default function ContactSection() {
                     Share your requirements and the services you're interested in, and we'll take it from there.
                   </p>
                   <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-blue-400">
-                    <span>Websites</span> • <span>Web Apps</span> • <span>Custom Software</span> • <span>UI/UX</span>
+                    <span>Websites</span>
+                    <span>Web Apps</span>
+                    <span>Custom Software</span>
+                    <span>UI/UX</span>
                   </div>
                 </div>
               </div>
@@ -88,17 +95,12 @@ export default function ContactSection() {
 
           {/* Bottom 3D Logo Graphic Vector */}
           <div className="w-48 h-48 sm:w-56 sm:h-56 relative self-start opacity-90 drop-shadow-[0_20px_35px_rgba(37,99,235,0.4)]">
-            <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
-              <path fillRule="evenodd" clipRule="evenodd" d="M20 30L55 10L80 25L45 45L20 30Z" fill="url(#contactGrad1)"/>
-              <path fillRule="evenodd" clipRule="evenodd" d="M20 50L55 30L80 45L45 65L20 50Z" fill="url(#contactGrad2)"/>
-              <path fillRule="evenodd" clipRule="evenodd" d="M20 70L55 50L80 65L45 85L20 70Z" fill="url(#contactGrad3)"/>
-              <defs>
-                <linearGradient id="contactGrad1" x1="20" y1="10" x2="80" y2="45" gradientUnits="userSpaceOnUse"><stop stopColor="#2563EB" /><stop offset="1" stopColor="#38BDF8" /></linearGradient>
-                <linearGradient id="contactGrad2" x1="20" y1="30" x2="80" y2="65" gradientUnits="userSpaceOnUse"><stop stopColor="#1D4ED8" /><stop offset="1" stopColor="#60A5FA" /></linearGradient>
-                <linearGradient id="contactGrad3" x1="20" y1="50" x2="80" y2="85" gradientUnits="userSpaceOnUse"><stop stopColor="#FFFFFF" /><stop offset="1" stopColor="#CBD5E1" /></linearGradient>
-              </defs>
-            </svg>
-          </div>
+  <img 
+    src="/images/Group.png" 
+    alt="StandoutDev Graphic" 
+    className="w-full h-full object-contain rounded-2xl"
+  />
+</div>
         </div>
 
         {/* ========================================================================= */}

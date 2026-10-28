@@ -7,10 +7,12 @@ export default function ApproachSection() {
       {/* Top Header Badge / Tag with Logo */}
       <div className="flex items-center justify-center gap-3 mb-6">
         {/* Logo Box */}
-        <div className="w-10 h-10 bg-[#0B0F19] rounded-xl flex items-center justify-center shadow-md">
-          <svg className="w-6 h-6 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
+        <div className="w-10 h-10 bg-[#0B0F19] rounded-xl flex items-center justify-center shadow-md overflow-hidden p-1.5">
+          <img 
+            src="/images/Group.png" 
+            alt="StandoutDev Logo" 
+            className="w-full h-full object-contain"
+          />
         </div>
 
         {/* Pill Badge */}
@@ -47,28 +49,14 @@ export default function ApproachSection() {
           </div>
         </div>
 
-        {/* Center 3D Logo Graphic */}
+        {/* Center Graphic Image */}
         <div className="relative z-10 flex items-center justify-center my-8">
-          <div className="w-28 h-28 sm:w-36 sm:h-36 relative flex items-center justify-center drop-shadow-[0_20px_35px_rgba(37,99,235,0.25)]">
-            <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" clipRule="evenodd" d="M20 30L55 10L80 25L45 45L20 30Z" fill="url(#grad1)"/>
-              <path fillRule="evenodd" clipRule="evenodd" d="M20 50L55 30L80 45L45 65L20 50Z" fill="url(#grad2)"/>
-              <path fillRule="evenodd" clipRule="evenodd" d="M20 70L55 50L80 65L45 85L20 70Z" fill="url(#grad3)"/>
-              <defs>
-                <linearGradient id="grad1" x1="20" y1="10" x2="80" y2="45" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#2563EB" />
-                  <stop offset="1" stopColor="#38BDF8" />
-                </linearGradient>
-                <linearGradient id="grad2" x1="20" y1="30" x2="80" y2="65" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#1D4ED8" />
-                  <stop offset="1" stopColor="#60A5FA" />
-                </linearGradient>
-                <linearGradient id="grad3" x1="20" y1="50" x2="80" y2="85" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#1E293B" />
-                  <stop offset="1" stopColor="#CBD5E1" />
-                </linearGradient>
-              </defs>
-            </svg>
+          <div className="w-32 h-32 sm:w-44 sm:h-44 relative flex items-center justify-center drop-shadow-[0_20px_35px_rgba(37,99,235,0.25)]">
+            <img 
+              src="/images/Group.png" 
+              alt="StandoutDev Approach Graphic" 
+              className="w-full h-full object-contain rounded-2xl"
+            />
           </div>
         </div>
 

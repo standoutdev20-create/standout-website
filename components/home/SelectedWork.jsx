@@ -8,10 +8,12 @@ export default function SelectedWork() {
       {/* Top Header Badge */}
       <div className="flex items-center justify-center gap-3 mb-6">
         {/* Logo Icon */}
-        <div className="w-10 h-10 bg-[#0B0F19] rounded-full flex items-center justify-center shadow-md">
-          <svg className="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
+        <div className="w-10 h-10 bg-[#0B0F19] rounded-xl flex items-center justify-center shadow-md overflow-hidden p-1.5">
+          <img 
+            src="/images/Group.png" 
+            alt="StandoutDev Logo" 
+            className="w-full h-full object-contain"
+          />
         </div>
 
         {/* Pill Tag */}
@@ -39,9 +41,7 @@ export default function SelectedWork() {
       {/* Projects Stack */}
       <div className="w-full max-w-6xl flex flex-col gap-24">
         
-        {/* ========================================================================= */}
-        {/* PROJECT 1: URBAN METAL CRAFT (Image 1 - Purple Mockup)[cite: 9] */}
-        {/* ========================================================================= */}
+        {/* PROJECT 1: URBAN METAL CRAFT */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Details */}
           <div className="lg:col-span-5 flex flex-col justify-between h-full">
@@ -101,7 +101,7 @@ export default function SelectedWork() {
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
               </div>
               <div className="bg-[#0B0F19] rounded-lg p-6 text-white min-h-[220px] flex flex-col justify-center items-start">
-                <span className="text-[10px] text-orange-500 font-bold uppercase tracking-wider mb-2">• LASER CUTTING</span>
+                <span className="text-[10px] text-orange-500 font-bold uppercase tracking-wider mb-2">LASER CUTTING</span>
                 <h4 className="text-2xl font-black text-white mb-2 leading-tight">
                   Precision <br /><span className="text-orange-500">Laser Cutting</span> <br />Process
                 </h4>
@@ -113,9 +113,7 @@ export default function SelectedWork() {
 
         <div className="w-full h-[1px] bg-slate-200/80 my-4"></div>
 
-        {/* ========================================================================= */}
-        {/* PROJECT 2: URBAN METAL CRAFT (Image 2 - Tablet Mockup Case Study)[cite: 10] */}
-        {/* ========================================================================= */}
+        {/* PROJECT 2: URBAN METAL CRAFT CASE STUDY */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Tablet Image Mockup */}
           <div className="lg:col-span-7 rounded-3xl overflow-hidden bg-slate-200/60 p-4 sm:p-8 flex items-center justify-center relative min-h-[360px]">
@@ -158,10 +156,10 @@ export default function SelectedWork() {
               <div>
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">DELIVERABLES</p>
                 <ul className="text-xs font-bold text-slate-800 space-y-1">
-                  <li>• WEBSITE STRATEGY</li>
-                  <li>• UI/UX DESIGN</li>
-                  <li>• RESPONSIVE WEB DEV</li>
-                  <li>• DESIGN SYSTEM</li>
+                  <li>WEBSITE STRATEGY</li>
+                  <li>UI/UX DESIGN</li>
+                  <li>RESPONSIVE WEB DEV</li>
+                  <li>DESIGN SYSTEM</li>
                 </ul>
               </div>
 
@@ -202,9 +200,7 @@ export default function SelectedWork() {
 
         <div className="w-full h-[1px] bg-slate-200/80 my-4"></div>
 
-        {/* ========================================================================= */}
-        {/* PROJECT 3: SIDDHNESH KRUPA (Image 2 - Real Estate Dark Laptop Mockup)[cite: 10] */}
-        {/* ========================================================================= */}
+        {/* PROJECT 3: SIDDHNESH KRUPA */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Details */}
           <div className="lg:col-span-5 flex flex-col justify-between h-full order-2 lg:order-1">
@@ -228,10 +224,10 @@ export default function SelectedWork() {
               <div>
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">DELIVERABLES</p>
                 <ul className="text-xs font-bold text-slate-800 space-y-1">
-                  <li>• PRODUCT STRATEGY</li>
-                  <li>• UX/UI DESIGN</li>
-                  <li>• FULL-STACK BUILD</li>
-                  <li>• DESIGN SYSTEM</li>
+                  <li>PRODUCT STRATEGY</li>
+                  <li>UX/UI DESIGN</li>
+                  <li>FULL-STACK BUILD</li>
+                  <li>DESIGN SYSTEM</li>
                 </ul>
               </div>
 

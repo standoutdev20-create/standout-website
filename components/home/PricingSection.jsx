@@ -19,10 +19,12 @@ export default function PricingSection() {
       {/* Top Header Badge */}
       <div className="flex items-center justify-center gap-3 mb-6 relative z-10">
         {/* Logo Box */}
-        <div className="w-10 h-10 bg-blue-600/20 border border-blue-500/30 rounded-xl flex items-center justify-center shadow-lg backdrop-blur-md">
-          <svg className="w-5 h-5 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
+        <div className="w-10 h-10 bg-blue-600/20 border border-blue-500/30 rounded-xl flex items-center justify-center shadow-lg backdrop-blur-md overflow-hidden p-1.5">
+          <img 
+            src="/images/Group.png" 
+            alt="StandoutDev Logo" 
+            className="w-full h-full object-contain"
+          />
         </div>
 
         {/* Pill Tag */}
