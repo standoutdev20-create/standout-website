@@ -2,26 +2,18 @@
 
 import "./globals.css";
 import Script from "next/script";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Geist } from "next/font/google";
 import { Providers } from "./providers";
 import Navbar from "@/components/site/Navbar";
-//import Footer from "@/components/site/Footer";
 import Grain from "@/components/site/Grain";
-import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CustomCursor from "@/components/site/CustomCursor";
 import WhatsAppButton from "@/components/site/WhatsAppButton";
+import Footer from "@/components/site/Footer";
+import AutoReveal from "@/components/site/AutoReveal";
 
-const spaceGrotesk = Space_Grotesk({
+const geist = Geist({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-inter",
+  variable: "--font-geist",
   display: "swap",
 });
 
@@ -132,7 +124,7 @@ const websiteJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+    <html lang="en" className={geist.variable}>
       <head>
         {/* Structured data: Organization + WebSite */}
         <script
@@ -174,14 +166,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* End Google Tag Manager (noscript) */}
 
         <Providers>
-          <SmoothScrollProvider>
-            <Grain />
-            <CustomCursor />
-            <Navbar />
-            <main className="relative z-10">{children}</main>
-     
-            <WhatsAppButton />
-          </SmoothScrollProvider>
+          <Grain />
+          <CustomCursor />
+          <Navbar />
+          <main className="relative z-10">
+            <AutoReveal>{children}</AutoReveal>
+          </main>
+          <Footer />
+          <WhatsAppButton />
         </Providers>
       </body>
     </html>

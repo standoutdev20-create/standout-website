@@ -2,6 +2,7 @@ import { getDb } from "@/lib/mongodb";
 import { listPublishedPosts } from "@/lib/blog";
 import { defaultOgImages } from "@/lib/seo";
 import BlogHero from "@/components/blog/BlogHero";
+import { HeroBackdrop } from "@/components/site/ui";
 import BlogPostGrid from "@/components/blog/BlogPostGrid";
 import BlogPagination from "@/components/blog/BlogPagination";
 
@@ -55,8 +56,14 @@ export default async function BlogIndexPage({ searchParams }) {
   );
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-      <BlogHero tag={tag} />
+    <>
+    <section data-no-reveal className="relative overflow-hidden bg-white pb-16 pt-32 sm:pb-20 sm:pt-36 lg:pt-40">
+      <HeroBackdrop />
+      <div className="relative mx-auto max-w-6xl px-6">
+        <BlogHero tag={tag} />
+      </div>
+    </section>
+    <div className="mx-auto max-w-6xl px-6 pb-24 md:pb-32">
 
       <BlogPostGrid posts={posts} tag={tag} page={page} />
 
@@ -65,6 +72,7 @@ export default async function BlogIndexPage({ searchParams }) {
         totalPages={totalPages}
         tag={tag}
       />
-    </main>
+    </div>
+    </>
   );
 }

@@ -19,8 +19,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        display: ['var(--font-space-grotesk)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-geist)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-geist)', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: 'hsl(var(--border))',

@@ -17,6 +17,81 @@ import {
 
 export const projects = [
   {
+    id: "meteoroid",
+    isNew: true,
+    title: "Meteoroid",
+    subtitle: "Luxurious Stones · CNC Stone Cladding",
+    category: "Website",
+    tag: "Architecture & Interiors",
+    year: "2026",
+    color: "from-stone-500 to-amber-700",
+    colorHex: "#a16207",
+    accentLight: "rgba(161,98,7,0.12)",
+    accentBorder: "rgba(161,98,7,0.25)",
+    url: "https://meteoroid.in/",
+    description:
+      "A luxury showcase website for premium CNC stone cladding, with editorial design, rich collections and enquiry-first product pages.",
+    fullDescription:
+      "Meteoroid Luxurious Stones creates precision-cut CNC stone cladding and bespoke natural stone designs. We built a premium, editorial-style website that lets their materials take centre stage: immersive collections, a CNC design gallery, detailed product pages and direct enquiry paths.",
+    challenge:
+      "Present a large, highly visual catalogue of stone collections and CNC designs in a way that feels as premium as the product, while making it easy for architects and homeowners to enquire.",
+    solution:
+      "An editorial layout with large photography, a bento-style collections grid, product pages with clear specifications (category, finish, application, format), a downloadable catalogue and WhatsApp enquiries on every page.",
+    thumbnail: "/images/projects/meteoroid-1.webp",
+    screenshots: [
+      "/images/projects/meteoroid-1.webp",
+      "/images/projects/meteoroid-2.webp",
+      "/images/projects/meteoroid-3.webp",
+      "/images/projects/meteoroid-4.webp",
+    ],
+    features: [
+      {
+        icon: Sparkles,
+        title: "Editorial Luxury Design",
+        description: "Large photography and refined typography that match a premium brand.",
+      },
+      {
+        icon: Layout,
+        title: "Collections Showcase",
+        description: "A bento-style grid for cladding, panels, inlays and landscaping stones.",
+      },
+      {
+        icon: PenTool,
+        title: "CNC Design Gallery",
+        description: "Dedicated pages for 2D and 3D CNC designs and artworks.",
+      },
+      {
+        icon: Monitor,
+        title: "Product Detail Pages",
+        description: "Clear specifications: category, finish, application and format.",
+      },
+      {
+        icon: Megaphone,
+        title: "WhatsApp Enquiries",
+        description: "One-tap enquiries on WhatsApp from anywhere on the site.",
+      },
+      {
+        icon: Award,
+        title: "Downloadable Catalogue",
+        description: "A catalogue download right from the navigation.",
+      },
+    ],
+    services: [
+      "Web Design",
+      "UI/UX Design",
+      "Next.js Development",
+      "Product Catalogue",
+    ],
+    technologies: ["Next.js", "React"],
+    results: [
+      { metric: "Live", label: "Website Status" },
+      { metric: "Collections", label: "Product Showcase" },
+      { metric: "Catalogue", label: "Downloadable" },
+      { metric: "WhatsApp", label: "Direct Enquiries" },
+    ],
+  },
+
+  {
     id: "uma-metals",
     title: "Uma Metal Craft",
     subtitle: "Premium Metal Manufacturing",
@@ -252,6 +327,7 @@ export const projects = [
 export const filters = ["All", "Website", "Product"];
 
 export const clientNames = [
+  "Meteoroid Luxurious Stones",
   "Uma Metal Craft",
   "Siddhanath Krupa Physics",
   "Digital Developers",

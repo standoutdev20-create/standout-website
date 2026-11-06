@@ -1,91 +1,85 @@
-import React from 'react';
+import Image from 'next/image';
+import { Check, X } from 'lucide-react';
+import { Container, Section, SectionHeader } from '@/components/site/ui';
+
+const common = [
+  'Separate designers, developers and agencies',
+  'Scattered communication and slow handoffs',
+  'Inconsistent design across screens',
+  'Unclear timelines and surprise costs',
+];
+
+const ours = [
+  'One team for design, development and delivery',
+  'A single point of contact and regular updates',
+  'A consistent design system from day one',
+  'Clear scope, honest timelines, no surprises',
+];
 
 export default function ApproachSection() {
   return (
-    <section className="relative w-full min-h-screen bg-[#F8FAFC] flex flex-col justify-center items-center px-4 py-20 overflow-hidden font-sans text-slate-900">
-      
-      {/* Top Header Badge / Tag with Logo */}
-      <div className="flex items-center justify-center gap-3 mb-6">
-        {/* Logo Box */}
-        <div className="w-10 h-10 bg-[#0B0F19] rounded-xl flex items-center justify-center shadow-md overflow-hidden p-1.5">
-          <img 
-            src="/images/Group.png" 
-            alt="StandoutDev Logo" 
-            className="w-full h-full object-contain"
-          />
-        </div>
+    <Section tone="white">
+      <Container>
+        <SectionHeader
+          eyebrow="The StandoutDev approach"
+          title="Disconnected teams create"
+          accent="disconnected products."
+          description="Scattered communication, inconsistent design and delayed development slow your product down. StandoutDev brings design, development and delivery together in one team."
+        />
 
-        {/* Pill Badge */}
-        <div className="inline-flex items-center gap-2 bg-white border border-slate-200/80 px-4 py-1.5 rounded-full shadow-sm">
-          <span className="w-2 h-2 rounded-full bg-blue-600"></span>
-          <span className="text-xs font-bold tracking-widest text-slate-600 uppercase">
-            THE STANDOUTDEV APPROACH
-          </span>
-        </div>
-      </div>
+        <div className="mt-14 grid items-stretch gap-5 lg:grid-cols-12">
+          {/* Common approach */}
+          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-7 sm:p-9 lg:col-span-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">The common approach</p>
+            <h3 className="mt-3 text-2xl font-bold text-slate-900">
+              Disconnected teams.
+              <br />
+              Endless delays.
+            </h3>
+            <ul className="mt-7 space-y-4">
+              {common.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-[15px] text-slate-600">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-500">
+                    <X className="h-3 w-3" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-      {/* Main Heading */}
-      <div className="text-center max-w-4xl mx-auto mb-6">
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-[1.15]">
-          Disconnected Teams Create <br />
-          <span className="text-[#2563EB]">Digital Products.</span>
-        </h2>
-      </div>
+          {/* Image */}
+          <div className="media-zoom relative min-h-[280px] overflow-hidden rounded-3xl lg:col-span-4">
+            <Image src="/images/stock/collaboration-top.jpg" alt="A team collaborating around laptops" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/70 via-transparent to-transparent" />
+            <div className="absolute inset-x-5 bottom-5 rounded-2xl bg-white/90 p-4 backdrop-blur">
+              <p className="text-sm font-semibold text-slate-900">Design + development, in one room.</p>
+              <p className="mt-1 text-xs text-slate-500">Fewer handoffs means faster, better decisions.</p>
+            </div>
+          </div>
 
-      {/* Subtitle / Description */}
-      <div className="text-center max-w-2xl mx-auto mb-16">
-        <p className="text-slate-500 text-sm sm:text-base font-normal leading-relaxed">
-          Scattered communication, inconsistent design, delayed development, and disconnected decisions can slow your digital product down. StandoutDev brings design, development, and delivery together in one coordinated process.
-        </p>
-      </div>
-
-      {/* Main Graphic & Cards Section */}
-      <div className="relative w-full max-w-4xl flex items-center justify-center min-h-[380px] mt-4">
-        
-        {/* Background Glowing Circular Grid Line */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] rounded-full border border-blue-200/60 bg-gradient-to-b from-blue-50/30 to-transparent flex items-center justify-center relative">
-            <div className="absolute -top-1.5 w-3 h-3 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(37,99,235,0.8)]"></div>
+          {/* StandoutDev way */}
+          <div className="relative overflow-hidden rounded-3xl bg-[#0B0F19] p-7 text-white sm:p-9 lg:col-span-4">
+            <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-blue-600/30 blur-[90px]" />
+            <p className="relative text-xs font-semibold uppercase tracking-[0.16em] text-blue-400">The StandoutDev way</p>
+            <h3 className="relative mt-3 text-2xl font-bold">
+              One team.
+              <br />
+              One clear direction.
+            </h3>
+            <ul className="relative mt-7 space-y-4">
+              {ours.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-[15px] text-slate-300">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
+                    <Check className="h-3 w-3" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-
-        {/* Center Graphic Image */}
-        <div className="relative z-10 flex items-center justify-center my-8">
-          <div className="w-32 h-32 sm:w-44 sm:h-44 relative flex items-center justify-center drop-shadow-[0_20px_35px_rgba(37,99,235,0.25)]">
-            <img 
-              src="/images/Group.png" 
-              alt="StandoutDev Approach Graphic" 
-              className="w-full h-full object-contain rounded-2xl"
-            />
-          </div>
-        </div>
-
-        {/* Left Card: The common approach */}
-        <div className="absolute left-2 sm:left-6 bottom-4 sm:bottom-8 z-20 w-[240px] sm:w-[280px] bg-[#2563EB] text-white p-6 rounded-2xl shadow-2xl transform -translate-y-2 hover:-translate-y-3 transition-transform duration-300">
-          <p className="text-xs text-blue-100/80 font-medium mb-3">
-            The common approach
-          </p>
-          <h3 className="text-xl sm:text-2xl font-bold leading-tight">
-            Disconnected teams. <br />
-            Endless delays.
-          </h3>
-        </div>
-
-        {/* Right Card: The StandoutDev way */}
-        <div className="absolute right-2 sm:right-6 bottom-4 sm:bottom-8 z-20 w-[240px] sm:w-[280px] bg-[#0B0F19] text-white p-6 rounded-2xl shadow-2xl transform -translate-y-2 hover:-translate-y-3 transition-transform duration-300 border border-slate-800">
-          <p className="text-xs text-slate-400 font-medium mb-3">
-            The StandoutDev way
-          </p>
-          <h3 className="text-xl sm:text-2xl font-bold leading-tight">
-            One team. <br />
-            One clear direction.
-          </h3>
-        </div>
-
-        {/* Bottom Horizontal Light Bar */}
-        <div className="absolute -bottom-2 w-full max-w-xs sm:max-w-md h-[2px] bg-gradient-to-r from-transparent via-blue-300 to-transparent"></div>
-      </div>
-
-    </section>
+      </Container>
+    </Section>
   );
 }

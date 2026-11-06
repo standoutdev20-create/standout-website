@@ -1,116 +1,71 @@
 'use client';
-import React, { useState } from 'react';
 
-export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(null);
+import { useState } from 'react';
+import { Plus } from 'lucide-react';
+import { faqs as defaultFaqs, CONTACT } from '@/lib/siteData';
+import { ButtonLink, Container, Section, SectionHeader } from '@/components/site/ui';
 
-  const faqs = [
-    {
-      question: "What services does StandoutDev provide?",
-      answer: "StandoutDev provides end-to-end digital services including custom web development, UI/UX design, web applications, SaaS platforms, e-commerce solutions, and ongoing technical support."
-    },
-    {
-      question: "How does your project development process work?",
-      answer: "Our process follows a clear 4-step path: Discovery & Planning, Scope & Architecture, Design & Development, and Launch with ongoing support to ensure smooth delivery."
-    },
-    {
-      question: "How much does a website or software project cost?",
-      answer: "Project costs vary depending on scope, complexity, features, and timeline. We offer transparent pricing with fixed or flexible custom quotes based on your exact requirements."
-    },
-    {
-      question: "How long does a project take to complete?",
-      answer: "A standard website typically takes 4 to 6 weeks, while complex web applications or software platforms can take 8 to 12 weeks depending on feature requirements."
-    },
-    {
-      question: "Can you work with our existing website or application?",
-      answer: "Yes, we can audit, redesign, optimize, or rebuild existing websites and applications, as well as seamlessly integrate new APIs and custom features."
-    },
-    {
-      question: "Will we receive ongoing support after launch?",
-      answer: "Absolutely. We stay on as your Growth Partner providing continuous maintenance, performance optimization, security monitoring, and updates."
-    }
-  ];
-
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
+export function FAQList({ items = defaultFaqs }) {
+  const [open, setOpen] = useState(0);
   return (
-    <section className="w-full bg-[#F8FAFC] py-20 px-4 flex flex-col items-center justify-center font-sans text-slate-900">
-      
-      {/* Top Header Badge */}
-      <div className="flex items-center justify-center gap-3 mb-6">
-        {/* Logo Icon */}
-        <div className="w-10 h-10 bg-[#0B0F19] rounded-xl flex items-center justify-center shadow-md overflow-hidden p-1.5">
-          <img 
-            src="/images/Group.png" 
-            alt="StandoutDev Logo" 
-            className="w-full h-full object-contain"
-          />
-        </div>
-
-        {/* Pill Tag */}
-        <div className="inline-flex items-center bg-white border border-slate-200 px-4 py-1 rounded-full shadow-sm">
-          <span className="text-xs font-extrabold tracking-widest text-slate-700 uppercase">
-            FAQ
-          </span>
-        </div>
-      </div>
-
-      {/* Main Heading */}
-      <div className="text-center max-w-4xl mx-auto mb-14">
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-[1.15]">
-          Everything You Need to Know <br />
-          Before <span className="text-[#2563EB]">Starting Your Project.</span>
-        </h2>
-      </div>
-
-      {/* FAQ Accordion List */}
-      <div className="w-full max-w-4xl flex flex-col gap-4">
-        {faqs.map((faq, index) => {
-          const isOpen = openIndex === index;
-
-          return (
-            <div
-              key={index}
-              className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
-                isOpen 
-                  ? 'border-blue-300 shadow-md' 
-                  : 'border-slate-200/80 hover:border-slate-300 shadow-sm'
-              }`}
+    <div className="divide-y divide-slate-200 rounded-3xl border border-slate-200 bg-white">
+      {items.map((item, i) => {
+        const isOpen = open === i;
+        return (
+          <div key={item.q}>
+            <button
+              type="button"
+              onClick={() => setOpen(isOpen ? -1 : i)}
+              aria-expanded={isOpen}
+              className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left sm:px-8 sm:py-6"
             >
-              {/* Question Row */}
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full text-left p-6 flex items-center justify-between gap-4 focus:outline-none"
+              <span className="text-base font-semibold text-slate-900 sm:text-lg">{item.q}</span>
+              <span
+                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
+                  isOpen ? 'rotate-45 bg-blue-600 text-white' : 'bg-slate-100 text-slate-600'
+                }`}
               >
-                <span className="text-base sm:text-lg font-bold text-slate-900">
-                  {faq.question}
-                </span>
-
-                {/* Round Plus/Minus Icon Button */}
-                <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${
-                    isOpen ? 'bg-blue-600 text-white' : 'bg-blue-50 text-blue-600'
-                  }`}
-                >
-                  <span className="text-lg font-medium leading-none">
-                    {isOpen ? '−' : '+'}
-                  </span>
-                </div>
-              </button>
-
-              {/* Answer Content */}
-              {isOpen && (
-                <div className="px-6 pb-6 pt-0 text-slate-500 text-sm leading-relaxed border-t border-slate-100 mt-1">
-                  {faq.answer}
-                </div>
-              )}
+                <Plus className="h-4 w-4" />
+              </span>
+            </button>
+            <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+              <div className="overflow-hidden">
+                <p className="px-6 pb-6 text-[15px] leading-relaxed text-slate-600 sm:px-8">{item.a}</p>
+              </div>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
-    </section>
+export default function FAQSection({ items }) {
+  return (
+    <Section tone="muted">
+      <Container>
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <SectionHeader
+              align="left"
+              eyebrow="FAQ"
+              title="Everything you need to know"
+              accent="before you start."
+              description="Can't find what you're looking for? Our team is happy to help."
+            />
+            <div className="mt-8 rounded-3xl bg-[#0B0F19] p-6 text-white">
+              <p className="font-semibold">Still have questions?</p>
+              <p className="mt-1 text-sm text-slate-400">Email us at {CONTACT.email}</p>
+              <ButtonLink href="/contact" variant="light" size="sm" className="mt-5">
+                Contact our team
+              </ButtonLink>
+            </div>
+          </div>
+          <div className="lg:col-span-8">
+            <FAQList items={items} />
+          </div>
+        </div>
+      </Container>
+    </Section>
   );
 }

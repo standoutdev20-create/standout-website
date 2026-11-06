@@ -1,4 +1,5 @@
 import { getDb } from '@/lib/mongodb'
+import { projects } from '@/components/work/projectsData'
 
 const SITE_URL = 'https://standoutdev.co'
 
@@ -24,6 +25,15 @@ export default async function sitemap() {
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }))
+
+  for (const project of projects) {
+    entries.push({
+      url: `${SITE_URL}/work/${project.id}`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    })
+  }
 
   try {
     const db = await getDb()

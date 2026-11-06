@@ -31,12 +31,12 @@ export default function BlogPostGrid({ posts, tag, page }) {
 
           <div className="flex flex-1 flex-col p-6">
             {post.tags?.[0] && (
-              <div className="mb-2 text-xs uppercase tracking-wider text-cyan-600">
+              <div className="mb-2 text-xs uppercase tracking-wider text-blue-600">
                 {post.tags[0]}
               </div>
             )}
 
-            <h2 className="text-xl font-semibold text-slate-900 group-hover:text-cyan-700">
+            <h2 className="text-xl font-semibold text-slate-900 group-hover:text-blue-700">
               {post.title}
             </h2>
 

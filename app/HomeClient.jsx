@@ -1,33 +1,31 @@
-
 import HeroSection from '@/components/home/HeroSection';
 import LogoMarquee from '@/components/home/LogoMarquee';
-import ApproachSection from '@/components/home/ApproachSection';
 import ServicesSection from '@/components/home/ServicesSection';
-import PricingSection from '@/components/home/PricingSection';  
-import HowWeWorkSection from '@/components/home/HowWeWorkSection';
-import WhoWeWorkWith from '@/components/home/WhoWeWorkWith';
+import ApproachSection from '@/components/home/ApproachSection';
+import AppShowcase from '@/components/site/AppShowcase';
 import SelectedWork from '@/components/home/SelectedWork';
+import HowWeWorkSection from '@/components/home/HowWeWorkSection';
 import WhyStandoutDev from '@/components/home/WhyStandoutDev';
+import PricingSection from '@/components/home/PricingSection';
+import WhoWeWorkWith from '@/components/home/WhoWeWorkWith';
 import FAQSection from '@/components/home/FAQSection';
 import ContactSection from '@/components/home/ContactSection';
-import Footer from '@/components/home/Footer';
-
 
 export default function HomeClient() {
   return (
-    <main>
+    <>
       <HeroSection />
       <LogoMarquee />
-      <ApproachSection />
       <ServicesSection />
-      <PricingSection  />
+      <AppShowcase eyebrow="What we build" title="Built for every screen." accent="Designed to convert." />
+      <ApproachSection />
+      <SelectedWork />
       <HowWeWorkSection />
-      <WhoWeWorkWith />
-      <SelectedWork/>
       <WhyStandoutDev />
-      <FAQSection  />
+      <PricingSection />
+      <WhoWeWorkWith />
+      <FAQSection />
       <ContactSection />
-      <Footer   />
-    </main>
+    </>
   );
 }

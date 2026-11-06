@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3f6fd"/>
+      <stop offset="0.6" stop-color="#f7f9fe"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <radialGradient id="planet" cx="0.5" cy="0" r="0.75">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.04" stop-color="#dbeafe"/>
+      <stop offset="0.12" stop-color="#93c5fd"/>
+      <stop offset="0.28" stop-color="#3b82f6" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#4f46e5" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#1e1b4b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rimGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cornerA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#818cf8" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cornerB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bokeh" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bokehBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#93c5fd" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#93c5fd" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="b80" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="b30" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="30"/></filter>
+    <filter id="b6" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <ellipse cx="200" cy="120" rx="560" ry="360" fill="url(#cornerA)" filter="url(#b80)"/>
+  <ellipse cx="1760" cy="160" rx="520" ry="340" fill="url(#cornerB)" filter="url(#b80)"/>
+  <ellipse cx="960" cy="1720" rx="1400" ry="860" fill="url(#rimGlow)" filter="url(#b80)"/>
+  <ellipse cx="960" cy="1760" rx="1250" ry="880" fill="url(#planet)" filter="url(#b6)"/>
+  <ellipse cx="960" cy="905" rx="520" ry="34" fill="#ffffff" opacity="0.85" filter="url(#b30)"/>
+  <circle cx="330" cy="610" r="70" fill="url(#bokehBlue)" filter="url(#b30)"/>
+  <circle cx="1600" cy="560" r="90" fill="url(#bokehBlue)" filter="url(#b30)"/>
+  <circle cx="1420" cy="300" r="40" fill="url(#bokeh)" filter="url(#b6)"/>
+  <circle cx="520" cy="330" r="28" fill="url(#bokeh)" filter="url(#b6)"/>
+  <circle cx="1780" cy="820" r="55" fill="url(#bokehBlue)" filter="url(#b30)"/>
+  <rect y="880" width="1920" height="200" fill="url(#fade)"/>
+</svg>
