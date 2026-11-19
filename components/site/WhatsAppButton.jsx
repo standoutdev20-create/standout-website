@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import { ADMIN_BASE } from '@/lib/constants/admin'
 
-const WHATSAPP_NUMBER = '918878025649'
+const WHATSAPP_NUMBER = '918180050683'
 const WHATSAPP_MESSAGE = "Hi Standoutdev, I'd like to discuss a project."
 
 export default function WhatsAppButton() {

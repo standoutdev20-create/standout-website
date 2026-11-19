@@ -97,7 +97,7 @@ const organizationJsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   email: "contact@standoutdev.com",
-  telephone: "+91-88780-25649",
+  telephone: "+91-81800-50683",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Pune",
@@ -107,7 +107,7 @@ const organizationJsonLd = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+91-88780-25649",
+    telephone: "+91-81800-50683",
     email: "contact@standoutdev.com",
     contactType: "customer service",
   },
